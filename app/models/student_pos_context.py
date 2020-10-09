@@ -1,12 +1,11 @@
 from __future__ import annotations
+from app.models import Student, PlanOfStudy
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
-from frex.models import DomainObject
-from app.models import Department
 
 
 @dataclass_json
 @dataclass(frozen=True)
-class Major(DomainObject):
-    name: str
-    department: Department
+class StudentPOSContext:
+    student: Student
+    plan_of_study: PlanOfStudy

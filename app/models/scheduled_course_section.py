@@ -1,8 +1,9 @@
 from __future__ import annotations
 from typing import Tuple
-from app.models import CourseSection, Instructor, Student
+from app.models import CourseSection
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
+from rdflib import URIRef
 
 
 @dataclass_json
@@ -10,8 +11,6 @@ from dataclasses_json import dataclass_json
 class ScheduledCourseSection(CourseSection):
     semester: str
     schedule: str  # TODO this maybe should be like, a date time? definitely not a string.
-    instructors: Tuple[Instructor]
-    registered_students: Tuple[
-        Student
-    ]  # maybe should keep registered students mutable?
+    instructor_uris: Tuple[URIRef]
+    registered_student_uris: Tuple[URIRef]
     course_registration_number: str

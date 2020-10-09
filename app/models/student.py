@@ -1,11 +1,9 @@
 from __future__ import annotations
-from typing import Tuple, TYPE_CHECKING
+from typing import Tuple
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
-
-if TYPE_CHECKING:
-    from app.models import Topic, Advisor, ScheduledCourseSection
+from app.models import Topic, Advisor, ScheduledCourseSection, PlanOfStudy
 
 
 @dataclass_json
@@ -17,3 +15,4 @@ class Student(DomainObject):
     topics_of_interest: Tuple[Topic]
     registered_courses: Tuple[ScheduledCourseSection]
     advisor: Advisor
+    study_plan: PlanOfStudy

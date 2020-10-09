@@ -1,14 +1,12 @@
 from __future__ import annotations
-from typing import Tuple, TYPE_CHECKING
+from typing import Tuple
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from app.models import Faculty
-
-if TYPE_CHECKING:
-    from app.models import ScheduledCourseSection
+from rdflib import URIRef
 
 
 @dataclass_json
 @dataclass(frozen=True)
 class Instructor(Faculty):
-    teaches_courses: Tuple[ScheduledCourseSection]
+    teaches_scheduled_course_uris: Tuple[URIRef]

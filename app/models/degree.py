@@ -2,10 +2,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from app.models import Major, Department
+from typing import Tuple
+from app.models import Major, Department, Requirement
 
 
 @dataclass_json
@@ -15,3 +13,4 @@ class Degree(DomainObject):
     description: str
     major: Major  # currently assuming 1 major
     department: Department
+    requirements: Tuple[Requirement]
