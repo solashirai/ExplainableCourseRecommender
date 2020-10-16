@@ -9,7 +9,7 @@ class DummyCourseCandidateGenerator(CandidateGenerator):
     def __init__(self, *, course_query_service: CourseQueryService, **kwargs):
         self.cqs = course_query_service
         generator_explanation = Explanation(
-            explanation_string="This is a dummy explanation."
+            explanation_string="This is a dummy explanation, generate all courses."
         )
         CandidateGenerator.__init__(
             self, generator_explanation=generator_explanation, **kwargs
@@ -25,12 +25,9 @@ class DummyCourseCandidateGenerator(CandidateGenerator):
             yield from candidates
 
         # TODO: this is a dummy
-        dummy_courses = [
-            self.cqs.get_course_by_uri(course_uri=None)
-            for i in range(10)
-        ]
+        courses = self.cqs.get_all_courses()
 
-        for course in dummy_courses:
+        for course in courses:
             yield CourseCandidate(
                 domain_object=course,
                 context=context,

@@ -12,17 +12,13 @@ class RecommendCoursesPipeline(_Pipeline):
     def __init__(
         self,
         *,
-        target_student: Student,
         course_query_service: CourseQueryService,
         course_ontology_service: CourseOntologyService
     ):
         self.cqs = course_query_service
         self.cos = course_ontology_service
-        context = StudentPOSContext(student=target_student,
-                                    plan_of_study=target_student.study_plan)
         _Pipeline.__init__(
             self,
-            context=context,
             candidate_generators=(
                 DummyCourseCandidateGenerator(
                     course_query_service=self.cqs

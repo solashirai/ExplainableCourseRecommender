@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Tuple
+from typing import Tuple, FrozenSet
 from app.models import Department, CourseCode, Topic
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
@@ -12,11 +12,11 @@ class Course(DomainObject):
     name: str
     description: str
     course_code: CourseCode
-    special_tags: Tuple[
+    special_tags: FrozenSet[
         str
     ]  # e.g. "isCommunicationIntensive". not sure if special tags is the best approach.
-    required_prerequisites: Tuple[Course]
-    recommended_prerequisites: Tuple[Course]
+    required_prerequisites: FrozenSet[Course]
+    recommended_prerequisites: FrozenSet[Course]
     department: Department
     credits: int
     topics: Tuple[Topic]

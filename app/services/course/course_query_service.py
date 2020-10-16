@@ -10,6 +10,10 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
+    def get_all_courses(self) -> Tuple[Course]:
+        pass
+
+    @abstractmethod
     def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course]:
         pass
 
