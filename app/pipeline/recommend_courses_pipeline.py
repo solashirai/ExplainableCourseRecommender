@@ -8,7 +8,6 @@ from app.pipeline_stages import *
 
 
 class RecommendCoursesPipeline(_Pipeline):
-
     def __init__(
         self,
         *,
@@ -20,26 +19,24 @@ class RecommendCoursesPipeline(_Pipeline):
         _Pipeline.__init__(
             self,
             candidate_generators=(
-                DummyCourseCandidateGenerator(
-                    course_query_service=self.cqs
-                ),
+                DummyCourseCandidateGenerator(course_query_service=self.cqs),
             ),
             stages=(
                 PrerequisiteUnfulfilledFilter(
                     filter_explanation=Explanation(
-                        explanation_string='You have not fulfilled the required prerequisites to take this course.'
+                        explanation_string="You have not fulfilled the required prerequisites to take this course."
                     )
                 ),
                 RecommendedPrereqScorer(
                     scoring_explanation=Explanation(
-                        explanation_string='You have completed some of the recommended prerequisites for this course.'
+                        explanation_string="You have completed some of the recommended prerequisites for this course."
                     )
                 ),
                 TopicOfInterestScorer(
                     scoring_explanation=Explanation(
-                        explanation_string='This course covers topics that you have indicated as being interested in.'
+                        explanation_string="This course covers topics that you have indicated as being interested in."
                     ),
-                    course_ontology_service=self.cos
+                    course_ontology_service=self.cos,
                 ),
                 CandidateRanker(),
             ),

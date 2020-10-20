@@ -1,20 +1,3 @@
-{{courseUri}} (crs-rec:hasRequiredPrerequisite* | crs-rec:hasRecommendedPrerequisite*)* ?relCourseUri .
-?relCourseUri a crs-rec:Course ;
-    crs-rec:hasName ?crsName ;
-    crs-rec:hasDescription ?crsDesc ;
-    crs-rec:hasCourseCode ?crsCode ;
-    crs-rec:hasDepartment ?crsDept ;
-    crs-rec:hasCredits ?crsCredits ;
-    crs-rec:hasTopic ?crsTopic .
-OPTIONAL {
-    {{courseUri}} crs-rec:hasSpecialTag ?specTag .
-}
-OPTIONAL {
-    {{courseUri}} crs-rec:hasRequiredPrerequisite ?reqPrereq .
-}
-OPTIONAL {
-    {{courseUri}} crs-rec:hasRecommendedPrerequisite ?recPrereq .
-}
-OPTIONAL {
-    {{courseUri}} crs-rec:hasOfferedSemesters ?offeredSemester .
-}
+?courseUri (crs-rec:hasRequiredPrerequisite* | crs-rec:hasRecommendedPrerequisite* | crs-rec:hasCorequisite*)* ?reqCourseUri .
+?courseUri ?p ?o .
+?reqCourseUri ?rp ?ro .

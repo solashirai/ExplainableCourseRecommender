@@ -1,1 +1,1 @@
-from .j2_query_str_service import J2QueryStrHelper
+from .j2_query_str_helper import J2QueryStrHelper

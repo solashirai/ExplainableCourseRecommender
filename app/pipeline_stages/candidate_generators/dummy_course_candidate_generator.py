@@ -5,7 +5,6 @@ from app.services.course import CourseQueryService
 
 
 class DummyCourseCandidateGenerator(CandidateGenerator):
-
     def __init__(self, *, course_query_service: CourseQueryService, **kwargs):
         self.cqs = course_query_service
         generator_explanation = Explanation(
@@ -32,5 +31,5 @@ class DummyCourseCandidateGenerator(CandidateGenerator):
                 domain_object=course,
                 context=context,
                 applied_scores=[0],
-                applied_explanations=[self.generator_explanation]
+                applied_explanations=[self.generator_explanation],
             )

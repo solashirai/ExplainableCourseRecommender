@@ -16,6 +16,7 @@ class Course(DomainObject):
         str
     ]  # e.g. "isCommunicationIntensive". not sure if special tags is the best approach.
     required_prerequisites: FrozenSet[Course]
+    corequisites: FrozenSet[Course]
     recommended_prerequisites: FrozenSet[Course]
     department: Department
     credits: int
