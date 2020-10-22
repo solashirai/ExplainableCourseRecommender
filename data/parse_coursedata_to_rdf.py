@@ -1,6 +1,6 @@
 import rdflib
 from rdflib.namespace import XSD
-from app.utils.namespaces import CRS_NS, RDF_NS
+from app.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS
 import ast
 import csv
 
@@ -26,50 +26,70 @@ for file in files:
 graph = rdflib.Graph()
 
 graph.bind('crs-onto', CRS_NS)
-courses_ns = rdflib.Namespace('https://tw.rpi.edu/ontology-engineering/oe2020/courses/')
-graph.bind('crs-courses', courses_ns)
-course_uri_dict = dict()
+entity_ns = rdflib.Namespace('https://tw.rpi.edu/ontology-engineering/oe2020/entity/')
+graph.bind('crs-entity', entity_ns)
+entity_uri_dict = dict()
 
 
-def new_course_uri():
-    return courses_ns[f'crs{str(len(course_uri_dict)).zfill(6)}']
+def new_uri():
+    return entity_ns[f'crs{str(len(entity_uri_dict)).zfill(6)}']
 
 
 for row in data_rows[1:]:
-    course_uri = course_uri_dict.get(row[name_to_index['short_name']], '')
+    course_uri = entity_uri_dict.get(f"course-{row[name_to_index['short_name']]}", '')
     if not course_uri:
-        course_uri = new_course_uri()
-        course_uri_dict[row[name_to_index['short_name']]] = course_uri
+        course_uri = new_uri()
+        entity_uri_dict[f"course-{row[name_to_index['short_name']]}"] = course_uri
+        course_code_uri = new_uri()
+        entity_uri_dict[row[name_to_index['short_name']]] = course_code_uri
 
-    graph.add((course_uri, RDF_NS['type'], CRS_NS['Course']))
-    graph.add((course_uri, CRS_NS['hasName'], rdflib.Literal(row[name_to_index['full_name']], datatype=XSD.string)))
-    graph.add((course_uri, CRS_NS['hasCredits'], rdflib.Literal(row[name_to_index['course_credit_hours']], datatype=XSD.integer)))
-    graph.add((course_uri, CRS_NS['hasDepartment'], rdflib.Literal(row[name_to_index['course_department']], datatype=XSD.string)))
-    graph.add((course_uri, CRS_NS['hasLevel'], rdflib.Literal(row[name_to_index['course_level']], datatype=XSD.string)))
-    graph.add((course_uri, CRS_NS['hasCourseCode'], rdflib.Literal(row[name_to_index['short_name']], datatype=XSD.string)))
-    graph.add((course_uri, CRS_NS['hasDescription'], rdflib.Literal(row[name_to_index['description']], datatype=XSD.string)))
-    graph.add((course_uri, CRS_NS['hasTopic'], rdflib.Literal('placeholder for topic', datatype=XSD.string)))
+        # TODO: right now department code is used to make department. change in future.
+        dept_code_uri = entity_uri_dict.get(row[name_to_index['course_department']], '')
+        department_uri = entity_uri_dict.get(f"{row[name_to_index['course_department']]} department", '')
+        if not dept_code_uri:
+            department_uri = new_uri()
+            entity_uri_dict[f"{row[name_to_index['course_department']]} department"] = department_uri
+            graph.add((department_uri, RDF_NS['type'], CRS_NS['Department']))
+            graph.add((department_uri, CRS_NS['hasName'], rdflib.Literal(row[name_to_index['course_department']], datatype=XSD.string)))
+            dept_code_uri = new_uri()
+            entity_uri_dict[row[name_to_index['course_department']]] = dept_code_uri
+            graph.add((dept_code_uri, RDF_NS['type'], CRS_NS['DepartmentCode']))
+            graph.add((dept_code_uri, CRS_NS['hasDepartment'], department_uri))
+            graph.add((dept_code_uri, LCC_LR_NS['hasTag'], rdflib.Literal(row[name_to_index['course_department']], datatype=XSD.string)))
+
+        graph.add((course_uri, RDF_NS['type'], CRS_NS['Course']))
+        graph.add((course_uri, CRS_NS['hasName'], rdflib.Literal(row[name_to_index['full_name']], datatype=XSD.string)))
+        graph.add((course_uri, CRS_NS['hasCredits'], rdflib.Literal(row[name_to_index['course_credit_hours']], datatype=XSD.integer)))
+        graph.add((course_uri, CRS_NS['hasDepartment'], department_uri))
+        graph.add((course_uri, CRS_NS['hasCourseCode'], course_code_uri))
+        graph.add((course_uri, CRS_NS['hasDescription'], rdflib.Literal(row[name_to_index['description']], datatype=XSD.string)))
+        graph.add((course_uri, CRS_NS['hasTopic'], rdflib.Literal('placeholder for topic', datatype=XSD.string)))
+
+        graph.add((course_code_uri, RDF_NS['type'], CRS_NS['CourseCode']))
+        graph.add((course_code_uri, CRS_NS['hasLevel'], rdflib.Literal(row[name_to_index['course_level']], datatype=XSD.string)))
+        graph.add((course_code_uri, CRS_NS['hasDepartmentCode'], dept_code_uri))
+        graph.add((course_code_uri, LCC_LR_NS['hasTag'], rdflib.Literal(row[name_to_index['short_name']], datatype=XSD.string)))
 
 for row in data_rows[1:]:
     # TODO: prerequisite information is not correctly parsed in the current data (10/20/2020). need to
     #  apply an extra check for "and" vs "or" vs "/" (slash usually for crosslisted courses)
-    course_uri = course_uri_dict[row[name_to_index['short_name']]]
+    course_uri = entity_uri_dict[row[name_to_index['short_name']]]
     if row[name_to_index['prerequisites']]:
         for prereq in ast.literal_eval(row[name_to_index['prerequisites']]):
 
-            prereq_uri = course_uri_dict.get(prereq, '')
+            prereq_uri = entity_uri_dict.get(prereq, '')
             if not prereq_uri:
-                prereq_uri = new_course_uri()
-                course_uri_dict[prereq] = prereq_uri
+                prereq_uri = new_uri()
+                entity_uri_dict[prereq] = prereq_uri
 
             graph.add((course_uri, CRS_NS['hasRequiredPrerequisite'], prereq_uri))
     if row[name_to_index['corequisites']]:
         for coreq in ast.literal_eval(row[name_to_index['corequisites']]):
 
-            coreq_uri = course_uri_dict.get(coreq, '')
+            coreq_uri = entity_uri_dict.get(coreq, '')
             if not coreq_uri:
-                coreq_uri = new_course_uri()
-                course_uri_dict[coreq] = coreq_uri
+                coreq_uri = new_uri()
+                entity_uri_dict[coreq] = coreq_uri
 
             graph.add((course_uri, CRS_NS['hasCorequisite'], coreq_uri))
 graph.serialize(savename, format='ttl')

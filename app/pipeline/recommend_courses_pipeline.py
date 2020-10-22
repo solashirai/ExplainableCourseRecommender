@@ -3,7 +3,6 @@ from frex.pipeline_stages import CandidateRanker
 from frex.models import Explanation
 from app.models import StudentPOSContext, Student, Course
 from app.services.course import CourseQueryService
-from app.services import CourseOntologyService
 from app.pipeline_stages import *
 
 
@@ -11,11 +10,9 @@ class RecommendCoursesPipeline(_Pipeline):
     def __init__(
         self,
         *,
-        course_query_service: CourseQueryService,
-        course_ontology_service: CourseOntologyService
+        course_query_service: CourseQueryService
     ):
         self.cqs = course_query_service
-        self.cos = course_ontology_service
         _Pipeline.__init__(
             self,
             candidate_generators=(
@@ -36,7 +33,7 @@ class RecommendCoursesPipeline(_Pipeline):
                     scoring_explanation=Explanation(
                         explanation_string="This course covers topics that you have indicated as being interested in."
                     ),
-                    course_ontology_service=self.cos,
+                    course_query_service=self.cqs,
                 ),
                 CandidateRanker(),
             ),

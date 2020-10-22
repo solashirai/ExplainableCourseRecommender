@@ -3,6 +3,8 @@ from app.models import *
 from app.services.course import GraphCourseQueryService
 from frex.stores import LocalGraph
 from app.utils.path import DATA_DIR
+from app.pipeline import RecommendCoursesPipeline
+from rdflib import URIRef
 
 
 @pytest.fixture(scope="session")
@@ -16,23 +18,32 @@ def course_qs(course_graph) -> GraphCourseQueryService:
 
 
 @pytest.fixture(scope="session")
-def dev_fixt():
-    student = Student(
-        uri=None,
-        study_plan=None,
-        name=None,
-        rin=None,
-        class_year=None,
-        topics_of_interest=None,
-        registered_courses=None,
+def course_rec_pipe(course_qs) -> RecommendCoursesPipeline:
+    return RecommendCoursesPipeline(course_query_service=course_qs)
+
+
+@pytest.fixture(scope="session")
+def test_pos_1():
+    return PlanOfStudy(
+        uri=URIRef('placeholder_pos1'),
+        class_year='2022',
+        planned_major=(),
+        planned_degree=None,
+        completed_courses=(),
+        ongoing_courses=(),
+        planned_courses=()
+    )
+
+
+@pytest.fixture(scope="session")
+def test_student_1(test_pos_1):
+    return Student(
+        uri=URIRef('placeholder_stud1'),
+        study_plan=test_pos_1,
+        name='john doe',
+        rin='123',
+        class_year='2022',
+        topics_of_interest=(),
+        registered_courses=(),
         advisor=None,
     )
-    f = Degree(
-        uri=None,
-        major=3,
-        department=None,
-        name="",
-        description="",
-        requirements=(None,),
-    )
-    return student

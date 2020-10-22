@@ -1,3 +1,24 @@
-?courseUri (crs-rec:hasRequiredPrerequisite* | crs-rec:hasRecommendedPrerequisite* | crs-rec:hasCorequisite*)* ?reqCourseUri .
-?courseUri ?p ?o .
-?reqCourseUri ?rp ?ro .
+?courseUri
+    crs-rec:hasCourseCode ?courseCodeUri ;
+    crs-rec:hasName ?crsName ;
+    crs-rec:hasDescription ?courseDesc ;
+    crs-rec:hasDepartment ?departmentUri ;
+    crs-rec:hasCredits ?courseCredits ;
+    crs-rec:hasTopic ?topicUri .
+OPTIONAL {
+    ?courseUri crs-rec:hasSpecialTag ?specialTag .
+}
+OPTIONAL {
+    ?courseUri crs-rec:hasRequiredPrerequisite ?reqPrereqCourseUri .
+}
+OPTIONAL {
+    ?courseUri crs-rec:hasRecommendedPrerequisite ?recPrereqCourseUri .
+}
+OPTIONAL {
+    ?courseUri crs-rec:hasCorequisite ?coreqCourseUri .
+}
+OPTIONAL {
+    ?courseUri crs-rec:hasOfferedSemesters ?offeredSemester .
+}
+
+{% include 'models/course_code.sparql.j2' %}

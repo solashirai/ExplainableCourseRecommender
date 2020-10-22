@@ -3,14 +3,11 @@ from typing import Tuple
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
-from app.models import DepartmentCode
-from rdflib import URIRef
+from app.models import Department
 
 
 @dataclass_json
 @dataclass(frozen=True)
-class CourseCode(DomainObject):
+class DepartmentCode(DomainObject):
     name: str
-    cross_listed: Tuple[URIRef]
-    course_level: int
-    department_code: DepartmentCode
+    department: Department

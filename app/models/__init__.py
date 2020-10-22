@@ -1,6 +1,7 @@
 from .topic import Topic
 from .department import Department
 from .major import Major
+from .department_code import DepartmentCode
 from .course_code import CourseCode
 from .course import Course
 from .requirement import Requirement

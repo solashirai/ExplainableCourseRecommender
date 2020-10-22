@@ -1,0 +1,1 @@
+from .recommend_courses_pipeline import RecommendCoursesPipeline

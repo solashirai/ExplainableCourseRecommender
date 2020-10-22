@@ -4,6 +4,7 @@ from app.models import Department, CourseCode, Topic
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
+from rdflib import URIRef
 
 
 @dataclass_json
@@ -15,9 +16,9 @@ class Course(DomainObject):
     special_tags: FrozenSet[
         str
     ]  # e.g. "isCommunicationIntensive". not sure if special tags is the best approach.
-    required_prerequisites: FrozenSet[Course]
-    corequisites: FrozenSet[Course]
-    recommended_prerequisites: FrozenSet[Course]
+    required_prerequisites: FrozenSet[URIRef]
+    corequisites: FrozenSet[URIRef]
+    recommended_prerequisites: FrozenSet[URIRef]
     department: Department
     credits: int
     topics: Tuple[Topic]

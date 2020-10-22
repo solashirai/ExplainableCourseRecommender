@@ -1,5 +1,5 @@
 from rdflib import URIRef
-from app.models import Course, CourseSection, ScheduledCourseSection, Topic
+from app.models import Course, CourseSection, ScheduledCourseSection, Topic, CourseCode, Department, DepartmentCode
 from app.services.course import CourseQueryService
 from app.services.graph import _GraphQueryService
 from app.utils import J2QueryStrHelper
@@ -20,9 +20,10 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
     def get_all_courses(self) -> Tuple[Course]:
-        self.get_cache_graph(
-            sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
-        )
+        # self.get_cache_graph(
+        #     sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
+        # )
+        self.cache_graph = self.queryable.graph
         courses = self._graph_get_all_courses()
 
         return courses
@@ -32,6 +33,45 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def get_courses_by_topic(self, *, topic: Topic) -> Tuple[Course]:
         pass
+
+    def get_course_code_by_uri(
+        self, *, course_code_uri: URIRef
+    ) -> CourseCode:
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(
+                file_name="construct_course_code_query",
+                constraints=[
+                    {"var_name": "?courseCodeUri", "var_values": [course_code_uri.n3()]}
+                ],
+            )
+        )
+        return self._graph_get_course_code_by_uri(course_code_uri=course_code_uri)
+
+    def get_department_code_by_uri(
+        self, *, department_code_uri: URIRef
+    ) -> DepartmentCode:
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(
+                file_name="construct_department_code_query",
+                constraints=[
+                    {"var_name": "?departmentCodeUri", "var_values": [department_code_uri.n3()]}
+                ],
+            )
+        )
+        return self._graph_get_department_code_by_uri(department_code_uri=department_code_uri)
+
+    def get_department_by_uri(
+        self, *, department_uri: URIRef
+    ) -> Department:
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(
+                file_name="construct_department_query",
+                constraints=[
+                    {"var_name": "?departmentUri", "var_values": [department_uri.n3()]}
+                ],
+            )
+        )
+        return self._graph_get_department_by_uri(department_uri=department_uri)
 
     def get_course_by_course_code_uri(self, *, course_code_uri: URIRef) -> Course:
         pass
@@ -71,28 +111,25 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         course_description = self.cache_graph.value(
             course_uri, CRS_NS["hasDescription"]
         )
-        course_code = self.cache_graph.value(course_uri, CRS_NS["hasCourseCode"])
-        department = self.cache_graph.value(course_uri, CRS_NS["hasDepartment"])
+        course_code = self._graph_get_course_code_by_uri(course_code_uri=self.cache_graph.value(course_uri, CRS_NS["hasCourseCode"]))
+        department = self._graph_get_department_by_uri(department_uri=self.cache_graph.value(course_uri, CRS_NS["hasDepartment"]))
         course_credits = self.cache_graph.value(course_uri, CRS_NS["hasCredits"])
         special_tags = frozenset(
             st.value
             for st in self.cache_graph.objects(course_uri, CRS_NS["hasSpecialTag"])
         )
         required_prerequisites = frozenset(
-            self._graph_get_course_by_uri(course_uri=prc_uri)
-            for prc_uri in self.cache_graph.objects(
+            self.cache_graph.objects(
                 course_uri, CRS_NS["hasRequiredPrerequisite"]
             )
         )
         recommended_prerequisites = frozenset(
-            self._graph_get_course_by_uri(course_uri=prc_uri)
-            for prc_uri in self.cache_graph.objects(
+            self.cache_graph.objects(
                 course_uri, CRS_NS["hasRecommendedPrerequisite"]
             )
         )
         corequisites = frozenset(
-            self._graph_get_course_by_uri(course_uri=prc_uri)
-            for prc_uri in self.cache_graph.objects(
+            self.cache_graph.objects(
                 course_uri, CRS_NS["hasCorequisite"]
             )
         )
@@ -141,6 +178,43 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         self, *, course_code_uri: URIRef
     ) -> Course:
         pass
+
+    def _graph_get_course_code_by_uri(
+        self, *, course_code_uri: URIRef
+    ) -> CourseCode:
+        name = self.cache_graph.value(course_code_uri, LCC_LR_NS['hasTag']).value
+        level = self.cache_graph.value(course_code_uri, CRS_NS['hasLevel']).value
+        department_code = self._graph_get_department_code_by_uri(department_code_uri=self.cache_graph.value(course_code_uri, CRS_NS['hasDepartmentCode']))
+        cross_listed = tuple(self.cache_graph.objects(course_code_uri, CRS_NS['hasCrossListing']))
+        return CourseCode(
+            uri=course_code_uri,
+            name=name,
+            cross_listed=cross_listed,
+            course_level=level,
+            department_code=department_code
+        )
+
+    def _graph_get_department_code_by_uri(
+        self, *, department_code_uri: URIRef
+    ) -> DepartmentCode:
+        name = self.cache_graph.value(department_code_uri, LCC_LR_NS['hasTag']).value
+        dept = self._graph_get_department_by_uri(department_uri=self.cache_graph.value(department_code_uri, CRS_NS['hasDepartment']))
+        return DepartmentCode(
+            uri=department_code_uri,
+            name=name,
+            department=dept
+        )
+
+    def _graph_get_department_by_uri(
+            self, *, department_uri: URIRef
+    ) -> Department:
+        name = self.cache_graph.value(department_uri, CRS_NS['hasName']).value
+        return Department(
+            uri=department_uri,
+            name=name,
+            offered_major_uris=(),  # TODO
+            offered_degree_uris=()  # TODO
+        )
 
     def _graph_get_course_sections_by_course_uri(
         self, *, course_uri: URIRef

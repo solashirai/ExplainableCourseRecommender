@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
 from app.models import Topic, Advisor, ScheduledCourseSection, PlanOfStudy
+from rdflib import URIRef
 
 
 @dataclass_json
@@ -14,5 +15,5 @@ class Student(DomainObject):
     class_year: str
     topics_of_interest: Tuple[Topic]
     registered_courses: Tuple[ScheduledCourseSection]
-    advisor: Advisor
+    advisor: URIRef
     study_plan: PlanOfStudy
