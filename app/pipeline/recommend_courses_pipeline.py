@@ -17,7 +17,12 @@ class RecommendCoursesPipeline(_Pipeline):
             stages=(
                 PrerequisiteUnfulfilledFilter(
                     filter_explanation=Explanation(
-                        explanation_string="You have not fulfilled the required prerequisites to take this course."
+                        explanation_string="You have fulfilled the required prerequisites to take this course."
+                    )
+                ),
+                CanFulfillPOSRequirementFilter(
+                    filter_explanation=Explanation(
+                        explanation_string="This course can fulfill some requirement towards your degree."
                     )
                 ),
                 RecommendedPrereqScorer(

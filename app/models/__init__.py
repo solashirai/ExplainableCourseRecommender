@@ -17,4 +17,3 @@ from .student import Student
 from .student_pos_context import StudentPOSContext
 from .student_pos_requirement_context import StudentPOSRequirementContext
 from .course_candidate import CourseCandidate
-

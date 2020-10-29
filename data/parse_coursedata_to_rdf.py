@@ -77,7 +77,7 @@ for row in data_rows[1:]:
 
         graph.add((course_code_uri, RDF_NS['type'], CRS_NS['CourseCode']))
         graph.add((course_code_uri, RDF_NS['type'], OWL['NamedIndividual']))
-        graph.add((course_code_uri, CRS_NS['hasLevel'], rdflib.Literal(row[name_to_index['course_level']], datatype=XSD.string)))
+        graph.add((course_code_uri, CRS_NS['hasLevel'], rdflib.Literal(row[name_to_index['course_level']], datatype=XSD.integer)))
         graph.add((course_code_uri, CRS_NS['hasDepartmentCode'], dept_code_uri))
         graph.add((course_code_uri, LCC_LR_NS['hasTag'], rdflib.Literal(row[name_to_index['short_name']], datatype=XSD.string)))
 

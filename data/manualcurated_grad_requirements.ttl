@@ -83,7 +83,7 @@ oe2020-crs-rec-ind:ccr000004 a oe2020-crs-rec:RangedCourseCodeRestriction ,
 
 oe2020-crs-rec-ind:ccr000005 a oe2020-crs-rec:SpecialTagCourseCodeRestriction ,
         owl:NamedIndividual ;
-    oe2020-crs-rec:hasValidSpecialTag "communication intensive"^^xsd:string .
+    oe2020-crs-rec:hasSpecialTag "communication intensive"^^xsd:string .
 
 oe2020-crs-rec-ind:ccr000006 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         owl:NamedIndividual ;# TODO fix and point to appropriate department codes
@@ -167,7 +167,7 @@ oe2020-crs-rec-ind:req000009 a oe2020-crs-rec:Requirement ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasName "AI part 1"^^xsd:string ;
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
-    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000007 .
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000007 .
 
 oe2020-crs-rec-ind:ccr000007 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         owl:NamedIndividual ;
@@ -179,7 +179,7 @@ oe2020-crs-rec-ind:req000010 a oe2020-crs-rec:Requirement ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasName "AI part 2"^^xsd:string ;
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
-    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000008 .
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000008 .
 
 oe2020-crs-rec-ind:ccr000008 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         owl:NamedIndividual ;
@@ -189,7 +189,7 @@ oe2020-crs-rec-ind:req000011 a oe2020-crs-rec:Requirement ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasName "AI part 3"^^xsd:string ;
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
-    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000009 .
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000009 .
 
 oe2020-crs-rec-ind:ccr000009 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         owl:NamedIndividual ;
