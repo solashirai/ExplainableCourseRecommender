@@ -9,7 +9,7 @@ from app.models import (
     Department,
     DepartmentCode,
     Requirement,
-    CourseCodeRestriction,
+    Student
 )
 from typing import Tuple
 
@@ -83,4 +83,8 @@ class CourseQueryService(ABC):
 
     @abstractmethod
     def get_all_requirements(self) -> Tuple[Requirement]:
+        pass
+
+    @abstractmethod
+    def get_student_by_uri(self, *, student_uri) -> Student:
         pass

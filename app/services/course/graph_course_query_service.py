@@ -9,6 +9,7 @@ from app.models import (
     DepartmentCode,
     Requirement,
     CourseCodeRestriction,
+    Student
 )
 from app.services.course import CourseQueryService
 from app.services.graph import _GraphQueryService
@@ -115,11 +116,6 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         self.get_cache_graph(
             sparql=J2QueryStrHelper.j2_query(file_name="construct_requirement_query")
         )
-        print("!!!!!!!!!!!")
-        print(len(self.cache_graph))
-        for trip in self.cache_graph:
-            print(trip)
-        print("!!!!!!!!!!!")
         # self.cache_graph = self.queryable.graph
         courses = self._graph_get_all_requirements()
 
@@ -138,6 +134,9 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             )
         )
         return self._graph_get_requirement_by_uri(requirement_uri=requirement_uri)
+
+    def get_student_by_uri(self, *, student_uri) -> Student:
+        pass
 
     ###
 

@@ -1,7 +1,8 @@
 from frex.pipelines import _Pipeline
 from frex.pipeline_stages import CandidateRanker
 from frex.models import Explanation
-from app.models import StudentPOSContext, Student, Course
+from app.models import CourseCandidate
+from typing import Tuple
 from app.services.course import CourseQueryService
 from app.pipeline_stages import *
 
