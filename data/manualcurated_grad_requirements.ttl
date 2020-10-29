@@ -1,0 +1,204 @@
+@prefix oe2020-crs-rec-ind: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/> .
+@prefix oe2020-crs-rec: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender/> .
+@prefix ns1: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+oe2020-crs-rec-ind:req000001 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "HASS Core Requirement"^^xsd:string ;
+    oe2020-crs-rec:requiresCredits "24"^^xsd:integer ;
+    oe2020-crs-rec:hasSubRequirement oe2020-crs-rec-ind:req000003 ,
+        oe2020-crs-rec-ind:req000004 ,
+        oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000007 ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000003 ,
+        oe2020-crs-rec-ind:req000004 ,
+        oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000007 ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000006 ;
+    oe2020-crs-rec:hasRestriction oe2020-crs-rec-ind:req000002 .
+
+oe2020-crs-rec-ind:req000002 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "1000-Level Restriction" ;
+    oe2020-crs-rec:requiresCredits "12"^^xsd:integer ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000001 .
+
+oe2020-crs-rec-ind:ccr000001 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ; # TODO fix and point to appropriate department codes
+    oe2020-crs-rec:hasValidLevelMax "2000"^^xsd:integer ;
+        oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
+        "COMM"^^xsd:string ,
+        "LANG"^^xsd:string ,
+        "LITR"^^xsd:string ,
+        "PHIL"^^xsd:string ,
+        "STSH"^^xsd:string ,
+        "WRIT"^^xsd:string ,
+        "COGS"^^xsd:string ,
+        "ECON"^^xsd:string ,
+        "PSYC"^^xsd:string ,
+        "STSS"^^xsd:string ,
+        "IHSS"^^xsd:string .
+
+oe2020-crs-rec-ind:ccr000002 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;# TODO fix and point to appropriate department codes
+    oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
+        "COMM"^^xsd:string ,
+        "LANG"^^xsd:string ,
+        "LITR"^^xsd:string ,
+        "PHIL"^^xsd:string ,
+        "STSH"^^xsd:string ,
+        "WRIT"^^xsd:string ,
+        "IHSS"^^xsd:string .
+
+oe2020-crs-rec-ind:ccr000003 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;# TODO fix and point to appropriate department codes
+    oe2020-crs-rec:hasValidDepartmentCodeTag "COGS"^^xsd:string ,
+        "ECON"^^xsd:string ,
+        "PSYC"^^xsd:string ,
+        "STSS"^^xsd:string ,
+        "IHSS"^^xsd:string .
+
+oe2020-crs-rec-ind:ccr000004 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;# TODO fix and point to appropriate department codes
+    oe2020-crs-rec:hasValidLevelMin "4000"^^xsd:integer ;
+    oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
+        "COMM"^^xsd:string ,
+        "LANG"^^xsd:string ,
+        "LITR"^^xsd:string ,
+        "PHIL"^^xsd:string ,
+        "STSH"^^xsd:string ,
+        "WRIT"^^xsd:string ,
+        "COGS"^^xsd:string ,
+        "ECON"^^xsd:string ,
+        "PSYC"^^xsd:string ,
+        "STSS"^^xsd:string ,
+        "IHSS"^^xsd:string .
+
+oe2020-crs-rec-ind:ccr000005 a oe2020-crs-rec:SpecialTagCourseCodeRestriction ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasValidSpecialTag "communication intensive"^^xsd:string .
+
+oe2020-crs-rec-ind:ccr000006 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;# TODO fix and point to appropriate department codes
+    oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
+        "COMM"^^xsd:string ,
+        "LANG"^^xsd:string ,
+        "LITR"^^xsd:string ,
+        "PHIL"^^xsd:string ,
+        "STSH"^^xsd:string ,
+        "WRIT"^^xsd:string ,
+        "COGS"^^xsd:string ,
+        "ECON"^^xsd:string ,
+        "PSYC"^^xsd:string ,
+        "STSS"^^xsd:string ,
+        "IHSS"^^xsd:string .
+
+oe2020-crs-rec-ind:req000003 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "Humanities Distribution"^^xsd:string ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000002 ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000007 ,
+        oe2020-crs-rec-ind:req000001 ;
+    oe2020-crs-rec:requiresCredits "3"^^xsd:integer .
+
+oe2020-crs-rec-ind:req000004 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "Social Science Distribution"^^xsd:string ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000003 ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000007 ,
+        oe2020-crs-rec-ind:req000001 ;
+    oe2020-crs-rec:requiresCredits "3"^^xsd:integer .
+
+oe2020-crs-rec-ind:req000005 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "4000-Level Requirement"^^xsd:string ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000004 ;
+    oe2020-crs-rec:requiresCredits "4"^^xsd:integer ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000003 ,
+        oe2020-crs-rec-ind:req000004 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000007 ,
+        oe2020-crs-rec-ind:req000001 .
+
+oe2020-crs-rec-ind:req000006 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "Communication Intensive Requirement"^^xsd:string ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000005 ;
+    oe2020-crs-rec:requiresCredits "4"^^xsd:integer ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000003 ,
+        oe2020-crs-rec-ind:req000004 ,
+        oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000007 ,
+        oe2020-crs-rec-ind:req000001 .
+
+oe2020-crs-rec-ind:req000007 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "Integrative Pathway"^^xsd:string ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000003 ,
+        oe2020-crs-rec-ind:req000004 ,
+        oe2020-crs-rec-ind:req000005 ,
+        oe2020-crs-rec-ind:req000006 ,
+        oe2020-crs-rec-ind:req000001 ;
+    oe2020-crs-rec:isFulfilledBy oe2020-crs-rec-ind:req000008 . # TODO: etc
+
+oe2020-crs-rec-ind:req000008 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "Integrative Pathway - Artificial Intelligence"^^xsd:string ;
+    oe2020-crs-rec:requiresCredits "12"^^xsd:integer ;
+    oe2020-crs-rec:hasSubRequirement oe2020-crs-rec-ind:req000009 ,
+        oe2020-crs-rec-ind:req000010 ,
+        oe2020-crs-rec-ind:req000011 ;
+    oe2020-crs-rec:canShareCreditsWith oe2020-crs-rec-ind:req000009 ,
+        oe2020-crs-rec-ind:req000010 ,
+        oe2020-crs-rec-ind:req000011 .
+
+oe2020-crs-rec-ind:req000009 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "AI part 1"^^xsd:string ;
+    oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000007 .
+
+oe2020-crs-rec-ind:ccr000007 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasValidCourseCodeTag "IHSS-1140"^^xsd:string ,
+        "IHSS-1972"^^xsd:string ,
+        "IHSS-1235"^^xsd:string .
+
+oe2020-crs-rec-ind:req000010 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "AI part 2"^^xsd:string ;
+    oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000008 .
+
+oe2020-crs-rec-ind:ccr000008 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasValidCourseCodeTag "COGS-2120"^^xsd:string .
+
+oe2020-crs-rec-ind:req000011 a oe2020-crs-rec:Requirement ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasName "AI part 3"^^xsd:string ;
+    oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
+    oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:req000009 .
+
+oe2020-crs-rec-ind:ccr000009 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+        owl:NamedIndividual ;
+    oe2020-crs-rec:hasValidCourseCodeTag "COGS-4210"^^xsd:string ,
+        "COGS-4410"^^xsd:string ,
+        "COGS-4420"^^xsd:string ,
+        "COGS-4640"^^xsd:string ,
+        "COGS-4880"^^xsd:string ,
+        "COGS-4960"^^xsd:string ,
+        "COGS-4960"^^xsd:string ,
+        "PHIL-4960"^^xsd:string ,
+        "PHIL-4961"^^xsd:string .
