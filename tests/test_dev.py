@@ -1,27 +1,24 @@
 from rdflib import URIRef
-from app.models import StudentPOSContext
+from app.models import StudentPOSRequirementContext
 
 
 def test_dev(course_qs):
-    teste = course_qs.get_course_by_uri(course_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/entity/crs000796'))
+    # basic placeholder test for getting course, under development
+    test_course = course_qs.get_course_by_uri(course_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crs002440'))
 
-    print(teste.name)
-    for req in teste.required_prerequisites:
-        print("-")
-        print(req.uri)
-        print(req.course_code)
-        print(req.name)
-
-    assert False
+    assert test_course.name == 'Programming Languages' and test_course.credits == 4 and test_course.course_code.name == 'CSCI-4430'
 
 
-def test_dev_2(course_rec_pipe, test_pos_1, test_student_1):
+def test_dev_2(course_rec_pipe, test_pos_1, test_student_1, course_qs):
+    # placeholder test for running the course recommende pipeline. under development.
+    context = StudentPOSRequirementContext(student=test_student_1, plan_of_study=test_pos_1,
+                                           requirements=frozenset(course_qs.get_all_requirements()))
 
-    context = StudentPOSContext(student=test_student_1, plan_of_study=test_pos_1)
+    # the pipeline should be doing some degere of filtering using requirements - still under development
+    rec_courses = list(course_rec_pipe(context=context))
 
-    asdf = list(course_rec_pipe(context=context))
-    print(len(asdf))
-    for ff in asdf[:3]:
-        print(ff)
+    print(len(rec_courses))
+    for ff in rec_courses[:3]:
+        print(ff.domain_object.course_code.name)
 
-    assert False
+    assert len(rec_courses) != len(course_qs.get_all_courses()) and len(rec_courses) > 0

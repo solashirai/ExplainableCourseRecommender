@@ -31,10 +31,10 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
     def get_all_courses(self) -> Tuple[Course]:
-        # self.get_cache_graph(
-        #     sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
-        # )
-        self.cache_graph = self.queryable.graph
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
+        )
+        # self.cache_graph = self.queryable.graph
         courses = self._graph_get_all_courses()
 
         return courses
@@ -112,10 +112,15 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         pass
 
     def get_all_requirements(self) -> Tuple[Requirement]:
-        # self.get_cache_graph(
-        #     sparql=J2QueryStrHelper.j2_query(file_name="construct_requirement_query")
-        # )
-        self.cache_graph = self.queryable.graph
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(file_name="construct_requirement_query")
+        )
+        print("!!!!!!!!!!!")
+        print(len(self.cache_graph))
+        for trip in self.cache_graph:
+            print(trip)
+        print("!!!!!!!!!!!")
+        # self.cache_graph = self.queryable.graph
         courses = self._graph_get_all_requirements()
 
         return courses
@@ -142,7 +147,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             pass
 
         # TODO: revised implementation based on ontology updates
-        course_name = self.cache_graph.value(course_uri, CRS_NS["hasName"])
+        course_name = self.cache_graph.value(course_uri, CRS_NS["hasName"]).value
         course_description = self.cache_graph.value(
             course_uri, CRS_NS["hasDescription"]
         )
@@ -152,7 +157,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         department = self._graph_get_department_by_uri(
             department_uri=self.cache_graph.value(course_uri, CRS_NS["hasDepartment"])
         )
-        course_credits = self.cache_graph.value(course_uri, CRS_NS["hasCredits"])
+        course_credits = self.cache_graph.value(course_uri, CRS_NS["hasCredits"]).value
         special_tags = frozenset(
             st.value
             for st in self.cache_graph.objects(course_uri, CRS_NS["hasSpecialTag"])
