@@ -19,6 +19,6 @@ class TopicOfInterestScorer(CandidateScorer):
             for i_topic in candidate.context.student.topics_of_interest:
                 topic_match = max(
                     topic_match,
-                    self.get_topic_similarity(topic_a=c_topic, topic_b=i_topic)
+                    self.get_topic_similarity(topic_a=c_topic, topic_b=i_topic),
                 )
         return topic_match

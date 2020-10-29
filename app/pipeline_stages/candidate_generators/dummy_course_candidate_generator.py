@@ -1,6 +1,6 @@
 from frex import CandidateGenerator, Explanation, Candidate
 from typing import Generator, Dict, Tuple
-from app.models import Course, CourseCandidate, StudentPOSContext
+from app.models import Course, CourseCandidate, StudentPOSRequirementContext
 from app.services.course import CourseQueryService
 
 
@@ -18,7 +18,7 @@ class DummyCourseCandidateGenerator(CandidateGenerator):
         self,
         *,
         candidates: Generator[Candidate, None, None] = None,
-        context: StudentPOSContext
+        context: StudentPOSRequirementContext
     ) -> Generator[CourseCandidate, None, None]:
         if candidates:
             yield from candidates

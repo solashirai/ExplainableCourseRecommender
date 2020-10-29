@@ -1,6 +1,16 @@
 from abc import ABC, abstractmethod
 from rdflib import URIRef
-from app.models import Course, CourseSection, ScheduledCourseSection, Topic, CourseCode, Department, DepartmentCode
+from app.models import (
+    Course,
+    CourseSection,
+    ScheduledCourseSection,
+    Topic,
+    CourseCode,
+    Department,
+    DepartmentCode,
+    Requirement,
+    CourseCodeRestriction,
+)
 from typing import Tuple
 
 
@@ -26,9 +36,7 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
-    def get_course_code_by_uri(
-        self, *, course_code_uri: URIRef
-    ) -> CourseCode:
+    def get_course_code_by_uri(self, *, course_code_uri: URIRef) -> CourseCode:
         pass
 
     @abstractmethod
@@ -38,9 +46,7 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
-    def get_department_by_uri(
-        self, *, department_uri: URIRef
-    ) -> Department:
+    def get_department_by_uri(self, *, department_uri: URIRef) -> Department:
         pass
 
     @abstractmethod
@@ -69,4 +75,12 @@ class CourseQueryService(ABC):
     def get_scheduled_course_section_by_crn(
         self, *, scheduled_course_crn: str
     ) -> ScheduledCourseSection:
+        pass
+
+    @abstractmethod
+    def get_requirement_by_uri(self, *, requirement_uri: URIRef) -> Requirement:
+        pass
+
+    @abstractmethod
+    def get_all_requirements(self) -> Tuple[Requirement]:
         pass

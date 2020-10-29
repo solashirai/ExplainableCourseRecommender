@@ -7,11 +7,7 @@ from app.pipeline_stages import *
 
 
 class RecommendCoursesPipeline(_Pipeline):
-    def __init__(
-        self,
-        *,
-        course_query_service: CourseQueryService
-    ):
+    def __init__(self, *, course_query_service: CourseQueryService):
         self.cqs = course_query_service
         _Pipeline.__init__(
             self,

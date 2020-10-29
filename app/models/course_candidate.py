@@ -1,5 +1,5 @@
 from __future__ import annotations
-from app.models import Course, StudentPOSContext
+from app.models import Course, StudentPOSRequirementContext
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import Candidate
@@ -9,4 +9,4 @@ from frex.models import Candidate
 @dataclass
 class CourseCandidate(Candidate):
     domain_object: Course
-    context: StudentPOSContext
+    context: StudentPOSRequirementContext
