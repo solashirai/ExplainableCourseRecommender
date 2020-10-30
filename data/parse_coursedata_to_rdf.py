@@ -1,6 +1,6 @@
 import rdflib
 from rdflib.namespace import XSD, OWL
-from app.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS
+from crex.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS
 import ast
 import csv
 

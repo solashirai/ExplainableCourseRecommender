@@ -1,5 +1,5 @@
 from rdflib import URIRef
-from app.models import StudentPOSRequirementContext
+from crex.models import StudentPOSRequirementContext
 
 
 def test_dev(course_qs):
