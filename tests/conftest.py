@@ -1,9 +1,9 @@
 import pytest
-from app.models import *
-from app.services.course import GraphCourseQueryService
+from crex.models import *
+from crex.services.course import GraphCourseQueryService
 from frex.stores import LocalGraph
-from app.utils.path import DATA_DIR
-from app.pipeline import RecommendCoursesPipeline
+from crex.utils.path import DATA_DIR
+from crex.pipeline import RecommendCoursesPipeline
 from rdflib import URIRef
 
 

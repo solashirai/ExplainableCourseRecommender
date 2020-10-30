@@ -30,7 +30,7 @@ oe2020-crs-rec-ind:req000002 a oe2020-crs-rec:Requirement ,
     oe2020-crs-rec:requiresCredits "12"^^xsd:integer ;
     oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000001 .
 
-oe2020-crs-rec-ind:ccr000001 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000001 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ; # TODO fix and point to appropriate department codes
     oe2020-crs-rec:hasValidLevelMax "2000"^^xsd:integer ;
         oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
@@ -46,7 +46,7 @@ oe2020-crs-rec-ind:ccr000001 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         "STSS"^^xsd:string ,
         "IHSS"^^xsd:string .
 
-oe2020-crs-rec-ind:ccr000002 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000002 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;# TODO fix and point to appropriate department codes
     oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
         "COMM"^^xsd:string ,
@@ -57,7 +57,7 @@ oe2020-crs-rec-ind:ccr000002 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         "WRIT"^^xsd:string ,
         "IHSS"^^xsd:string .
 
-oe2020-crs-rec-ind:ccr000003 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000003 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;# TODO fix and point to appropriate department codes
     oe2020-crs-rec:hasValidDepartmentCodeTag "COGS"^^xsd:string ,
         "ECON"^^xsd:string ,
@@ -65,7 +65,7 @@ oe2020-crs-rec-ind:ccr000003 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         "STSS"^^xsd:string ,
         "IHSS"^^xsd:string .
 
-oe2020-crs-rec-ind:ccr000004 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000004 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;# TODO fix and point to appropriate department codes
     oe2020-crs-rec:hasValidLevelMin "4000"^^xsd:integer ;
     oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
@@ -81,11 +81,11 @@ oe2020-crs-rec-ind:ccr000004 a oe2020-crs-rec:RangedCourseCodeRestriction ,
         "STSS"^^xsd:string ,
         "IHSS"^^xsd:string .
 
-oe2020-crs-rec-ind:ccr000005 a oe2020-crs-rec:SpecialTagCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000005 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasSpecialTag "communication intensive"^^xsd:string .
 
-oe2020-crs-rec-ind:ccr000006 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000006 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;# TODO fix and point to appropriate department codes
     oe2020-crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string ,
         "COMM"^^xsd:string ,
@@ -169,7 +169,7 @@ oe2020-crs-rec-ind:req000009 a oe2020-crs-rec:Requirement ,
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
     oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000007 .
 
-oe2020-crs-rec-ind:ccr000007 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000007 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasValidCourseCodeTag "IHSS-1140"^^xsd:string ,
         "IHSS-1972"^^xsd:string ,
@@ -181,7 +181,7 @@ oe2020-crs-rec-ind:req000010 a oe2020-crs-rec:Requirement ,
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
     oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000008 .
 
-oe2020-crs-rec-ind:ccr000008 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000008 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasValidCourseCodeTag "COGS-2120"^^xsd:string .
 
@@ -191,7 +191,7 @@ oe2020-crs-rec-ind:req000011 a oe2020-crs-rec:Requirement ,
     oe2020-crs-rec:requiresCredits "3"^^xsd:integer ;
     oe2020-crs-rec:hasCourseCodeRestriction oe2020-crs-rec-ind:ccr000009 .
 
-oe2020-crs-rec-ind:ccr000009 a oe2020-crs-rec:RangedCourseCodeRestriction ,
+oe2020-crs-rec-ind:ccr000009 a oe2020-crs-rec:CourseCodeRestriction ,
         owl:NamedIndividual ;
     oe2020-crs-rec:hasValidCourseCodeTag "COGS-4210"^^xsd:string ,
         "COGS-4410"^^xsd:string ,
