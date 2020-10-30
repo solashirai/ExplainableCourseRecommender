@@ -6,7 +6,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
 
 oe2020-crs-rec-ind:dptc0001 a oe2020-crs-rec:DepartmentCode ,
         owl:NamedIndividual ;

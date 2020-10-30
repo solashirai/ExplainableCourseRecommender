@@ -5,11 +5,9 @@ COPY /requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
 # More likely to change
-COPY /flask_app/ /app/
+COPY /app/ /app/
 COPY /crex/ /app/crex/
 COPY /data/ /app/data/
 
-ENV FLASK_APP=endpoint_main.py
-ENV FLASK_RUN_HOST=0.0.0.0
-
-CMD ["flask", "run"]
+ENV LISTEN_PORT 5000
+EXPOSE 5000
