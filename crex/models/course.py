@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Tuple, FrozenSet
-from crex.models import Department, CourseCode, Topic
+from crex.models import Department, CourseCode, TopicArea
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from frex.models import DomainObject
@@ -21,7 +21,7 @@ class Course(DomainObject):
     recommended_prerequisites: FrozenSet[URIRef]
     department: Department
     credits: int
-    topics: Tuple[Topic]
+    topics: Tuple[TopicArea]
     offered_semesters: Tuple[
         str
     ]  # e.g. "F2020". Change str to a new model later, if needed

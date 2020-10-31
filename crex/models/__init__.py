@@ -1,4 +1,4 @@
-from .topic import Topic
+from .topic_area import TopicArea
 from .department import Department
 from .major import Major
 from .department_code import DepartmentCode

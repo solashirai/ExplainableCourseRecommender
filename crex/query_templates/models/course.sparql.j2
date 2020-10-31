@@ -5,6 +5,9 @@
     crs-rec:hasDepartment ?departmentUri ;
     crs-rec:hasCredits ?courseCredits ;
     crs-rec:hasTopic ?topicUri .
+
+{% include 'models/topic_area.sparql.j2' %}
+
 OPTIONAL {
     ?courseUri crs-rec:hasSpecialTag ?specialTag .
 }

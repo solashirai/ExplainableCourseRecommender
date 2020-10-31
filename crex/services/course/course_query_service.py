@@ -4,7 +4,7 @@ from crex.models import (
     Course,
     CourseSection,
     ScheduledCourseSection,
-    Topic,
+    TopicArea,
     CourseCode,
     Department,
     DepartmentCode,
@@ -28,7 +28,7 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
-    def get_courses_by_topic(self, *, topic: Topic) -> Tuple[Course]:
+    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
         pass
 
     @abstractmethod

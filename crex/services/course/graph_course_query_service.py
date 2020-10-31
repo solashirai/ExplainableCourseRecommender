@@ -3,7 +3,7 @@ from crex.models import (
     Course,
     CourseSection,
     ScheduledCourseSection,
-    Topic,
+    TopicArea,
     CourseCode,
     Department,
     DepartmentCode,
@@ -43,7 +43,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course]:
         pass
 
-    def get_courses_by_topic(self, *, topic: Topic) -> Tuple[Course]:
+    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
         pass
 
     def get_course_code_by_uri(self, *, course_code_uri: URIRef) -> CourseCode:
@@ -171,7 +171,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             self.cache_graph.objects(course_uri, CRS_NS["hasCorequisite"])
         )
         topics = tuple(
-            tp.value for tp in self.cache_graph.objects(course_uri, CRS_NS["hasTopic"])
+            self._graph_get_topic_area(topic_area_uri=ta_uri) for ta_uri in self.cache_graph.objects(course_uri, CRS_NS["hasTopic"])
         )
         offered_semesters = tuple(
             sem.value
@@ -208,7 +208,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     ) -> Tuple[Course]:
         pass
 
-    def _graph_get_courses_by_topic(self, *, topic: Topic) -> Tuple[Course]:
+    def _graph_get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
         pass
 
     def _graph_get_course_by_course_code_uri(
@@ -320,6 +320,19 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             sub_requirement_uris=sub_req_uris,
             fulfilled_by_requirement_uris=fulfill_by_req_uri,
             course_code_restriction=cc_restriction,
+        )
+
+    def _graph_get_topic_area(self,*, topic_area_uri:URIRef) -> TopicArea:
+        # discipline = self.cache_graph.value(topic_area_uri, CRS_NS['belongsTo']) # TODO: currently using placeholder
+        discipline = 'placeholder discipline'
+        name = self.cache_graph.value(topic_area_uri, RDFS_NS['label']).value
+        super_topics = tuple(self._graph_get_topic_area(topic_area_uri=ta_uri) for ta_uri in self.cache_graph.objects(topic_area_uri, CRS_NS['isSubTopicOf']))
+
+        return TopicArea(
+            uri=topic_area_uri,
+            name=name,
+            sub_topic_of=super_topics,
+            discipline=discipline
         )
 
     def _graph_get_course_code_restriction_by_uri(
