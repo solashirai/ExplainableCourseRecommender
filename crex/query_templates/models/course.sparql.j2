@@ -6,6 +6,7 @@
     crs-rec:hasCredits ?courseCredits ;
     crs-rec:hasTopic ?topicUri .
 
+{% include 'models/course_code.sparql.j2' %}
 {% include 'models/topic_area.sparql.j2' %}
 
 OPTIONAL {
@@ -23,5 +24,3 @@ OPTIONAL {
 OPTIONAL {
     ?courseUri crs-rec:hasOfferedSemesters ?offeredSemester .
 }
-
-{% include 'models/course_code.sparql.j2' %}
