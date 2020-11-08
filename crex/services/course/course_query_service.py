@@ -9,7 +9,7 @@ from crex.models import (
     Department,
     DepartmentCode,
     Requirement,
-    Student
+    Student,
 )
 from typing import Tuple
 

@@ -9,13 +9,14 @@ from crex.models import (
     DepartmentCode,
     Requirement,
     CourseCodeRestriction,
-    Student
+    Student,
 )
 from crex.services.course import CourseQueryService
 from crex.services.graph import _GraphQueryService
 from crex.utils import J2QueryStrHelper
 from crex.utils.namespaces import *
 from typing import Tuple
+from frex.stores import LocalGraph
 import math
 
 
@@ -32,10 +33,12 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
     def get_all_courses(self) -> Tuple[Course]:
-        self.get_cache_graph(
-            sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
-        )
-        # self.cache_graph = self.queryable.graph
+        if isinstance(self.queryable, LocalGraph):
+            self.cache_graph = self.queryable.graph
+        else:
+            self.get_cache_graph(
+                sparql=J2QueryStrHelper.j2_query(file_name="construct_course_query")
+            )
         courses = self._graph_get_all_courses()
 
         return courses
@@ -113,10 +116,14 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         pass
 
     def get_all_requirements(self) -> Tuple[Requirement]:
-        self.get_cache_graph(
-            sparql=J2QueryStrHelper.j2_query(file_name="construct_requirement_query")
-        )
-        # self.cache_graph = self.queryable.graph
+        if isinstance(self.queryable, LocalGraph):
+            self.cache_graph = self.queryable.graph
+        else:
+            self.get_cache_graph(
+                sparql=J2QueryStrHelper.j2_query(
+                    file_name="construct_requirement_query"
+                )
+            )
         courses = self._graph_get_all_requirements()
 
         return courses
@@ -171,7 +178,8 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             self.cache_graph.objects(course_uri, CRS_NS["hasCorequisite"])
         )
         topics = tuple(
-            self._graph_get_topic_area(topic_area_uri=ta_uri) for ta_uri in self.cache_graph.objects(course_uri, CRS_NS["hasTopic"])
+            self._graph_get_topic_area(topic_area_uri=ta_uri)
+            for ta_uri in self.cache_graph.objects(course_uri, CRS_NS["hasTopic"])
         )
         offered_semesters = tuple(
             sem.value
@@ -208,7 +216,9 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     ) -> Tuple[Course]:
         pass
 
-    def _graph_get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
+    def _graph_get_courses_by_topic_area(
+        self, *, topic_area: TopicArea
+    ) -> Tuple[Course]:
         pass
 
     def _graph_get_course_by_course_code_uri(
@@ -322,17 +332,22 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             course_code_restriction=cc_restriction,
         )
 
-    def _graph_get_topic_area(self,*, topic_area_uri:URIRef) -> TopicArea:
+    def _graph_get_topic_area(self, *, topic_area_uri: URIRef) -> TopicArea:
         # discipline = self.cache_graph.value(topic_area_uri, CRS_NS['belongsTo']) # TODO: currently using placeholder
-        discipline = 'placeholder discipline'
-        name = self.cache_graph.value(topic_area_uri, RDFS_NS['label']).value
-        super_topics = tuple(self._graph_get_topic_area(topic_area_uri=ta_uri) for ta_uri in self.cache_graph.objects(topic_area_uri, CRS_NS['isSubTopicOf']))
+        discipline = "placeholder discipline"
+        name = self.cache_graph.value(topic_area_uri, RDFS_NS["label"]).value
+        super_topics = tuple(
+            self._graph_get_topic_area(topic_area_uri=ta_uri)
+            for ta_uri in self.cache_graph.objects(
+                topic_area_uri, CRS_NS["isSubTopicOf"]
+            )
+        )
 
         return TopicArea(
             uri=topic_area_uri,
             name=name,
             sub_topic_of=super_topics,
-            discipline=discipline
+            discipline=discipline,
         )
 
     def _graph_get_course_code_restriction_by_uri(

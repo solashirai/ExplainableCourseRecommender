@@ -22,7 +22,9 @@ class CourseCodeRestriction(DomainObject):
             return True
         elif (
             not self.valid_course_code_names  # if the restriction checks for exact names, return false past here
-            and self.min_level <= course.course_code.course_level <= self.max_level  # check course level
+            and self.min_level
+            <= course.course_code.course_level
+            <= self.max_level  # check course level
             and (
                 not self.valid_department_code_names  # if no department codes are specified, assume any are fine
                 or course.course_code.department_code.name
