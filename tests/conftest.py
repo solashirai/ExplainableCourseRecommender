@@ -10,7 +10,7 @@ from rdflib import URIRef
 @pytest.fixture(scope="session")
 def course_graph() -> LocalGraph:
     return LocalGraph(file_paths=(
-        (DATA_DIR/"yacs_course_data_v1.ttl").resolve(),
+        (DATA_DIR/"yacs_course_data.ttl").resolve(),
         (DATA_DIR/"rpi_departments.ttl").resolve(),
         (DATA_DIR/"manualcurated_grad_requirements.ttl").resolve(),
     ))

@@ -4,7 +4,8 @@ from crex.models import StudentPOSRequirementContext
 
 def test_dev(course_qs):
     # basic placeholder test for getting course, under development
-    test_course = course_qs.get_course_by_uri(course_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crs002440'))
+    print(len(course_qs.queryable.graph))
+    test_course = course_qs.get_course_by_uri(course_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crs006142'))
 
     assert test_course.name == 'Programming Languages' and test_course.credits == 4 and test_course.course_code.name == 'CSCI-4430'
 
