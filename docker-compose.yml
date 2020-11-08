@@ -1,0 +1,16 @@
+version: "3.5"
+networks:
+  course-rec:
+    name: course-rec
+services:
+  explainable-course-recommender:
+    build:
+      context: .
+    container_name: explainable-course-recommender
+    image: explainable-course-recommender
+    networks:
+      - course-rec
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data:ro
