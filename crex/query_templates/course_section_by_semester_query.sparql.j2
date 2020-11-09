@@ -1,0 +1,13 @@
+{% extends 'base/construct_query.sparql.j2' %}
+{% block construct_triples %}
+    {% include 'constructors/constructor_course_section.sparql.j2' %}
+{% endblock %}
+{% block values %}
+    {% include 'base/value_constraint.sparql.j2' %}
+{% endblock %}
+{% block expressions %}
+?semesterScheduleUri crs-rec:hasSemester ?semesterStr ;
+    crs-rec:hasSemesterYear ?semesterYearInt .
+?courseSectionUri crs-rec:hasSchedule ?semesterScheduleUri .
+    {% include 'models/course_section.sparql.j2' %}
+{% endblock %}

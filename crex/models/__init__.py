@@ -1,3 +1,4 @@
+from .semester import Semester
 from .topic_area import TopicArea
 from .department import Department
 from .major import Major

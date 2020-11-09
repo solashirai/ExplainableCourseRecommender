@@ -34,3 +34,18 @@ def test_dev_2(course_rec_pipe, test_pos_1, test_student_1, course_qs):
         print(ff.domain_object.course_code.name)
 
     assert len(rec_courses) != len(course_qs.get_all_courses()) and len(rec_courses) > 0
+
+
+def test_dev_4(course_qs):
+    cs = course_qs.get_course_section_by_uri(course_section_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crsSec000017'))
+
+    print(cs)
+
+    assert False
+
+def test_dev_3(course_qs):
+    all_css = course_qs.get_course_sections_by_semester(semester='fall', semester_year=2020)
+
+    print(f'len: {len(all_css)}')
+    print(all_css[0])
+    assert False
