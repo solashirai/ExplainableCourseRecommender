@@ -1,5 +1,6 @@
 from rdflib import URIRef
 from crex.models import StudentPOSRequirementContext
+from crex.services import SemesterCourseRecommenderService
 
 
 def test_dev(course_qs):
@@ -44,8 +45,18 @@ def test_dev_4(course_qs):
     assert False
 
 def test_dev_3(course_qs):
-    all_css = course_qs.get_course_sections_by_semester(semester='fall', semester_year=2020)
+    all_css = course_qs.get_course_sections_by_semester(term='fall', year=2020)
 
     print(f'len: {len(all_css)}')
     print(all_css[0])
+    assert False
+
+def test_dev_4(course_qs, test_student_1):
+
+    scrs = SemesterCourseRecommenderService(course_query_service=course_qs)
+    test_recs = scrs.get_recommendations_for_target_semester(student=test_student_1, year=2020, term='fall')
+    print(len(test_recs))
+    for rec in test_recs:
+        print(rec)
+
     assert False

@@ -11,7 +11,7 @@ from crex.models import (
     Requirement,
     CourseCodeRestriction,
     Student,
-    Semester
+    Semester,
 )
 from crex.services.course import CourseQueryService
 from crex.services.graph import _GraphQueryService
@@ -95,19 +95,32 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         pass
 
     def get_course_sections_by_semester(
-            self, *, semester: str, semester_year: int
+        self, *, term: str, year: int
     ) -> Tuple[CourseSection]:
-        self.get_cache_graph(
-            sparql=J2QueryStrHelper.j2_query(
-                file_name="course_section_by_semester_query",
-                constraints=[
-                    {"var_name": "?semesterYearInt", "var_values": [Literal(semester_year, datatype=XSD['integer']).n3()]},
-                    {"var_name": "?semesterStr", "var_values": [Literal(semester, datatype=XSD['string']).n3()]}
-                ],
+        if isinstance(self.queryable, LocalGraph):
+            self.cache_graph = self.queryable.graph
+        else:
+            self.get_cache_graph(
+                sparql=J2QueryStrHelper.j2_query(
+                    file_name="course_section_by_semester_query",
+                    constraints=[
+                        {
+                            "var_name": "?yearInt",
+                            "var_values": [
+                                Literal(year, datatype=XSD["integer"]).n3()
+                            ],
+                        },
+                        {
+                            "var_name": "?termStr",
+                            "var_values": [Literal(term, datatype=XSD["string"]).n3()],
+                        },
+                    ],
+                )
             )
-        )
 
-        return self._graph_get_course_sections_by_semester(semester=semester, semester_year=semester_year)
+        return self._graph_get_course_sections_by_semester(
+            term=term, year=year
+        )
 
     def get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
@@ -119,12 +132,17 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             sparql=J2QueryStrHelper.j2_query(
                 file_name="course_section_query",
                 constraints=[
-                    {"var_name": "?courseSectionUri", "var_values": [course_section_uri.n3()]},
+                    {
+                        "var_name": "?courseSectionUri",
+                        "var_values": [course_section_uri.n3()],
+                    },
                 ],
             )
         )
 
-        return self._graph_get_course_section_by_uri(course_section_uri=course_section_uri)
+        return self._graph_get_course_section_by_uri(
+            course_section_uri=course_section_uri
+        )
 
     def get_scheduled_course_section_by_uri(
         self, *, scheduled_course_uri: URIRef
@@ -146,9 +164,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             self.cache_graph = self.queryable.graph
         else:
             self.get_cache_graph(
-                sparql=J2QueryStrHelper.j2_query(
-                    file_name="requirement_query"
-                )
+                sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
             )
         courses = self._graph_get_all_requirements()
 
@@ -292,11 +308,23 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         )
 
     def _graph_get_course_sections_by_semester(
-        self, *, semester: str, semester_year: int
+        self, *, term: str, year: int
     ) -> Tuple[CourseSection]:
+        target_semester_uri = None
+        for cand_uri in self.cache_graph.subjects(CRS_NS['hasTerm'], Literal(term, datatype=XSD.string)):
+            if self.cache_graph.value(cand_uri, CRS_NS['hasYear']).value == year:
+                target_semester_uri = cand_uri
         course_sections = []
-        for course_section_uri in self.cache_graph.subjects(RDF_NS["type"], CRS_NS["CourseSection"]):
-            course_sections.append(self._graph_get_course_section_by_uri(course_section_uri=course_section_uri))
+
+        for course_section_uri in self.cache_graph.subjects(
+            RDF_NS["type"], CRS_NS["CourseSection"]
+        ):
+            if (course_section_uri, CRS_NS['hasSchedule'], target_semester_uri) in self.cache_graph:
+                course_sections.append(
+                    self._graph_get_course_section_by_uri(
+                        course_section_uri=course_section_uri
+                    )
+                )
 
         return tuple(course_sections)
 
@@ -309,26 +337,23 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         self, *, course_section_uri: URIRef
     ) -> CourseSection:
         course = self._graph_get_course_by_uri(
-            course_uri=self.cache_graph.value(course_section_uri, CRS_NS['isCourseSectionOf']))
-        semester = self._graph_get_semester_by_uri(semester_uri=self.cache_graph.value(course_section_uri, CRS_NS['hasSchedule']))
-
-        return CourseSection(
-            uri=course_section_uri,
-            course=course,
-            semester=semester
+            course_uri=self.cache_graph.value(
+                course_section_uri, CRS_NS["isCourseSectionOf"]
+            )
+        )
+        semester = self._graph_get_semester_by_uri(
+            semester_uri=self.cache_graph.value(
+                course_section_uri, CRS_NS["hasSchedule"]
+            )
         )
 
-    def _graph_get_semester_by_uri(
-            self, *, semester_uri: URIRef
-                                   ) -> Semester:
-        year = self.cache_graph.value(semester_uri, CRS_NS['hasSemesterYear']).value
-        semester = self.cache_graph.value(semester_uri, CRS_NS['hasSemester']).value
+        return CourseSection(uri=course_section_uri, course=course, semester=semester)
 
-        return Semester(
-            uri=semester_uri,
-            year=year,
-            semester=semester
-        )
+    def _graph_get_semester_by_uri(self, *, semester_uri: URIRef) -> Semester:
+        year = self.cache_graph.value(semester_uri, CRS_NS["hasYear"]).value
+        term = self.cache_graph.value(semester_uri, CRS_NS["hasTerm"]).value
+
+        return Semester(uri=semester_uri, year=year, term=term)
 
     def _graph_get_scheduled_course_section_by_uri(
         self, *, scheduled_course_uri: URIRef
@@ -364,18 +389,18 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
                 requirement_uri, CRS_NS["hasCourseCodeRestriction"]
             )
         )
-        share_req_uris = self.cache_graph.objects(
+        share_req_uris = tuple(self.cache_graph.objects(
             requirement_uri, CRS_NS["canShareCreditsWith"]
-        )
-        sub_req_uris = self.cache_graph.objects(
+        ))
+        sub_req_uris = tuple(self.cache_graph.objects(
             requirement_uri, CRS_NS["hasSubRequirement"]
-        )
-        restrict_req_uris = self.cache_graph.objects(
+        ))
+        restrict_req_uris = tuple(self.cache_graph.objects(
             requirement_uri, CRS_NS["hasRestriction"]
-        )
-        fulfill_by_req_uri = self.cache_graph.objects(
+        ))
+        fulfill_by_req_uri = tuple(self.cache_graph.objects(
             requirement_uri, CRS_NS["isFulfilledBy"]
-        )
+        ))
 
         return Requirement(
             uri=requirement_uri,

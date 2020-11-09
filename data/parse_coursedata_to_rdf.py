@@ -73,8 +73,8 @@ for year in years:
         entity_uri_dict[sem_yr] = schedule_uri
         graph.add((schedule_uri, RDF_NS['type'], CRS_NS['SemesterSchedule']))
         graph.add((schedule_uri, RDF_NS['type'], OWL['NamedIndividual']))
-        graph.add((schedule_uri, CRS_NS['hasSemester'], rdflib.Literal(sem, datatype=XSD.string)))
-        graph.add((schedule_uri, CRS_NS['hasSemesterYear'], rdflib.Literal(year, datatype=XSD.integer)))
+        graph.add((schedule_uri, CRS_NS['hasTerm'], rdflib.Literal(sem, datatype=XSD.string)))
+        graph.add((schedule_uri, CRS_NS['hasYear'], rdflib.Literal(year, datatype=XSD.integer)))
 
 
 #make up new URIs.

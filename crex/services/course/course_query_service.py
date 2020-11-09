@@ -50,6 +50,12 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
+    def get_course_sections_by_semester(
+        self, *, term: str, year: int
+    ) -> Tuple[CourseSection]:
+        pass
+
+    @abstractmethod
     def get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
     ) -> Tuple[CourseSection]:

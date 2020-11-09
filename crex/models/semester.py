@@ -7,5 +7,5 @@ from frex.models import DomainObject
 @dataclass_json
 @dataclass(frozen=True)
 class Semester(DomainObject):
-    semester: str
+    term: str
     year: int

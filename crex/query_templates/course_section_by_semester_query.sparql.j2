@@ -6,8 +6,8 @@
     {% include 'base/value_constraint.sparql.j2' %}
 {% endblock %}
 {% block expressions %}
-?semesterScheduleUri crs-rec:hasSemester ?semesterStr ;
-    crs-rec:hasSemesterYear ?semesterYearInt .
+?semesterScheduleUri crs-rec:hasTerm ?termStr ;
+    crs-rec:hasYear ?yearInt .
 ?courseSectionUri crs-rec:hasSchedule ?semesterScheduleUri .
     {% include 'models/course_section.sparql.j2' %}
 {% endblock %}
