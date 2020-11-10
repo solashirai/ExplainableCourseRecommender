@@ -1,0 +1,17 @@
+?planOfStudyUri crs-rec:hasClassYear ?posYearInt ;
+    crs-rec:hasDegree ?degreeUri .
+
+?planOfStudyUri (crs-rec:hasPlannedCourse|crs-rec:hasOngoingCourse|crs-rec:hasCompletedCourse) ?courseSectionUri .
+{% include 'models/course_section.sparql.j2' %}
+
+{% include 'models/degree.sparql.j2' %}
+
+OPTIONAL {
+    ?planOfStudyUri crs-rec:hasCompletedCourse ?completedCourseSectionUri .
+}
+OPTIONAL {
+    ?planOfStudyUri crs-rec:hasOngoingCourse ?ongoingCourseSectionUri .
+}
+OPTIONAL {
+    ?planOfStudyUri crs-rec:hasPlannedCourse ?plannedCourseSectionUri .
+}

@@ -1,0 +1,9 @@
+?planOfStudyUri a crs-rec:PlanOfStudy ;
+    crs-rec:hasClassYear ?posYearInt ;
+    crs-rec:hasDegree ?degreeUri ;
+    crs-rec:hasCompletedCourse ?completedCourseSectionUri ;
+    crs-rec:hasOngoingCourse ?ongoingCourseSectionUri ;
+    crs-rec:hasPlannedCourse ?plannedCourseSectionUri .
+
+{% include 'constructors/constructor_course_section.sparql.j2' %}
+{% include 'constructors/constructor_degree.sparql.j2' %}

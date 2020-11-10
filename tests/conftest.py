@@ -35,9 +35,9 @@ def test_pos_1():
         class_year="2022",
         planned_major=(),
         planned_degree=None,
-        completed_courses=(),
-        ongoing_courses=(),
-        planned_courses=(),
+        completed_course_sections=(),
+        ongoing_course_sections=(),
+        planned_course_sections=(),
     )
 
 
@@ -47,7 +47,6 @@ def test_student_1(test_pos_1):
         uri=URIRef("placeholder_stud1"),
         study_plan=test_pos_1,
         name="john doe",
-        rin="123",
         class_year="2022",
         topics_of_interest=(),
         registered_courses=(),

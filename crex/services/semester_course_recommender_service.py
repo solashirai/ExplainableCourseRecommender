@@ -5,22 +5,24 @@ from typing import List
 
 
 class SemesterCourseRecommenderService:
-
     def __init__(self, *, course_query_service: CourseQueryService):
         self.cqs = course_query_service
 
     def get_recommendations_for_target_semester(
-            self, *, term: str, year: int, student: Student, max_credits: int = 16):
+        self, *, term: str, year: int, student: Student, max_credits: int = 16
+    ):
 
         rec_pipe = RecommendCoursesForSemesterPipeline(course_query_service=self.cqs)
-        requirements = self.cqs.get_all_requirements() # TODO: requirements should be specific to students / major
+        requirements = (
+            self.cqs.get_all_requirements()
+        )  # TODO: requirements should be specific to students / major
 
         context = StudentPOSRequirementContext(
             student=student,
             plan_of_study=student.study_plan,
             requirements=frozenset(requirements),
             target_term=term,
-            target_year=year
+            target_year=year,
         )
 
         candidate_courses: List[CourseCandidate] = list(rec_pipe(context=context))

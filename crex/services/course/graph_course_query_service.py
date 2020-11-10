@@ -12,6 +12,10 @@ from crex.models import (
     CourseCodeRestriction,
     Student,
     Semester,
+    PlanOfStudy,
+    Degree,
+    Major,
+    Advisor,
 )
 from crex.services.course import CourseQueryService
 from crex.services.graph import _GraphQueryService
@@ -35,12 +39,8 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
     def get_all_courses(self) -> Tuple[Course]:
-        if isinstance(self.queryable, LocalGraph):
-            self.cache_graph = self.queryable.graph
-        else:
-            self.get_cache_graph(
-                sparql=J2QueryStrHelper.j2_query(file_name="course_query")
-            )
+        self.cache_graph = self.queryable.graph
+        # self.get_cache_graph(sparql=J2QueryStrHelper.j2_query(file_name="course_query"))
         courses = self._graph_get_all_courses()
 
         return courses
@@ -97,30 +97,27 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     def get_course_sections_by_semester(
         self, *, term: str, year: int
     ) -> Tuple[CourseSection]:
-        if isinstance(self.queryable, LocalGraph):
-            self.cache_graph = self.queryable.graph
-        else:
-            self.get_cache_graph(
-                sparql=J2QueryStrHelper.j2_query(
-                    file_name="course_section_by_semester_query",
-                    constraints=[
-                        {
-                            "var_name": "?yearInt",
-                            "var_values": [
-                                Literal(year, datatype=XSD["integer"]).n3()
-                            ],
-                        },
-                        {
-                            "var_name": "?termStr",
-                            "var_values": [Literal(term, datatype=XSD["string"]).n3()],
-                        },
-                    ],
-                )
-            )
+        self.cache_graph = self.queryable.graph
 
-        return self._graph_get_course_sections_by_semester(
-            term=term, year=year
-        )
+        # self.get_cache_graph(
+        #     sparql=J2QueryStrHelper.j2_query(
+        #         file_name="course_section_by_semester_query",
+        #         constraints=[
+        #             {
+        #                 "var_name": "?yearInt",
+        #                 "var_values": [
+        #                     Literal(year, datatype=XSD["integer"]).n3()
+        #                 ],
+        #             },
+        #             {
+        #                 "var_name": "?termStr",
+        #                 "var_values": [Literal(term, datatype=XSD["string"]).n3()],
+        #             },
+        #         ],
+        #     )
+        # )
+
+        return self._graph_get_course_sections_by_semester(term=term, year=year)
 
     def get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
@@ -160,12 +157,10 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         pass
 
     def get_all_requirements(self) -> Tuple[Requirement]:
-        if isinstance(self.queryable, LocalGraph):
-            self.cache_graph = self.queryable.graph
-        else:
-            self.get_cache_graph(
-                sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
-            )
+        self.cache_graph = self.queryable.graph
+        # self.get_cache_graph(
+        #     sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
+        # )
         courses = self._graph_get_all_requirements()
 
         return courses
@@ -185,7 +180,19 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_requirement_by_uri(requirement_uri=requirement_uri)
 
     def get_student_by_uri(self, *, student_uri) -> Student:
-        pass
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(
+                file_name="student_query",
+                constraints=[
+                    {
+                        "var_name": "?studentUri",
+                        "var_values": [student_uri.n3()],
+                    }
+                ],
+            )
+        )
+
+        return self._graph_get_student_by_uri(student_uri=student_uri)
 
     ###
 
@@ -311,15 +318,21 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         self, *, term: str, year: int
     ) -> Tuple[CourseSection]:
         target_semester_uri = None
-        for cand_uri in self.cache_graph.subjects(CRS_NS['hasTerm'], Literal(term, datatype=XSD.string)):
-            if self.cache_graph.value(cand_uri, CRS_NS['hasYear']).value == year:
+        for cand_uri in self.cache_graph.subjects(
+            CRS_NS["hasTerm"], Literal(term, datatype=XSD.string)
+        ):
+            if self.cache_graph.value(cand_uri, CRS_NS["hasYear"]).value == year:
                 target_semester_uri = cand_uri
         course_sections = []
 
         for course_section_uri in self.cache_graph.subjects(
             RDF_NS["type"], CRS_NS["CourseSection"]
         ):
-            if (course_section_uri, CRS_NS['hasSchedule'], target_semester_uri) in self.cache_graph:
+            if (
+                course_section_uri,
+                CRS_NS["hasSchedule"],
+                target_semester_uri,
+            ) in self.cache_graph:
                 course_sections.append(
                     self._graph_get_course_section_by_uri(
                         course_section_uri=course_section_uri
@@ -389,18 +402,18 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
                 requirement_uri, CRS_NS["hasCourseCodeRestriction"]
             )
         )
-        share_req_uris = tuple(self.cache_graph.objects(
-            requirement_uri, CRS_NS["canShareCreditsWith"]
-        ))
-        sub_req_uris = tuple(self.cache_graph.objects(
-            requirement_uri, CRS_NS["hasSubRequirement"]
-        ))
-        restrict_req_uris = tuple(self.cache_graph.objects(
-            requirement_uri, CRS_NS["hasRestriction"]
-        ))
-        fulfill_by_req_uri = tuple(self.cache_graph.objects(
-            requirement_uri, CRS_NS["isFulfilledBy"]
-        ))
+        share_req_uris = tuple(
+            self.cache_graph.objects(requirement_uri, CRS_NS["canShareCreditsWith"])
+        )
+        sub_req_uris = tuple(
+            self.cache_graph.objects(requirement_uri, CRS_NS["hasSubRequirement"])
+        )
+        restrict_req_uris = tuple(
+            self.cache_graph.objects(requirement_uri, CRS_NS["hasRestriction"])
+        )
+        fulfill_by_req_uri = tuple(
+            self.cache_graph.objects(requirement_uri, CRS_NS["isFulfilledBy"])
+        )
 
         return Requirement(
             uri=requirement_uri,
@@ -470,4 +483,94 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             valid_department_code_names=valid_dc_names,
             min_level=min_lvl,
             max_level=max_lvl,
+        )
+
+    def _graph_get_degree_by_uri(self, *, degree_uri: URIRef) -> Degree:
+        name = self.cache_graph.value(degree_uri, CRS_NS["hasName"]).value
+        major = self._graph_get_major_by_uri(
+            major_uri=self.cache_graph.value(degree_uri, CRS_NS["hasMajor"])
+        )
+        requirements = tuple()  # TODO: populate requirements
+
+        return Degree(uri=degree_uri, name=name, major=major, requirements=requirements)
+
+    def _graph_get_major_by_uri(self, *, major_uri: URIRef) -> Major:
+        name = self.cache_graph.value(major_uri, CRS_NS["hasName"]).value
+        dept = self._graph_get_department_by_uri(
+            department_uri=self.cache_graph.value(major_uri, CRS_NS["hasDepartment"])
+        )
+
+        return Major(uri=major_uri, name=name, department=dept)
+
+    def _graph_get_plan_of_study_by_uri(
+        self, *, plan_of_study_uri: URIRef
+    ) -> PlanOfStudy:
+
+        degree = self._graph_get_degree_by_uri(
+            degree_uri=self.cache_graph.value(plan_of_study_uri, CRS_NS["hasDegree"])
+        )
+        major = degree.major
+        year = self.cache_graph.value(plan_of_study_uri, CRS_NS["hasClassYear"]).value
+
+        completed = tuple(
+            self._graph_get_course_section_by_uri(course_section_uri=csu)
+            for csu in self.cache_graph.objects(
+                plan_of_study_uri, CRS_NS["hasCompletedCourse"]
+            )
+        )
+        ongoing = tuple(
+            self._graph_get_course_section_by_uri(course_section_uri=csu)
+            for csu in self.cache_graph.objects(
+                plan_of_study_uri, CRS_NS["hasOngoingCourse"]
+            )
+        )
+        planned = tuple(
+            self._graph_get_course_section_by_uri(course_section_uri=csu)
+            for csu in self.cache_graph.objects(
+                plan_of_study_uri, CRS_NS["hasPlannedCourse"]
+            )
+        )
+
+        return PlanOfStudy(
+            uri=plan_of_study_uri,
+            planned_major=major,
+            planned_degree=degree,
+            class_year=year,
+            completed_course_sections=completed,
+            ongoing_course_sections=ongoing,
+            planned_course_sections=planned,
+        )
+
+    def _graph_get_advisor_by_uri(self, *, advisor_uri: URIRef) -> Advisor:
+        name = self.cache_graph.value(advisor_uri, CRS_NS["hasName"]).value
+        advisee_uris = ()  # TODO: populate advisees?
+
+        return Advisor(uri=advisor_uri, name=name, advises_student_uris=advisee_uris)
+
+    def _graph_get_student_by_uri(self, *, student_uri: URIRef) -> Student:
+
+        name = self.cache_graph.value(student_uri, CRS_NS["hasName"]).value
+        class_year = self.cache_graph.value(student_uri, CRS_NS["hasClassYear"]).value
+        advisor = self._graph_get_advisor_by_uri(
+            advisor_uri=self.cache_graph.value(student_uri, CRS_NS["hasAdvisor"])
+        )
+        topics = tuple(
+            self._graph_get_topic_area(topic_area_uri=tau)
+            for tau in self.cache_graph.objects(student_uri, CRS_NS["hasInterest"])
+        )
+
+        study_plan = self._graph_get_plan_of_study_by_uri(
+            plan_of_study_uri=self.cache_graph.value(
+                student_uri, CRS_NS["hasStudyPlan"]
+            )
+        )
+
+        return Student(
+            uri=student_uri,
+            name=name,
+            class_year=class_year,
+            topics_of_interest=topics,
+            registered_courses=study_plan.ongoing_course_sections,
+            advisor=advisor,
+            study_plan=study_plan,
         )

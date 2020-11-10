@@ -23,8 +23,9 @@ class CourseSectionsInSemesterCandidateGenerator(CandidateGenerator):
         if candidates:
             yield from candidates
 
-        course_sections = self.cqs.get_course_sections_by_semester(year=context.target_year,
-                                                                   term=context.target_term)
+        course_sections = self.cqs.get_course_sections_by_semester(
+            year=context.target_year, term=context.target_term
+        )
 
         for course_section in course_sections:
             yield CourseCandidate(

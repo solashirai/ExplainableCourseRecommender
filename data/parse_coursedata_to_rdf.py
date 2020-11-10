@@ -166,11 +166,29 @@ def new_pos_uri():
 def new_usr_uri():
     return entity_ns[f'usr{str(len(entity_uri_dict)).zfill(6)}']
 
+# PLACEHOLDER STUFF
+graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], RDF_NS['type'], CRS_NS['Major']))
+graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], RDF_NS['type'], OWL['NamedIndividual']))
+graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], CRS_NS['hasName'], rdflib.Literal('placeholder computer science major', datatype=XSD.string)))
+graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], CRS_NS['hasDepartment'], entity_ns['dpt0026']))
+
+graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], RDF_NS['type'], CRS_NS['Degree']))
+graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], RDF_NS['type'], OWL['NamedIndividual']))
+graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], CRS_NS['hasName'], rdflib.Literal('placeholder BS', datatype=XSD.string)))
+graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], CRS_NS['hasMajor'], entity_ns['PLACEHOLDER-MAJOR-1']))
+
+graph.add((entity_ns['PLACEHOLDER-ADVISOR-URI'], RDF_NS['type'], CRS_NS['Advisor']))
+graph.add((entity_ns['PLACEHOLDER-ADVISOR-URI'], RDF_NS['type'], CRS_NS['NamedIndividual']))
+graph.add((entity_ns['PLACEHOLDER-ADVISOR-URI'], CRS_NS['hasName'], rdflib.Literal('Placeholder advisor name', datatype=XSD.string)))
+# END OF SUPER PLACEHOLDER STUFF
+
 for user, file in transcript_files.items():
     print(user, file)
     user_uri = new_usr_uri()
     entity_uri_dict[user] = user_uri
     graph.add((user_uri, CRS_NS['hasName'], rdflib.Literal(user, datatype=XSD.string)))
+    graph.add((user_uri, CRS_NS['hasClassYear'], rdflib.Literal(2021, datatype=XSD.integer))) # placeholder class yr
+    graph.add((user_uri, CRS_NS['hasAdvisor'], entity_ns['PLACEHOLDER-ADVISOR-URI'])) # placeholder advisor
     graph.add((user_uri, RDF_NS['type'], CRS_NS['Student']))
     graph.add((user_uri, RDF_NS['type'], OWL['NamedIndividual']))
 
@@ -178,6 +196,10 @@ for user, file in transcript_files.items():
     entity_uri_dict[str(pos_uri)] = pos_uri
     graph.add((pos_uri, RDF_NS['type'], CRS_NS['PlanOfStudy']))
     graph.add((pos_uri, RDF_NS['type'], OWL['NamedIndividual']))
+    graph.add((pos_uri, CRS_NS['hasClassYear'],
+               rdflib.Literal(2021, datatype=XSD.integer)))  # placeholder class yr
+    graph.add((pos_uri, CRS_NS['hasMajor'], entity_ns['PLACEHOLDER-MAJOR-1']))
+    graph.add((pos_uri, CRS_NS['hasDegree'], entity_ns['PLACEHOLDER-DEGREE-1']))
     graph.add((user_uri, CRS_NS['hasStudyPlan'], pos_uri))
 
 

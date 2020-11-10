@@ -1,0 +1,8 @@
+?majorUri crs-rec:hasName ?majorNameStr ;
+    crs-rec:hasDepartment ?majorDepartmentUri .
+
+{% with %}
+    {% set departmentUri = "?majorDepartmentUri" %}
+    {% set departmentNameStr = "?majorDepartmentNameStr" %}
+    {% include 'models/department.sparql.j2' %}
+{% endwith %}

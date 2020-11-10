@@ -1,0 +1,9 @@
+?majorUri a crs-rec:Major ;
+    crs-rec:hasName ?majorNameStr ;
+    crs-rec:hasDepartment ?majorDepartmentUri .
+
+{% with %}
+    {% set departmentUri = "?majorDepartmentUri" %}
+    {% set departmentNameStr = "?majorDepartmentNameStr" %}
+    {% include 'constructors/constructor_department.sparql.j2' %}
+{% endwith %}

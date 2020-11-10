@@ -9,4 +9,4 @@ from rdflib import URIRef
 @dataclass_json
 @dataclass(frozen=True)
 class Instructor(Faculty):
-    teaches_scheduled_course_uris: Tuple[URIRef]
+    teaches_scheduled_course_uris: Tuple[URIRef] = ()

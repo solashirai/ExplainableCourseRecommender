@@ -1,1 +1,1 @@
-?departmentUri crs-rec:hasName ?departmentName .
+{{ departmentUri|default("?departmentUri", true) }} crs-rec:hasName {{ departmentNameStr|default("?departmentNameStr", true) }} .

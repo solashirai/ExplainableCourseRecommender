@@ -9,4 +9,3 @@ from frex.models import DomainObject
 @dataclass(frozen=True)
 class Faculty(DomainObject):
     name: str
-    department: Department

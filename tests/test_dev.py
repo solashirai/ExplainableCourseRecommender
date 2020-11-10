@@ -1,6 +1,10 @@
-from rdflib import URIRef
+from rdflib import URIRef, Namespace
 from crex.models import StudentPOSRequirementContext
 from crex.services import SemesterCourseRecommenderService
+
+individual_ns = Namespace(
+    "https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/"
+)
 
 
 def test_dev(course_qs):
@@ -38,25 +42,55 @@ def test_dev_2(course_rec_pipe, test_pos_1, test_student_1, course_qs):
 
 
 def test_dev_4(course_qs):
-    cs = course_qs.get_course_section_by_uri(course_section_uri=URIRef('https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crsSec000017'))
+    cs = course_qs.get_course_section_by_uri(
+        course_section_uri=URIRef(
+            "https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/crsSec000017"
+        )
+    )
 
     print(cs)
 
     assert False
 
-def test_dev_3(course_qs):
-    all_css = course_qs.get_course_sections_by_semester(term='fall', year=2020)
 
-    print(f'len: {len(all_css)}')
+def test_dev_3(course_qs):
+    all_css = course_qs.get_course_sections_by_semester(term="fall", year=2020)
+
+    print(f"len: {len(all_css)}")
     print(all_css[0])
     assert False
+
 
 def test_dev_4(course_qs, test_student_1):
 
     scrs = SemesterCourseRecommenderService(course_query_service=course_qs)
-    test_recs = scrs.get_recommendations_for_target_semester(student=test_student_1, year=2020, term='fall')
+    test_recs = scrs.get_recommendations_for_target_semester(
+        student=test_student_1, year=2020, term="fall"
+    )
     print(len(test_recs))
     for rec in test_recs:
         print(rec)
 
     assert False
+
+
+def test_dev_5(course_qs):
+
+    student = course_qs.get_student_by_uri(
+        student_uri=URIRef(
+            "https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/usr009034"
+        )
+    )
+
+    assert (
+        student.name == "owen"
+        and student.class_year == 2021
+        and set(cs.uri for cs in student.study_plan.completed_course_sections)
+        == {
+            individual_ns["crsSec001796"],
+            individual_ns["crsSec001826"],
+            individual_ns["crsSec001842"],
+            individual_ns["crsSec003626"],
+            individual_ns["crsSec004683"],
+        }
+    )

@@ -1,0 +1,8 @@
+?studentUri a crs-rec:Student ;
+    crs-rec:hasName ?studentNameStr ;
+    crs-rec:hasAdvisor ?advisorUri ;
+    crs-rec:hasClassYear ?studentYearInt ;
+    crs-rec:hasStudyPlan ?planOfStudyUri .
+
+{% include 'constructors/constructor_plan_of_study.sparql.j2' %}
+{% include 'constructors/constructor_advisor.sparql.j2' %}

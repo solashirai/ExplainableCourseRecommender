@@ -12,6 +12,6 @@ class PlanOfStudy(DomainObject):
     class_year: str
     planned_major: Major
     planned_degree: Degree
-    completed_courses: Tuple[Course]
-    ongoing_courses: Tuple[ScheduledCourseSection]
-    planned_courses: Tuple[CourseSection]
+    completed_course_sections: Tuple[CourseSection]
+    ongoing_course_sections: Tuple[ScheduledCourseSection]
+    planned_course_sections: Tuple[CourseSection]
