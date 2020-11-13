@@ -1,4 +1,4 @@
-git+git://github.com/solashirai/ExplainableRecommenderFramework.git@84fd4b29ec82a0dba5f9d91b5a6c1a5cdbb57f60#egg=frex
+git+git://github.com/solashirai/ExplainableRecommenderFramework.git@f1bf43c32522acc018cd02f0f58259467f9bbfbb#egg=frex
 scipy==1.5.2
 dataclasses-json==0.5.2
 rdflib==4.2.2
