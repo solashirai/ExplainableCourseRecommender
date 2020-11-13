@@ -39,8 +39,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
     def get_all_courses(self) -> Tuple[Course]:
-        self.cache_graph = self.queryable.graph
-        # self.get_cache_graph(sparql=J2QueryStrHelper.j2_query(file_name="course_query"))
+        self.get_cache_graph(sparql=J2QueryStrHelper.j2_query(file_name="course_query"))
         courses = self._graph_get_all_courses()
 
         return courses
@@ -97,25 +96,20 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     def get_course_sections_by_semester(
         self, *, term: str, year: int
     ) -> Tuple[CourseSection]:
-        self.cache_graph = self.queryable.graph
 
-        # self.get_cache_graph(
-        #     sparql=J2QueryStrHelper.j2_query(
-        #         file_name="course_section_by_semester_query",
-        #         constraints=[
-        #             {
-        #                 "var_name": "?yearInt",
-        #                 "var_values": [
-        #                     Literal(year, datatype=XSD["integer"]).n3()
-        #                 ],
-        #             },
-        #             {
-        #                 "var_name": "?termStr",
-        #                 "var_values": [Literal(term, datatype=XSD["string"]).n3()],
-        #             },
-        #         ],
-        #     )
-        # )
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(
+                file_name="course_section_by_semester_query",
+                constraints=[
+                    {
+                        "var_name": "(?semesterYearInt ?semesterTermStr)",
+                        "var_values": [
+                            f'({Literal(year, datatype=XSD["integer"]).n3()} {Literal(term, datatype=XSD["string"]).n3()})'
+                        ],
+                    },
+                ],
+            )
+        )
 
         return self._graph_get_course_sections_by_semester(term=term, year=year)
 
@@ -157,10 +151,9 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         pass
 
     def get_all_requirements(self) -> Tuple[Requirement]:
-        self.cache_graph = self.queryable.graph
-        # self.get_cache_graph(
-        #     sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
-        # )
+        self.get_cache_graph(
+            sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
+        )
         courses = self._graph_get_all_requirements()
 
         return courses

@@ -2,6 +2,8 @@ from crex.pipeline import RecommendCoursesForSemesterPipeline
 from crex.services.course import CourseQueryService
 from crex.models import Student, Semester, StudentPOSRequirementContext, CourseCandidate
 from typing import List
+from frex.utils import ConstraintSolver, ConstraintType
+from frex.models import ConstraintSolution
 
 
 class SemesterCourseRecommenderService:
@@ -9,8 +11,8 @@ class SemesterCourseRecommenderService:
         self.cqs = course_query_service
 
     def get_recommendations_for_target_semester(
-        self, *, term: str, year: int, student: Student, max_credits: int = 16
-    ):
+        self, *, term: str, year: int, student: Student, max_credits: int = 16, min_credits: int = 12
+    ) -> ConstraintSolution:
 
         rec_pipe = RecommendCoursesForSemesterPipeline(course_query_service=self.cqs)
         requirements = (
@@ -25,15 +27,17 @@ class SemesterCourseRecommenderService:
             target_year=year,
         )
 
-        candidate_courses: List[CourseCandidate] = list(rec_pipe(context=context))
+        candidate_courses = list(rec_pipe(context=context))
 
-        final_courses = []
-        total_credits = 0
-        for cand in candidate_courses:
-            if total_credits + cand.domain_object.credits < max_credits:
-                final_courses.append(cand)
-                total_credits += cand.domain_object.credits
-            else:
-                break
+        soln = ConstraintSolver().set_sections(sections=1)\
+            .set_candidates(candidates=candidate_courses)\
+            .set_items_per_section(count=4)\
+            .add_section_constraint(attribute_name='credits',
+                                    constraint_type=ConstraintType.LEQ,
+                                    constraint_value=max_credits)\
+            .add_section_constraint(attribute_name='credits',
+                                    constraint_type=ConstraintType.GEQ,
+                                    constraint_value=min_credits)\
+            .solve()
 
-        return tuple(final_courses)
+        return soln
