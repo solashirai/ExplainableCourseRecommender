@@ -1,0 +1,518 @@
+@prefix lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> .
+@prefix oe2020-crs-rec: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender/> .
+@prefix oe2020-crs-rec-ind: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oe2020-crs-rec-ind:usrjacob a owl:NamedIndividual,
+        oe2020-crs-rec:Student ;
+    oe2020-crs-rec:hasAdvisor oe2020-crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasName "jacob"^^xsd:string ;
+    oe2020-crs-rec:hasStudyPlan oe2020-crs-rec-ind:pos0ae915694bbc4c24455b621d59e5d43959b3b463 .
+
+oe2020-crs-rec-ind:usrkelly a owl:NamedIndividual,
+        oe2020-crs-rec:Student ;
+    oe2020-crs-rec:hasAdvisor oe2020-crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasName "kelly"^^xsd:string ;
+    oe2020-crs-rec:hasStudyPlan oe2020-crs-rec-ind:pose8a68a3d863e198fde2a9851f9334379d0b5599c .
+
+oe2020-crs-rec-ind:usrowen a owl:NamedIndividual,
+        oe2020-crs-rec:Student ;
+    oe2020-crs-rec:hasAdvisor oe2020-crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasName "owen"^^xsd:string ;
+    oe2020-crs-rec:hasStudyPlan oe2020-crs-rec-ind:pos9a8e6844c6ecbac12f9f92da68ac51c5bd67704f .
+
+oe2020-crs-rec-ind:crsSec0838fe4beedeff7709d32d16ca67c9aa2373dba7 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs2a22ca2e61da1be778732a493f944011f5b30519 .
+
+oe2020-crs-rec-ind:crsSec09e02ba7dd47f949ed506bbe05d31a62c3e06da9 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs6c7fc3ba25be1e232dbe3a07d51bac9f85153d8a .
+
+oe2020-crs-rec-ind:crsSec0a61f4d238af95e6e6bc6845bead604b479ab122 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sema0d49ea0d6dc417abdadaf2f1aa29734029b6393 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs35db23a745b2e7184207e83001ec0ce2bceb82f0 .
+
+oe2020-crs-rec-ind:crsSec0a9d84565fa929509ed68c76ce5b41efc7dfcaea a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc2c7cedc141260f2b1e4a13ea8f55543248156fe .
+
+oe2020-crs-rec-ind:crsSec0cf0d1a768ef7b1d580ac0aaf258257b8c766ecb a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs547b5ccb36b817d3e2df2a96a09aa18f678bc4e0 .
+
+oe2020-crs-rec-ind:crsSec0d060d8550b4d97fa0aa0188e75a213e37114cb5 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc746a794a800d873f1e5deff86c0c58e25f94848 .
+
+oe2020-crs-rec-ind:crsSec14ad40435184e39ebb5699dc89322c5a38c55f24 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs331b6fa914bf4a6dbe2665f26df7d9aaf1c9d24a .
+
+oe2020-crs-rec-ind:crsSec17e92f86c032f11abf28080bae93695a8ee9084c a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc746a794a800d873f1e5deff86c0c58e25f94848 .
+
+oe2020-crs-rec-ind:crsSec192b2af59bf9943781cab0e661a77db8de785cf1 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsd930192130a654416bffd45ce16415ee608df66d .
+
+oe2020-crs-rec-ind:crsSec1d571602ec11f8e32dcde3b985cb277b68b7abb5 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs66ece4f97b7ad555666d9477af785bcaa7a40e8a .
+
+oe2020-crs-rec-ind:crsSec1db3d246531051f46889d24f445e50ac1f7cae61 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsee2fa75a3bc95d71a462042b4b3f9e66fdce42ac .
+
+oe2020-crs-rec-ind:crsSec1f9c3de8827d2a922390a9c840e80f2983c1eaa6 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsf8575a4da47928fe6c890ee48c11bc46dbc44fbc .
+
+oe2020-crs-rec-ind:crsSec1fb606214ceb6f97ebd4c17015aa946c37d3f4e5 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs41ba1ceeed4063b7e9b1bc426623d2ed4b49cb48 .
+
+oe2020-crs-rec-ind:crsSec249ae94910bb420655983622fccd843a7c5d824a a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsbb2f79ec60f43618cd25567f87e71171d29aee83 .
+
+oe2020-crs-rec-ind:crsSec2b03be2a3d3cc65e4ffe28e69dc056960fefb4a3 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs61c14eb096ee7002039fb8baee948b4495f08440 .
+
+oe2020-crs-rec-ind:crsSec2ccf34159728c9c8b9af8aa8d0326085b9212c2c a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc88c40a0ee893a3dbb83f35ca5fc105fd70f3963 .
+
+oe2020-crs-rec-ind:crsSec2fe38afe034d683d35fff3d543305f4f400eeb9d a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsf43c625cdfaa98be1c4984bf01d8b0550b748eeb .
+
+oe2020-crs-rec-ind:crsSec3b37139a2b62122e052805c0316019ae60ffc2b3 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs069792967f560c291d14805e83d08dec258e4432 .
+
+oe2020-crs-rec-ind:crsSec40567fef852031bad43995aa8cab7c4877bc0a02 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs667378d70c52e4a84617225e20e380eb49540f42 .
+
+oe2020-crs-rec-ind:crsSec4d3630ed52401a5362753db61595b8e1aec66bd8 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs11d22a217c292f1bd278d88b96fa770c9a6fa207 .
+
+oe2020-crs-rec-ind:crsSec5241e24de4b9d40df379b7916e4698ac81354f6f a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs72de52b44f46d5b08b2917495701f202699880ca .
+
+oe2020-crs-rec-ind:crsSec536ebee7b9ff58165dfb41e0433423d245d935ce a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs7c03aa6fefaf99476e8158ef5943f5ee91ee6146 .
+
+oe2020-crs-rec-ind:crsSec5d667f2bc18ff4cbc61dae4e8de903c96149f391 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsea7a8cc185c4323465d7224baa97a8b017c9e66c .
+
+oe2020-crs-rec-ind:crsSec5fd627bdf533aefd6f25ebb995fccc08e57f8dc2 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs7c03aa6fefaf99476e8158ef5943f5ee91ee6146 .
+
+oe2020-crs-rec-ind:crsSec615e6c5aee4bbf92e6e193f86346602825bba571 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs70c201e1b37def5c83e4458b044028e8a44f91c7 .
+
+oe2020-crs-rec-ind:crsSec663dda052cc6e9647d255c294c71409b1883963f a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs0f4511984f6fb0682b0185c2dc94b50dbc4efd2a .
+
+oe2020-crs-rec-ind:crsSec67fd2eab1560354a2b7d409638d560a417971a5f a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsbb2f79ec60f43618cd25567f87e71171d29aee83 .
+
+oe2020-crs-rec-ind:crsSec6a1c91448f2bdb49b519784e470a68c37318b45c a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs3040f719acb6d5f911e4a1e0efdae1aab16e71d5 .
+
+oe2020-crs-rec-ind:crsSec6e3b3fc6cf37593d9af264799dc55ba3e8b80076 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sema0d49ea0d6dc417abdadaf2f1aa29734029b6393 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsa18bc81767358d48a799123e0edba6144a82308b .
+
+oe2020-crs-rec-ind:crsSec74ab64ce28b5de0e6d1f96ce81c14d8fa6fe8a77 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crse3d8169270588b8895ebbfa0409b6d2e5272911c .
+
+oe2020-crs-rec-ind:crsSec79431f36805f7d501cc79356e3f69b26340e1d98 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs8aabf92b49dce005f10db4d14605ad4d5eb920d7 .
+
+oe2020-crs-rec-ind:crsSec8102566ff399c31b30351decb38ba3893db8e2f5 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs16512f1cf1a0772c4b025c3d6ec1edcd0d8fe1fb .
+
+oe2020-crs-rec-ind:crsSec8281ac09fc60458b13bdfef54b75f0b8e771837e a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs938c5b7e20ea7e1620a2dd6329e6f0af274b46c3 .
+
+oe2020-crs-rec-ind:crsSec84f2a2ca58eb1e01418fd8a9e845fe0a7011a9f8 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsd2f934d93ec580430c12e82e6804c66976c31887 .
+
+oe2020-crs-rec-ind:crsSec85d12e82990f2995f20af661dda94eb13c4d7cca a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs5beadfd41f74078fe05228858aa28f11b210879f .
+
+oe2020-crs-rec-ind:crsSec8bb40720e14ff5d40a16d71efbfab65bbcd742eb a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs76deeb1ecf1123e7b7b6918afd3e7e9c65a5bbdc .
+
+oe2020-crs-rec-ind:crsSec91d1d93e91dcf0e5dc8e5046a8ba842c8a9450fd a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs41ba1ceeed4063b7e9b1bc426623d2ed4b49cb48 .
+
+oe2020-crs-rec-ind:crsSec9895a515adaea0c0d88683c116a889fdb13f1ba4 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs7c03aa6fefaf99476e8158ef5943f5ee91ee6146 .
+
+oe2020-crs-rec-ind:crsSec99b5492130e02e1dcb08692178a020c1c2444195 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs9797fa54cb6f077d0e7cf31e23bdbafbbe00e8af .
+
+oe2020-crs-rec-ind:crsSec9e5a592775429fca3a01f3b91d28fcf39c4ddd2b a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsbe3e321974f0718f33ca4c0b0d5c167983b60fc1 .
+
+oe2020-crs-rec-ind:crsSeca0e6cd733209da12bd22e628286c5731ad3fd751 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsd930192130a654416bffd45ce16415ee608df66d .
+
+oe2020-crs-rec-ind:crsSeca285a497bcdab4230423e78885a66d7011c25567 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs11d22a217c292f1bd278d88b96fa770c9a6fa207 .
+
+oe2020-crs-rec-ind:crsSeca2bd5570182e013ecca023bed83d23e81a59b5bf a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs9797fa54cb6f077d0e7cf31e23bdbafbbe00e8af .
+
+oe2020-crs-rec-ind:crsSeca2f5fd4b324ba56c7f3216023c994a0ef63173a7 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs8e3b954b259c3b7c341a8839f81fb05deeff68ea .
+
+oe2020-crs-rec-ind:crsSeca80328aff3c7b436003e675d9e51a3b5d55bb4ab a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs331b6fa914bf4a6dbe2665f26df7d9aaf1c9d24a .
+
+oe2020-crs-rec-ind:crsSecb3c283b21671008deb680a27ca11c178daed2958 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc746a794a800d873f1e5deff86c0c58e25f94848 .
+
+oe2020-crs-rec-ind:crsSecb432aba50b39737c6b97b445b4e7bfb1dc602cf9 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsafed9cb99a22f3c1c24a461212de74c061147fdc .
+
+oe2020-crs-rec-ind:crsSecb4b7191ef7fcc1fb7f4a67b9ea217e00f70f4e2f a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs87c33e6f8e59c88a3691a58142f7515c7f8028a4 .
+
+oe2020-crs-rec-ind:crsSecb51795dcb14e5a2c884dd1ce7deae9b0e2493732 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs938c5b7e20ea7e1620a2dd6329e6f0af274b46c3 .
+
+oe2020-crs-rec-ind:crsSecbace2953677a9b794cd5cc5d64513adf5bc0fae2 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sema0d49ea0d6dc417abdadaf2f1aa29734029b6393 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs02263367a7fe1f75031956b7a30282736ff88417 .
+
+oe2020-crs-rec-ind:crsSecbc29e94fcaa333888baa92efb31dad194e1718b6 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsafed9cb99a22f3c1c24a461212de74c061147fdc .
+
+oe2020-crs-rec-ind:crsSecc12394e35f80e3ccc0559f0e0500abcb53aaeb82 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsf43c625cdfaa98be1c4984bf01d8b0550b748eeb .
+
+oe2020-crs-rec-ind:crsSecc18298722384f14e82f3995d5dcdaf4271864b3d a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs1d588530e25bf2621ff3dc4a2a1dc04fa49bd2b8 .
+
+oe2020-crs-rec-ind:crsSecc4b387e96f764565a80950390b36235fc00eabf1 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsa9004db87efa99687062b8819ace3f59d4e235cd .
+
+oe2020-crs-rec-ind:crsSeccb117aa26ddc5cf711c70466adcc656492e8a464 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsfb2686b704f12418fbb57e79c573d4bb0fd2f418 .
+
+oe2020-crs-rec-ind:crsSecce866dba24b0cdf1e707f40e0ee7fbb8de068406 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem99a8a5556d9cbc799d437c7dd45b0daaa5aad421 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsbb2f79ec60f43618cd25567f87e71171d29aee83 .
+
+oe2020-crs-rec-ind:crsSecd5c95ece2b749c2e0beb1d2bfde0e23e5ad45d93 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs1f544a878959fae04cb9d08b258e527007df5491 .
+
+oe2020-crs-rec-ind:crsSecdf7a8a20bfd3f7030778b04afa260030862609c6 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs0dd642892c31107a31f8c463c75e83e7b9755bd3 .
+
+oe2020-crs-rec-ind:crsSece04b10767b92aa4d53eb5a5b044ef13673b49448 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs622f7a32272ea2f04599f688790c2571325b949a .
+
+oe2020-crs-rec-ind:crsSece405364a6acf6b819c02915a204114f26ff8551f a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsb195823511b1f4a6f4b656734aab626993defec6 .
+
+oe2020-crs-rec-ind:crsSecebb480e6bcfb19209377e651f33864ed4cf41a9b a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs76deeb1ecf1123e7b7b6918afd3e7e9c65a5bbdc .
+
+oe2020-crs-rec-ind:crsSecf36366d3afcd0dc9f00d5440d638f97b26ca4dcd a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs1d588530e25bf2621ff3dc4a2a1dc04fa49bd2b8 .
+
+oe2020-crs-rec-ind:crsSecf5a9dafe85e39b30bdbd45b3371eeefd7520569d a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs8e3b954b259c3b7c341a8839f81fb05deeff68ea .
+
+oe2020-crs-rec-ind:crsSecf5ca1d79c8309a5acae1dadfaa2001a6513e63f8 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsc88c40a0ee893a3dbb83f35ca5fc105fd70f3963 .
+
+oe2020-crs-rec-ind:crsSecf603c709ea539acc6b9bb842d574c3d9eb7c17fa a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs61c14eb096ee7002039fb8baee948b4495f08440 .
+
+oe2020-crs-rec-ind:crsSecf7b40623128f286084d451d67cc7fb4b60b11c94 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sembd57198d8d3019f61ddffb86cb624332673802a0 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs4b79ba1b9717a21b3aff7a7d656a471eea21448a .
+
+oe2020-crs-rec-ind:crsSecf8b3e82fd2f512b3db0727642c6a1b7153581d47 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsd13b01ead0fba8b4aa112ce4a06999a774cf7b2d .
+
+oe2020-crs-rec-ind:crsSecf933e52fca45edcb5542a7050005c3955a392ca0 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semd03b7ad09f0fd571f2ffb4e54ae7555e6da34f94 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs42892397399a7d23bb3bf6d6758cd64aa57a111d .
+
+oe2020-crs-rec-ind:crsSecfb9210e5ca6bd4844b7bf9bdf1cb1c5956f81d08 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsd930192130a654416bffd45ce16415ee608df66d .
+
+oe2020-crs-rec-ind:pos0ae915694bbc4c24455b621d59e5d43959b3b463 a owl:NamedIndividual,
+        oe2020-crs-rec:PlanOfStudy ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasCompletedCourse oe2020-crs-rec-ind:crsSec06dba1e30a9898dc20a588f77776abb1231b51af,
+        oe2020-crs-rec-ind:crsSec17e92f86c032f11abf28080bae93695a8ee9084c,
+        oe2020-crs-rec-ind:crsSec192b2af59bf9943781cab0e661a77db8de785cf1,
+        oe2020-crs-rec-ind:crsSec1db3d246531051f46889d24f445e50ac1f7cae61,
+        oe2020-crs-rec-ind:crsSec1fb606214ceb6f97ebd4c17015aa946c37d3f4e5,
+        oe2020-crs-rec-ind:crsSec2b03be2a3d3cc65e4ffe28e69dc056960fefb4a3,
+        oe2020-crs-rec-ind:crsSec3b37139a2b62122e052805c0316019ae60ffc2b3,
+        oe2020-crs-rec-ind:crsSec61dc26307ae1dca357991e284a71f05ffca1d236,
+        oe2020-crs-rec-ind:crsSec67fd2eab1560354a2b7d409638d560a417971a5f,
+        oe2020-crs-rec-ind:crsSec6f57a03b4d270b1a260b6da132cee24ed353bbcb,
+        oe2020-crs-rec-ind:crsSec84f2a2ca58eb1e01418fd8a9e845fe0a7011a9f8,
+        oe2020-crs-rec-ind:crsSec85d12e82990f2995f20af661dda94eb13c4d7cca,
+        oe2020-crs-rec-ind:crsSec9895a515adaea0c0d88683c116a889fdb13f1ba4,
+        oe2020-crs-rec-ind:crsSec99903280b121e2648b3316cdeeb2fc19b7a2454d,
+        oe2020-crs-rec-ind:crsSec9e5a592775429fca3a01f3b91d28fcf39c4ddd2b,
+        oe2020-crs-rec-ind:crsSeca285a497bcdab4230423e78885a66d7011c25567,
+        oe2020-crs-rec-ind:crsSeca2bd5570182e013ecca023bed83d23e81a59b5bf,
+        oe2020-crs-rec-ind:crsSeca2f5fd4b324ba56c7f3216023c994a0ef63173a7,
+        oe2020-crs-rec-ind:crsSeca80328aff3c7b436003e675d9e51a3b5d55bb4ab,
+        oe2020-crs-rec-ind:crsSecb34396e0c4dbeb8f9195df72a30cf44cd9ddd205,
+        oe2020-crs-rec-ind:crsSecb432aba50b39737c6b97b445b4e7bfb1dc602cf9,
+        oe2020-crs-rec-ind:crsSecb4b7191ef7fcc1fb7f4a67b9ea217e00f70f4e2f,
+        oe2020-crs-rec-ind:crsSecb51795dcb14e5a2c884dd1ce7deae9b0e2493732,
+        oe2020-crs-rec-ind:crsSecc12394e35f80e3ccc0559f0e0500abcb53aaeb82,
+        oe2020-crs-rec-ind:crsSecc18298722384f14e82f3995d5dcdaf4271864b3d,
+        oe2020-crs-rec-ind:crsSecebb480e6bcfb19209377e651f33864ed4cf41a9b,
+        oe2020-crs-rec-ind:crsSecf2e5fd50fa39572d1907428a517979feb021a4f8,
+        oe2020-crs-rec-ind:crsSecf5ca1d79c8309a5acae1dadfaa2001a6513e63f8 ;
+    oe2020-crs-rec:hasPlannedDegree oe2020-crs-rec-ind:PLACEHOLDER-DEGREE-1 ;
+    oe2020-crs-rec:hasPlannedMajor oe2020-crs-rec-ind:PLACEHOLDER-MAJOR-1 .
+
+oe2020-crs-rec-ind:pos9a8e6844c6ecbac12f9f92da68ac51c5bd67704f a owl:NamedIndividual,
+        oe2020-crs-rec:PlanOfStudy ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasCompletedCourse oe2020-crs-rec-ind:crsSec0838fe4beedeff7709d32d16ca67c9aa2373dba7,
+        oe2020-crs-rec-ind:crsSec0cf0d1a768ef7b1d580ac0aaf258257b8c766ecb,
+        oe2020-crs-rec-ind:crsSec0d060d8550b4d97fa0aa0188e75a213e37114cb5,
+        oe2020-crs-rec-ind:crsSec1d571602ec11f8e32dcde3b985cb277b68b7abb5,
+        oe2020-crs-rec-ind:crsSec40567fef852031bad43995aa8cab7c4877bc0a02,
+        oe2020-crs-rec-ind:crsSec4d3630ed52401a5362753db61595b8e1aec66bd8,
+        oe2020-crs-rec-ind:crsSec5241e24de4b9d40df379b7916e4698ac81354f6f,
+        oe2020-crs-rec-ind:crsSec5fd627bdf533aefd6f25ebb995fccc08e57f8dc2,
+        oe2020-crs-rec-ind:crsSec615e6c5aee4bbf92e6e193f86346602825bba571,
+        oe2020-crs-rec-ind:crsSec663dda052cc6e9647d255c294c71409b1883963f,
+        oe2020-crs-rec-ind:crsSec6a1c91448f2bdb49b519784e470a68c37318b45c,
+        oe2020-crs-rec-ind:crsSec79431f36805f7d501cc79356e3f69b26340e1d98,
+        oe2020-crs-rec-ind:crsSec8102566ff399c31b30351decb38ba3893db8e2f5,
+        oe2020-crs-rec-ind:crsSec8281ac09fc60458b13bdfef54b75f0b8e771837e,
+        oe2020-crs-rec-ind:crsSec8bb40720e14ff5d40a16d71efbfab65bbcd742eb,
+        oe2020-crs-rec-ind:crsSec99b5492130e02e1dcb08692178a020c1c2444195,
+        oe2020-crs-rec-ind:crsSecbc29e94fcaa333888baa92efb31dad194e1718b6,
+        oe2020-crs-rec-ind:crsSecc4b387e96f764565a80950390b36235fc00eabf1,
+        oe2020-crs-rec-ind:crsSeccb117aa26ddc5cf711c70466adcc656492e8a464,
+        oe2020-crs-rec-ind:crsSecce866dba24b0cdf1e707f40e0ee7fbb8de068406,
+        oe2020-crs-rec-ind:crsSecd5c95ece2b749c2e0beb1d2bfde0e23e5ad45d93,
+        oe2020-crs-rec-ind:crsSece04b10767b92aa4d53eb5a5b044ef13673b49448,
+        oe2020-crs-rec-ind:crsSece405364a6acf6b819c02915a204114f26ff8551f,
+        oe2020-crs-rec-ind:crsSecf5a9dafe85e39b30bdbd45b3371eeefd7520569d,
+        oe2020-crs-rec-ind:crsSecf603c709ea539acc6b9bb842d574c3d9eb7c17fa,
+        oe2020-crs-rec-ind:crsSecf7b40623128f286084d451d67cc7fb4b60b11c94,
+        oe2020-crs-rec-ind:crsSecf8b3e82fd2f512b3db0727642c6a1b7153581d47,
+        oe2020-crs-rec-ind:crsSecfb9210e5ca6bd4844b7bf9bdf1cb1c5956f81d08 ;
+    oe2020-crs-rec:hasPlannedDegree oe2020-crs-rec-ind:PLACEHOLDER-DEGREE-1 ;
+    oe2020-crs-rec:hasPlannedMajor oe2020-crs-rec-ind:PLACEHOLDER-MAJOR-1 .
+
+oe2020-crs-rec-ind:pose8a68a3d863e198fde2a9851f9334379d0b5599c a owl:NamedIndividual,
+        oe2020-crs-rec:PlanOfStudy ;
+    oe2020-crs-rec:hasClassYear 2021 ;
+    oe2020-crs-rec:hasCompletedCourse oe2020-crs-rec-ind:crsSec06dba1e30a9898dc20a588f77776abb1231b51af,
+        oe2020-crs-rec-ind:crsSec09e02ba7dd47f949ed506bbe05d31a62c3e06da9,
+        oe2020-crs-rec-ind:crsSec0a61f4d238af95e6e6bc6845bead604b479ab122,
+        oe2020-crs-rec-ind:crsSec0a9d84565fa929509ed68c76ce5b41efc7dfcaea,
+        oe2020-crs-rec-ind:crsSec14ad40435184e39ebb5699dc89322c5a38c55f24,
+        oe2020-crs-rec-ind:crsSec1f9c3de8827d2a922390a9c840e80f2983c1eaa6,
+        oe2020-crs-rec-ind:crsSec249ae94910bb420655983622fccd843a7c5d824a,
+        oe2020-crs-rec-ind:crsSec2ccf34159728c9c8b9af8aa8d0326085b9212c2c,
+        oe2020-crs-rec-ind:crsSec2fe38afe034d683d35fff3d543305f4f400eeb9d,
+        oe2020-crs-rec-ind:crsSec536ebee7b9ff58165dfb41e0433423d245d935ce,
+        oe2020-crs-rec-ind:crsSec5d667f2bc18ff4cbc61dae4e8de903c96149f391,
+        oe2020-crs-rec-ind:crsSec61dc26307ae1dca357991e284a71f05ffca1d236,
+        oe2020-crs-rec-ind:crsSec6e3b3fc6cf37593d9af264799dc55ba3e8b80076,
+        oe2020-crs-rec-ind:crsSec6f57a03b4d270b1a260b6da132cee24ed353bbcb,
+        oe2020-crs-rec-ind:crsSec74ab64ce28b5de0e6d1f96ce81c14d8fa6fe8a77,
+        oe2020-crs-rec-ind:crsSec91d1d93e91dcf0e5dc8e5046a8ba842c8a9450fd,
+        oe2020-crs-rec-ind:crsSec99903280b121e2648b3316cdeeb2fc19b7a2454d,
+        oe2020-crs-rec-ind:crsSeca0e6cd733209da12bd22e628286c5731ad3fd751,
+        oe2020-crs-rec-ind:crsSecb34396e0c4dbeb8f9195df72a30cf44cd9ddd205,
+        oe2020-crs-rec-ind:crsSecb3c283b21671008deb680a27ca11c178daed2958,
+        oe2020-crs-rec-ind:crsSecbace2953677a9b794cd5cc5d64513adf5bc0fae2,
+        oe2020-crs-rec-ind:crsSecdf7a8a20bfd3f7030778b04afa260030862609c6,
+        oe2020-crs-rec-ind:crsSecf2e5fd50fa39572d1907428a517979feb021a4f8,
+        oe2020-crs-rec-ind:crsSecf36366d3afcd0dc9f00d5440d638f97b26ca4dcd,
+        oe2020-crs-rec-ind:crsSecf933e52fca45edcb5542a7050005c3955a392ca0 ;
+    oe2020-crs-rec:hasPlannedDegree oe2020-crs-rec-ind:PLACEHOLDER-DEGREE-1 ;
+    oe2020-crs-rec:hasPlannedMajor oe2020-crs-rec-ind:PLACEHOLDER-MAJOR-1 .
+
+oe2020-crs-rec-ind:crsSec06dba1e30a9898dc20a588f77776abb1231b51af a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem8b2565a675c26f030abfad3bfae948375f73a6e2 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crse329031d3e20b4f7df0cc091addfc12990b15e9e .
+
+oe2020-crs-rec-ind:crsSec61dc26307ae1dca357991e284a71f05ffca1d236 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsa377b92f1c56499fe1cbf9a714573dec03fd3717 .
+
+oe2020-crs-rec-ind:crsSec6f57a03b4d270b1a260b6da132cee24ed353bbcb a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:semdde83f6104710660ab43f3cdd09b35136e5c8d57 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs5379e33f8b7fd88a06c4c964c61e341944499eba .
+
+oe2020-crs-rec-ind:crsSec99903280b121e2648b3316cdeeb2fc19b7a2454d a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem9dd614985c876f7d36df3ee762d064e1a92a9851 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crsf94bf20c61705dda362cbf073409ad5eb40a86a1 .
+
+oe2020-crs-rec-ind:crsSecb34396e0c4dbeb8f9195df72a30cf44cd9ddd205 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs5588ea4d5b28350c146e5d15db75fea3702c6cdc .
+
+oe2020-crs-rec-ind:crsSecf2e5fd50fa39572d1907428a517979feb021a4f8 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseSection ;
+    oe2020-crs-rec:hasSemester oe2020-crs-rec-ind:sem175f75689d2c3a423fb229fc2d31893a13bf5bd4 ;
+    oe2020-crs-rec:isCourseSectionOf oe2020-crs-rec-ind:crs9fbea7ac4232c67a10b6faa47651f016d3c2ff43 .
+
+oe2020-crs-rec-ind:PLACEHOLDER-ADVISOR-URI a owl:NamedIndividual,
+        oe2020-crs-rec:Advisor ;
+    oe2020-crs-rec:hasName "Placeholder advisor name"^^xsd:string .
+
+oe2020-crs-rec-ind:PLACEHOLDER-DEGREE-1 a owl:NamedIndividual,
+        oe2020-crs-rec:Degree ;
+    oe2020-crs-rec:hasName "placeholder BS"^^xsd:string ;
+    oe2020-crs-rec:hasPlannedMajor oe2020-crs-rec-ind:PLACEHOLDER-MAJOR-1 .
+
+oe2020-crs-rec-ind:PLACEHOLDER-MAJOR-1 a owl:NamedIndividual,
+        oe2020-crs-rec:Major ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasName "placeholder computer science major"^^xsd:string .
+
