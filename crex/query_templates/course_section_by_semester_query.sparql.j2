@@ -9,6 +9,6 @@
 ?semesterScheduleUri a crs-rec:SemesterSchedule ;
     crs-rec:hasTerm ?semesterTermStr ;
     crs-rec:hasYear ?semesterYearInt .
-?courseSectionUri crs-rec:hasSchedule ?semesterScheduleUri .
+?courseSectionUri crs-rec:hasSemester ?semesterScheduleUri .
     {% include 'models/course_section.sparql.j2' %}
 {% endblock %}

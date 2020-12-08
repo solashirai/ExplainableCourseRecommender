@@ -323,7 +323,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         ):
             if (
                 course_section_uri,
-                CRS_NS["hasSchedule"],
+                CRS_NS["hasSemester"],
                 target_semester_uri,
             ) in self.cache_graph:
                 course_sections.append(
@@ -349,7 +349,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         )
         semester = self._graph_get_semester_by_uri(
             semester_uri=self.cache_graph.value(
-                course_section_uri, CRS_NS["hasSchedule"]
+                course_section_uri, CRS_NS["hasSemester"]
             )
         )
 
@@ -481,7 +481,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     def _graph_get_degree_by_uri(self, *, degree_uri: URIRef) -> Degree:
         name = self.cache_graph.value(degree_uri, CRS_NS["hasName"]).value
         major = self._graph_get_major_by_uri(
-            major_uri=self.cache_graph.value(degree_uri, CRS_NS["hasMajor"])
+            major_uri=self.cache_graph.value(degree_uri, CRS_NS["hasPlannedMajor"])
         )
         requirements = tuple()  # TODO: populate requirements
 
@@ -500,7 +500,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     ) -> PlanOfStudy:
 
         degree = self._graph_get_degree_by_uri(
-            degree_uri=self.cache_graph.value(plan_of_study_uri, CRS_NS["hasDegree"])
+            degree_uri=self.cache_graph.value(plan_of_study_uri, CRS_NS["hasPlannedDegree"])
         )
         major = degree.major
         year = self.cache_graph.value(plan_of_study_uri, CRS_NS["hasClassYear"]).value

@@ -28,6 +28,9 @@ class SemesterCourseRecommenderService:
         )
 
         candidate_courses = list(rec_pipe(context=context))
+        candidate_courses = [crs for crs in candidate_courses if crs.domain_object.credits]
+
+        print("cand len: ", len(candidate_courses))
 
         soln = ConstraintSolver().set_sections(sections=1)\
             .set_candidates(candidates=candidate_courses)\
