@@ -2,3 +2,18 @@
     ?requirementPred ?requirementObj .
 
 {% include 'models/course_code_restriction.sparql.j2' %}
+
+{#
+OPTIONAL {
+    ?requirementUri crs-rec:canShareCreditsWith ?shareRequirementUri .
+}
+OPTIONAL {
+    ?requirementUri crs-rec:hasSubRequirement ?subRequirementUri .
+}
+OPTIONAL {
+    ?requirementUri crs-rec:hasRestriction ?rstrRequirementUri .
+}
+OPTIONAL {
+    ?requirementUri crs-rec:isFulfilledBy ?fulfillRequirementUri .
+}
+#}

@@ -11,7 +11,13 @@ class SemesterCourseRecommenderService:
         self.cqs = course_query_service
 
     def get_recommendations_for_target_semester(
-        self, *, term: str, year: int, student: Student, max_credits: int = 16, min_credits: int = 12
+        self,
+        *,
+        term: str,
+        year: int,
+        student: Student,
+        max_credits: int = 16,
+        min_credits: int = 12
     ) -> ConstraintSolution:
 
         rec_pipe = RecommendCoursesForSemesterPipeline(course_query_service=self.cqs)
@@ -28,19 +34,28 @@ class SemesterCourseRecommenderService:
         )
 
         candidate_courses = list(rec_pipe(context=context))
-        candidate_courses = [crs for crs in candidate_courses if crs.domain_object.credits]
+        candidate_courses = [
+            crs for crs in candidate_courses if crs.domain_object.credits
+        ]
 
         print("cand len: ", len(candidate_courses))
 
-        soln = ConstraintSolver().set_sections(sections=1)\
-            .set_candidates(candidates=candidate_courses)\
-            .set_items_per_section(count=4)\
-            .add_section_constraint(attribute_name='credits',
-                                    constraint_type=ConstraintType.LEQ,
-                                    constraint_value=max_credits)\
-            .add_section_constraint(attribute_name='credits',
-                                    constraint_type=ConstraintType.GEQ,
-                                    constraint_value=min_credits)\
+        soln = (
+            ConstraintSolver()
+            .set_sections(sections=1)
+            .set_candidates(candidates=candidate_courses)
+            .set_items_per_section(count=4)
+            .add_section_constraint(
+                attribute_name="credits",
+                constraint_type=ConstraintType.LEQ,
+                constraint_value=max_credits,
+            )
+            .add_section_constraint(
+                attribute_name="credits",
+                constraint_type=ConstraintType.GEQ,
+                constraint_value=min_credits,
+            )
             .solve()
+        )
 
         return soln

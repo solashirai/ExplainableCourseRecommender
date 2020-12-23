@@ -22,5 +22,8 @@ OPTIONAL {
     ?courseUri crs-rec:hasCorequisite ?coreqCourseUri .
 }
 OPTIONAL {
-    ?courseUri crs-rec:hasOfferedSemesters ?offeredSemester .
+    ?courseUri crs-rec:offerTerm ?courseOfferTerm .
+}
+OPTIONAL {
+    ?courseUri crs-rec:offerPeriod ?courseOfferPeriod .
 }

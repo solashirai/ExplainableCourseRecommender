@@ -22,6 +22,5 @@ class Course(DomainObject):
     department: Department
     credits: int
     topics: Tuple[TopicArea]
-    offered_semesters: Tuple[
-        str
-    ]  # e.g. "F2020". Change str to a new model later, if needed
+    offering_terms: Tuple[str, ...]  # e.g. "FALL", "SPRING
+    offering_period: str  # "ANNUAL", "EVEN", or "ODD"

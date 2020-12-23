@@ -92,5 +92,11 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
+    def get_all_requirements_by_degree_uri(
+        self, *, degree_uri: URIRef
+    ) -> Tuple[Requirement]:
+        pass
+
+    @abstractmethod
     def get_student_by_uri(self, *, student_uri) -> Student:
         pass

@@ -1,5 +1,7 @@
 ?degreeUri a crs-rec:Degree ;
     crs-rec:hasName ?degreeNameStr ;
-    crs-rec:hasPlannedMajor ?majorUri .
+    crs-rec:hasPlannedMajor ?majorUri ;
+    crs-rec:hasRequirement ?requirementUri .
 
 {% include 'constructors/constructor_major.sparql.j2' %}
+{% include 'constructors/constructor_requirement.sparql.j2' %}
