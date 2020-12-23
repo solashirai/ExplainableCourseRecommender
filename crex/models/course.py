@@ -21,6 +21,6 @@ class Course(DomainObject):
     recommended_prerequisites: FrozenSet[URIRef]
     department: Department
     credits: int
-    topics: Tuple[TopicArea, ...]
+    topics: FrozenSet[TopicArea]
     offering_terms: Tuple[str, ...]  # e.g. "FALL", "SPRING
     offering_period: str  # "ANNUAL", "EVEN", or "ODD"

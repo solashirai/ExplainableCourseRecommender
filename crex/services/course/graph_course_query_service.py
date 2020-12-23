@@ -241,6 +241,8 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         course_description = self.cache_graph.value(
             course_uri, CRS_NS["hasDescription"]
         )
+        if course_description:
+            course_description = course_description.value
         course_code = self._graph_get_course_code_by_uri(
             course_code_uri=self.cache_graph.value(course_uri, CRS_NS["hasCourseCode"])
         )
@@ -261,7 +263,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         corequisites = frozenset(
             self.cache_graph.objects(course_uri, CRS_NS["hasCorequisite"])
         )
-        topics = tuple(
+        topics = frozenset(
             self._graph_get_topic_area(topic_area_uri=ta_uri)
             for ta_uri in self.cache_graph.objects(course_uri, CRS_NS["hasTopic"])
         )
@@ -454,16 +456,16 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
                 )
             )
 
-        share_req_uris = tuple(
+        share_req_uris = frozenset(
             self.cache_graph.objects(requirement_uri, CRS_NS["canShareCreditsWith"])
         )
-        sub_req_uris = tuple(
+        sub_req_uris = frozenset(
             self.cache_graph.objects(requirement_uri, CRS_NS["hasSubRequirement"])
         )
-        restrict_req_uris = tuple(
+        restrict_req_uris = frozenset(
             self.cache_graph.objects(requirement_uri, CRS_NS["hasRestriction"])
         )
-        fulfill_by_req_uri = tuple(
+        fulfill_by_req_uri = frozenset(
             self.cache_graph.objects(requirement_uri, CRS_NS["isFulfilledBy"])
         )
 
@@ -481,7 +483,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         # discipline = self.cache_graph.value(topic_area_uri, CRS_NS['belongsTo']) # TODO: currently using placeholder
         discipline = "placeholder discipline"
         name = self.cache_graph.value(topic_area_uri, RDFS_NS["label"]).value
-        super_topics = tuple(
+        super_topics = frozenset(
             self._graph_get_topic_area(topic_area_uri=ta_uri)
             for ta_uri in self.cache_graph.objects(
                 topic_area_uri, CRS_NS["isSubTopicOf"]
@@ -572,21 +574,21 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         major = degree.major
         year = self.cache_graph.value(plan_of_study_uri, CRS_NS["hasClassYear"]).value
 
-        completed = tuple(
+        completed = frozenset(
             # self._graph_get_course_section_by_uri(course_section_uri=csu)
             csu
             for csu in self.cache_graph.objects(
                 plan_of_study_uri, CRS_NS["hasCompletedCourse"]
             )
         )
-        ongoing = tuple(
+        ongoing = frozenset(
             # self._graph_get_course_section_by_uri(course_section_uri=csu)
             csu
             for csu in self.cache_graph.objects(
                 plan_of_study_uri, CRS_NS["hasOngoingCourse"]
             )
         )
-        planned = tuple(
+        planned = frozenset(
             # self._graph_get_course_section_by_uri(course_section_uri=csu)
             csu
             for csu in self.cache_graph.objects(
@@ -617,7 +619,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         advisor = self._graph_get_advisor_by_uri(
             advisor_uri=self.cache_graph.value(student_uri, CRS_NS["hasAdvisor"])
         )
-        topics = tuple(
+        topics = frozenset(
             self._graph_get_topic_area(topic_area_uri=tau)
             for tau in self.cache_graph.objects(student_uri, CRS_NS["hasInterest"])
         )
