@@ -1,0 +1,463 @@
+special_tags:
+  artificial_intelligence_and_data_concentration:
+    courses: [
+        CSCI-4100,
+        CSCI-6100,
+        CSCI-4110,
+        CSCI-6110,
+        CSCI-4130,
+        CSCI-6130,
+        CSCI-4150,
+        CSCI-4270,
+        CSCI-6270,
+        CSCI-4340,
+        CSCI-6340,
+        CSCI-4350,
+        CSCI-6350,
+        ITWS-4350,
+        CSCI-4370,
+        CSCI-6370,
+        CSCI-4380,
+        CSCI-4390,
+        CSCI-6390,
+        CSCI-4400,
+        CSCI-6400,
+        CSCI-4420,
+        MATH-4030,
+        PHIL-4420,
+        CSCI-4480,
+        ECSE-4480,
+        CSCI-4490,
+        CSCI-6490,
+        ECSE-4490,
+        CSCI-4600,
+        CSCI-6600,
+        ITWS-4600,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-496x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-496x,
+        COGS-4410,
+        CSCI-496x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        CSCI-496x,
+        CSCI-696x,
+        CSCI-496x,
+        ECSE-4850,
+        ECSE-496x,
+        ECSE-496x,
+        ECSE-6610,
+    ]
+
+  communication_intensive:
+    courses: [
+        'STSS-4430',
+        'PHIL-4500',
+        'IHSS-1510',
+        'MATH-4090',
+        'ECON-4360',
+        'MANE-4210',
+        'ISYE-4270',
+        'STSS-4970',
+        'COMM-2440',
+        'PSYC-2310',
+        'LANG-4420',
+        'STSS-1110',
+        'IHSS-1165',
+        'CHME-4050',
+        'ARTS-1050',
+        'BCBP-4990',
+        'PSYC-4990',
+        'PHIL-4130',
+        'MANE-4230',
+        'MANE-4220',
+        'WRIT-2330',
+        'STSS-2210',
+        'COMM-2660',
+        'MANE-4390',
+        'COMM-4730',
+        'CHEM-4120',
+        'STSS-4990',
+        'ECON-4270',
+        'ARTS-4640',
+        'CIVL-6340',
+        'PHIL-2960',
+        'ECSE-4900',
+        'ARTS-2540',
+        'STSH-1110',
+        'IHSS-1700',
+        'COMM-2520',
+        'ARTS-2964',
+        'WRIT-2340',
+        'BMED-4130',
+        'STSH-4990',
+        'STSH-4430',
+        'CSCI-4440',
+        'LITR-2150',
+        'ARTS-2180',
+        'IHSS-1220',
+        'IHSS-1320',
+        'PSYC-4430',
+        'ARTS-4880',
+        'PHYS-2350',
+        'ITWS-4100',
+        'STSH-4250',
+        'CSCI-4370',
+        'GSAS-1600',
+        'MANE-4260',
+        'STSH-4970',
+        'BIOL-4990',
+        'LITR-2110',
+        'ECON-4900',
+        'MGMT-4967',
+        'STSH-4510',
+        'BIOL-4980',
+        'ECON-4170',
+        'IHSS-1160',
+        'GSAS-2520',
+        'WRIT-1110',
+        'IHSS-2610',
+        'CSCI-4530',
+        'ARCH-4530',
+        'ARCH-4920',
+        'ARTS-4130',
+        'LITR-2960',
+        'ARTS-2963',
+        'BIOL-4710',
+        'ECON-4190',
+        'ARTS-4080',
+        'ITWS-1220',
+        'WRIT-4380',
+        'LITR-4770',
+        'CIVL-4920',
+        'BMED-4600',
+        'STSS-2300',
+        'COMM-4240',
+        'ENVE-4180',
+        'WRIT-2110',
+        'MTLE-4920',
+        'MGMT-1250',
+        'BCBP-4710',
+        'CSCI-4230',
+        'BIOL-4990',
+        'COMM-2520',
+        'IHSS-1973',
+        'COGS-4440',
+        'LITR-2110',
+        'MATH-4950',
+        'PHIL-4480',
+        'BIOL-4740',
+        'ECSE-4900',
+        'IHSS-1170',
+        'ERTH-2210',
+        'IHSS-1700',
+        'PSYC-4740',
+        'PHIL-4500',
+        'ITWS-4100',
+        'IHSS-1080',
+        'PHYS-2350',
+        'ECON-4270',
+        'CSCI-4460',
+        'BMED-4600',
+        'ECON-4170',
+        'MGMT-1240',
+        'PSYC-2310',
+        'ARTS-2540',
+        'MANE-4380',
+        'CSCI-4310',
+        'STSH-4420',
+        'WRIT-1110',
+        'PSYC-4400',
+        'MANE-4220',
+        'WRIT-2310',
+        'IHSS-1175',
+        'WRIT-2320',
+        'WRIT-2330',
+        'ECON-4900',
+        'BCBP-4990',
+        'STSH-1110',
+        'IHSS-1978',
+        'MANE-4260',
+        'IHSS-1410',
+        'BIOL-4320',
+        'STSS-4970',
+        'IHSS-1235',
+        'ECON-4110',
+        'IHSS-1110',
+        'PSYC-4310',
+        'BIOL-4720',
+        'IHSS-1961',
+        'WRIT-2110',
+        'STSH-4250',
+        'PSYC-4990',
+        'COGS-4560',
+        'ARTS-1050',
+        'GSAS-2520',
+        'LITR-4770',
+        'LITR-2960',
+        'PSYC-4440',
+        'WRIT-2340',
+        'LANG-4420',
+        'STSH-4970',
+        'MTLE-4920',
+        'IHSS-1969',
+        'PHIL-4240',
+        'IHSS-1240',
+        'STSS-1110',
+        'ECON-4190',
+        'MATH-4090',
+        'PHIL-4990',
+        'IHSS-1140',
+        'CSCI-4440',
+        'GSAS-1600',
+        'WRIT-4550',
+        'PSYC-2730',
+        'ISYE-4270',
+        'CHEM-4020',
+        'PSYC-4430',
+        'CIVL-6340',
+        'COMM-4250',
+        'COMM-4580',
+        'COMM-2660',
+        'IHSS-1962'
+    ]
+
+
+degree_IDs:
+  degBSInCSCI:
+    has_req: [csci_bachelor_req]
+
+req_IDs:
+  csci_bachelor_req:
+    req_credits: 128
+    sub_req_IDs: [hass_core_req, science_math_science_core_req, csci_math_science_option_req,
+                  csci_csci_core_req, csci_capstone_req, csci_option_req]
+    valid_courses:
+      min_level: 0
+
+  science_math_science_core_req:
+    req_credits: 46
+    sub_req_IDs: [science_math_science_core_req_1, science_math_science_core_req_2]
+    valid_courses:
+      valid_dept_codes: [ ASTR, BCBP, BIOL, CHEM, CSCI, ERTH, ISCI, MATH, MATP, PHYS ]
+
+  science_math_science_core_req_1:
+    req_credits: 16
+    valid_courses:
+      valid_codes: [ PHYS-1100, BIOL-1010, BIOL-1015, MATH-1010, MATH-1020 ]
+
+  science_math_science_core_req_2:
+    req_credits: 4
+    valid_courses:
+      valid_dept_codes: [ MATH ]
+      min_level: 4000
+
+  csci_math_science_option_req:
+    req_credits: 0
+    sub_req_IDs: [ csci_math_option_1_req, csci_math_option_2_req, csci_science_option_req ]
+    valid_courses:
+      min_level: 0
+
+  csci_math_option_1_req:
+    req_credits: 4
+    share_credit_IDs: [ science_math_science_core_req, science_math_science_core_req_2]
+    valid_courses:
+      valid_codes: [MATH-2010, MATH-4030, MATH-4040, MATH-4100, MATP-4600]
+
+  csci_math_option_2_req:
+    req_credits: 4
+    share_credit_IDs: [ science_math_science_core_req, science_math_science_core_req_2]
+    restriction_IDs: [csci_math_option_2_restriction_req]
+    valid_courses:
+      valid_dept_codes: [ MATH, MATP ]
+      min_level: 2000
+
+  csci_math_option_2_restriction_req:
+    req_credits: 1
+    valid_courses:
+      valid_codes: [MATH-2800]
+
+  csci_science_option_req:
+    req_credits: 4
+    share_credit_IDs: [ science_math_science_core_req ]
+    valid_courses:
+      valid_dept_codes: [BIOL, CHEM, ERTH, PHYS, ASTR]
+
+  csci_csci_core_req:
+    req_credits: 32
+    share_credit_IDs: [ science_math_science_core_req ]
+    valid_courses:
+      valid_codes: [CSCI-1100, CSCI-1200, CSCI-2200, CSCI-2500, CSCI-2300, CSCI-2600, CSCI-4210, CSCI-4430]
+
+  csci_option_req:
+    req_credits: 16
+    valid_courses:
+      valid_dept_codes: [CSCI]
+      min_level: 4000
+
+  csci_capstone_req:
+    req_credits: 0
+    fulfillable_by_IDs: [csci_research_capstone_req, csci_course_capstone_req]
+    valid_courses:
+      min_level: 0
+
+  csci_research_capstone_req:
+    req_credits: 4
+    valid_courses:
+      special_tags: [ csci_URP ]
+
+  csci_course_capstone_req:
+    req_credits: 0
+    fulfillable_by_IDs: [csci_course_capstone_theory_and_alg_req, csci_course_capstone_sys_and_software_req,
+      csci_course_capstone_ai_and_data_req, csci_course_capstone_vis_graphic_robo_game_req]
+    valid_courses:
+      min_level: 0
+
+  csci_course_capstone_theory_and_alg_req:
+    req_credits: 12
+    valid_courses:
+      special_tags: [ theory_and_algorithms_concentration ]
+
+  csci_course_capstone_sys_and_software_req:
+    req_credits: 12
+    valid_courses:
+      special_tags: [ systems_and_software_concentration ]
+
+  csci_course_capstone_ai_and_data_req:
+    req_credits: 12
+    valid_courses:
+      special_tags: [ artificial_intelligence_and_data_concentration ]
+
+  csci_course_capstone_vis_graphic_robo_game_req:
+    req_credits: 12
+    valid_courses:
+      special_tags: [ vision_graphics_robotics_and_games_concentration ]
+
+  # HASS
+
+  hass_core_req:
+    sub_req_IDs: [hass_humanities_dist_req, hass_social_science_dist_req, hass_communication_intensive_req, hass_4k_req, hass_inquery_req, hass_pathway_req]
+    restriction_IDs: [hass_1k_restriction_req]
+    req_credits: 24
+    valid_courses:
+      valid_dept_codes: [ ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS, COGS, ECON, PSYC, STSS ]
+  hass_inquery_req:
+    req_credits: 3
+    share_credit_IDs: [hass_communication_intensive_req, hass_humanities_dist_req, hass_social_science_dist_req, hass_4k_req]
+    valid_courses:
+      valid_dept_codes: [ IHSS ] # ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS, COGS, ECON, PSYC, STSS ]
+#      special_tags: [HASS_inquery]
+  hass_communication_intensive_req:
+    req_credits: 3
+    share_credit_IDs: [ hass_inquery_req, hass_humanities_dist_req, hass_social_science_dist_req, hass_4k_req ]
+    valid_courses:
+      valid_dept_codes: [ ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS, COGS, ECON, PSYC, STSS ]
+      special_tags: [ communication_intensive ]
+  hass_humanities_dist_req:
+    req_credits: 3
+    share_credit_IDs: [ hass_inquery_req, hass_social_science_dist_req, hass_communication_intensive_req, hass_4k_req ]
+    valid_courses:
+      valid_dept_codes: [ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS]
+  hass_social_science_dist_req:
+    req_credits: 3
+    share_credit_IDs: [ hass_inquery_req, hass_humanities_dist_req, hass_communication_intensive_req, hass_4k_req ]
+    valid_courses:
+      valid_dept_codes: [ COGS, ECON, PSYC, HCDE, GSAS, STSS, IHSS ]
+  hass_4k_req:
+    req_credits: 4
+    share_credit_IDs: [ hass_inquery_req, hass_humanities_dist_req, hass_social_science_dist_req, hass_communication_intensive_req ]
+    valid_courses:
+      valid_dept_codes: [ ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS, COGS, ECON, PSYC, STSS ]
+      min_level: 4000
+  hass_1k_restriction_req:
+    req_credits: 12
+    share_credit_IDs: [hass_humanities_dist_req, hass_social_science_dist_req, hass_communication_intensive_req, hass_inquery_req]
+    valid_courses:
+      valid_dept_codes: [ ARTS, COMM, LANG, LITR, PHIL, STSH, WRIT, GSAS, HCDE, IHSS, COGS, ECON, PSYC, STSS ]
+      max_level: 2000
+  hass_pathway_req:
+    req_credits: 0
+    share_credit_IDs: [hass_humanities_dist_req, hass_social_science_dist_req, hass_communication_intensive_req, hass_4k_req, hass_inquery_req]
+    fulfillable_by_IDs: [hass_pathway_ai, hass_pathway_art_history, hass_pathway_neuroscience]
+    valid_courses:
+      min_level: 0
+
+  # hass pathways
+  hass_pathway_ai:
+    req_credits: 0
+    sub_req_IDs: [hass_pathway_ai_1, hass_pathway_ai_2, hass_pathway_ai_3]
+    valid_courses:
+      min_level: 0
+  hass_pathway_ai_1:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [IHSS-1140, IHSS-1972, IHSS-1235]
+  hass_pathway_ai_2:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [ COGS-2120 ]
+  hass_pathway_ai_3:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [ COGS-4410, COGS-4420, COGS-4640, COGS-4880, COGS-4960, COGS-4960, PHIL-4960, PHIL-4961 ]
+
+  hass_pathway_art_history:
+    req_credits: 0
+    sub_req_IDs: [hass_pathway_art_history_1, hass_pathway_art_history_2]
+    valid_courses:
+      min_level: 0
+  hass_pathway_art_history_1:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [ ARTS-1050, IHSS-1080, IHSS-1300, IHSS-1170, IHSS-1700, IHSS-1960 ]
+  hass_pathway_art_history_2:
+    req_credits: 8
+    valid_courses:
+      valid_codes: [ ARTS-2500, ARTS-2540, ARTS-4130 ]
+
+  hass_pathway_neuroscience:
+    req_credits: 0
+    sub_req_IDs: [ hass_pathway_neuroscience_1, hass_pathway_neuroscience_2 ]
+    valid_courses:
+      min_level: 0
+  hass_pathway_neuroscience_1:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [ PSYC-1200 ]
+  hass_pathway_neuroscience_2:
+    req_credits: 8
+    sub_req_IDs: [hass_pathway_neuroscience_2_4k]
+    valid_courses:
+      valid_codes: [ IHSS-19XX, PSYC-4320, COGS-4360, PSYC-4330, COGS-4330, PSYC-4500, PSYC-4600, COGS-4600, PSYC-4610, COGS-4610, PSYC-4700, COGS-4700 ]
+  hass_pathway_neuroscience_2_4k:
+    req_credits: 4
+    valid_courses:
+      valid_codes: [ PSYC-4320, COGS-4360, PSYC-4330, COGS-4330, PSYC-4500, PSYC-4600, COGS-4600, PSYC-4610, COGS-4610, PSYC-4700, COGS-4700 ]
+
+  # end of hass pathways

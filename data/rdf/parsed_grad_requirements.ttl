@@ -1,0 +1,973 @@
+@prefix crs-rec: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender/> .
+@prefix crs-rec-ind: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+crs-rec-ind:crs01aebcb69da2b1690f463bfa2e006a527ff01006 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs03205587071a5ea71b8269ed5bccbc9034a75177 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs062ebee920866bf73d9ee0a35bd0250b75cca041 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs0a91da570ca1b0d86c48791d0873ffd997e7f0df crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs0ad2afbe44c9313fddf9c2e3947806f71ff12eaa crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs0dd642892c31107a31f8c463c75e83e7b9755bd3 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs0fd1c3a8d485817daec2ab0ec78162c880776dcc crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs11197ddff0a936924166a2e9cb38f71c8b315bda crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs17dfc1e892dc6a04cb291539e9eb289ba19528be crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs18b31db8929810bfe0761b868b16fdedef9126e5 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs19b82bf165600ecc0445670282d387e3b22c4221 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs1b3682ca73022fd39f42bce44f5663eb4a51c3e5 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs1c0d72741e6ee807d4102aa22623dfe2c7012d0b crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs1d8e664e9be3fdfad4623a7e9e31a26bd50e1cc0 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs1dffac7f637be0fa64f5a26e6cdd425e649a8039 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs2028a7b9325ccb1abf1e4b3fc3d052625e2f7c26 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs210bf8776afeaf3261afaa9fdba88982a36eca30 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs22451d8f491ff29ed28edea6600baa792e3b8524 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs2291d4edd171552fadf8fa6f1b0231b46d01d626 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs22cee0a9b4f31efd99374bcc9ac1ac9620a61f20 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs22f72a506181d31f3e3ec6031892acf22556458e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs27402c82c5b2cbd3afa326fe954365254d381ae6 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs274d38aedd8637fdbfd4a32e41017675f93d7fe6 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs2a94672878309be461f02150029db399a28cce5e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs3040f719acb6d5f911e4a1e0efdae1aab16e71d5 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs31368ade066d93e357b6dc853fbb3db5575c0202 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs3259afdeb2cd42b2ce38d28c2b939f5e9828f9bc crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs3412fc261a357744c57fc929e51f6ee1a05a490f crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs347baf1bd43f43b44107f0594845a743d37b241f crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs36c2bd83171290120fc1f3cf28319fc59528aa27 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs392ce22073c59108da9d59ae93de4115ff900b00 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs39f109372768bab599f40e2f87748f947a78da44 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs3c2fdae206677458afca13ca2e0b0f2bc3e01b63 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs3d78d28dab5eab946eeb255604a0c903a6330007 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs3fe2b160b5c372cb0bf2844188660cd1363d364b crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs47e9557f18006a7eea24c3406e67c4e437a8b640 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs489392808b5045d40f4bae0ed52eee15a03e5b98 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs49572a48b5a72de4c6022b4861b944ff5fa7ac90 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs496be5e68975fb82528ad1920bdc7ded4f40c96d crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs49e36946f510075f2d91040f1598f2ce2d37f800 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs4c7359ffe3f7e0f4b4d3d5e3de58d63f131109f1 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs4e9605518aef08518df598d2233dd4b119a3921e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs4f983f3ffe907e12d96f03eba23d67625a1f3c4c crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs50f9c759c8d413220e6601cd49bf6691440b041b crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs5379e33f8b7fd88a06c4c964c61e341944499eba crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs5a1fcbb02e8c5a872605b11a12cd9f8381490610 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs5bcfe3cf99f560500240d31cd51f0afb68a9edf7 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs5d6596f3ff2503da44109b2dab1087afb40a3117 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs606b871bc86455b3d3e80ee452370dbd602ac4c9 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs6108b5f3718210bd278d6f56a95ddd84058932be crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs61c14eb096ee7002039fb8baee948b4495f08440 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs622f7a32272ea2f04599f688790c2571325b949a crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs628ea8c4ef606285d32970f27cf7d4f1cbde7c77 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs634ce8f30ef4f0fb69263d232832ed3563123dc9 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs638d670584a206643ab839811956dd61217b1635 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs650b308c00877703ef7fc7daf84b3012e074b5d4 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs66d028041744b387f806c711ec97d233d59ec154 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs6874bc4508f514b3c0e1189577abc2d2ec97a25c crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs697e2d8422b633946bb63abe7153ab98d4adb565 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs6a702b56e8ce807d5e3fa531173466e683bbaf22 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs6ca62f40c281bc8caae0337aac8bae6fc15dc483 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs6f3d56fd3830542bd895a71b5020c992d716120e crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string,
+        "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs6fca132bd7b2c2d7809076b09ae5deeb68de0cfc crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs702fe68bfddceb83ebde66272620791e575008fb crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs7562d90e3f2eb8ba15b7154f08353d152c6e768f crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs75ced664fe2cb8d4e9eb62fb27e9c23a111b3576 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs76324aae224f1935f4efaffa1aca647ebdda86b5 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs7704366bd4bee2bfe455e1bc7942321d2f20d8b3 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs7912a441e9259d73f2774d564abe4ddbb33445b4 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs798164bc3788d6666adf4e8a2840804c40932c98 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs7acf3f604f3d1948995abb1138149607fb38dd81 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs7cd5a27799645b9379d399891c228aa93761f748 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs7decd1a4c6c590cba8becf8268dd4d8cf02ce24f crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs80374ae8a27a2f239740235b74538c2d3ab94ce5 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs80e372ed7618354f3b3c4688a42fdd33b53bbdcf crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs80e752e7f20f7755d1ab8dead0aa28607a7da2d5 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs81aeacc11b820c7978ecfe5c20b19be616f5d12d crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs8645787c2dcb955ffeac52a19a05c556fedd0918 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs86469a07d23e1916cdfcda5ae56e7d8c81ce65d2 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs86bb7bb6561e9a06adbbe5bdeadc469f98ff8015 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs8722506885c2b18f4c50deac918f73bfc9da5585 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs88727484a99ec275def1c0daba53f44d01a12b46 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs8b4f55b880920d934d946539809d14b3e5ea4c05 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs8db19021def81486a985e83a8f96a8d174b1d72e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs8e8414163111974f0e77a1dd82c6c90eb087c6b8 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs8edd2f5959a4290d84690d52eaeb0ad73ad6a088 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs8fe68e2aa842d6375cdfd75c3bfff65deaf5895b crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs90c71f36015a37ddfd5ba10cd7150f56d72bebc0 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs9667db977bf03a04a6f72f840ff90603b35ad545 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs98ec237909f9a31f5923a777de2af7ad2ea5f018 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs996b74ac113623d88e137dd250dc4969a58e5fbb crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs9a9101d7a947c72635b147b4925f4927f6e881b1 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs9c7881b95685b8d48985c4490125a9b471cb5c2b crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs9d136c01408a30c21f301ae6b44475f39244fdd7 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crs9e2b253986bc1bbe8b808a55cd04a0f60a8da9b3 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crs9fbea7ac4232c67a10b6faa47651f016d3c2ff43 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa0fe9c2201c42b0037482101a6a4097adc5df501 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa2a27cffaf5f296ee3d2f3ded2fff1d9ba3b1311 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa377b92f1c56499fe1cbf9a714573dec03fd3717 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa437c37a1c276f1e4e75d7d789ba183172758634 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa4cf1b3845af2dc99379aa6b3f2c46c530887889 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa8012d26c5a870e5ef5206b03910dbfa91d55b51 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsa89530d296c5a2ff0a41c325bb6d1c2f81cb7253 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsa9254cc528b81c9c3fa6a202e556b0dbfc1b7d73 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsac04e58327b6bbfd33a4eadeeef99177e4fd3552 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsb0f781d967a1e269fc43b77417e4db5f22a3d5d7 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsb195823511b1f4a6f4b656734aab626993defec6 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsb4662718b60e0c6a0fd59c5f9cfb5a62b3f78e76 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsb4c9fa10f22b4c1369d0068fdc8173f28724d1b8 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsb84ef9b3f550f1620aa0b781dc1c206c2d71e843 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsbb1f560266279500ea17c27ee1252e44b5de6758 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsbc33d2312a426a81e21f15d46bb1bc4860e95478 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsbe291a55177ccfcae8b61ca3801a45a57173ab5f crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsbe2fe75c64265a129f0df61a656c04639f7f18b7 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsc0be5ca1e81f5406ffaed7243b1e20a0a7df0b23 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsc1726fc22f878ef72eacce3d7fc24040a2eb46a3 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsc4d903ec9acf9ea9478fc2860b8b09fc9ffedf1a crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsc7e7083a617c886307d648360820531f40272b13 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsc8422fd8eb50a6f9c321c3fb0709363e543a9646 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crscba99861c6f4345ecd139d937228722bbc078c3b crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crscf0d00daf408fb16312e900cd7b5049fef5ec720 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsd144c0a20d961b78dd528c02cc30b76bda306cef crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsd8756bfaddfdec4140cfd0b582c8cd3571a52cbc crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsda886409d6ccc0f6393fcab57fdde3684cb7f79e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsdb045c38507ad410ee37ed77d9e6661f211daeff crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsdee6d4ed672cf1e5a64c3aa52dad2ec5bb89aef2 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse0687fe4426011d2559999dcb850341b6e29b3bb crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse14d95bee653cb708a764fdf64f79ab809be44f6 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse29cd61e2bd09bce499b103513c102c738d0a4eb crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse3d8169270588b8895ebbfa0409b6d2e5272911c crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse48acf4e7b426772108e832cd84a3a6451899c65 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse4f267b321ff6628ce6ff32c801c1f6288ab5f43 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse5c97ed30267cc2866249f7b7255474e38930ed4 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse5f67c35eb53a3d8f6d1891071a2d8398a0dfd28 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crse61cb3f3323fb006ff40c6e301a2d2fab4d01e33 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsedf3d4ff18fe5eb3ae9e2d9832cd28c2b157e0a7 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsee2fa75a3bc95d71a462042b4b3f9e66fdce42ac crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsee6052a1dc7d51fa71aade236f9172ea52a30f2e crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsee701197c16df4a24039e5e8a6008803859c32e4 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf02626087567221762e9ca89cf2dba05864dda64 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf06e864d487621b6571aa8966d94a00fd121dfd6 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf3d90f66c2a6941a69ddbd45c2f06dd23e1c5132 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf8575a4da47928fe6c890ee48c11bc46dbc44fbc crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf948ae8b03f6ad7712c4dde74ccb28f786d4a7f1 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsf9fabc903f7673fea839bf89113e8d98d493674e crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsfa660f56796c4a1cdfab5721fd142a4f16f6ce57 crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:crsfb1198ca2960aac554d0aeca2ee456bf57eea653 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:crsff0af3f7a5b86a4ef6e8b7ef5aeb1a802e99b241 crs-rec:hasSpecialTag "communication_intensive"^^xsd:string .
+
+crs-rec-ind:degBSInCSCI crs-rec:hasRequirement crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e .
+
+crs-rec-ind:ccr025faa7b4298e75fdec2e4498b8ba6584337863d a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "communication_intensive"^^xsd:string ;
+    crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string,
+        "COGS"^^xsd:string,
+        "COMM"^^xsd:string,
+        "ECON"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "LANG"^^xsd:string,
+        "LITR"^^xsd:string,
+        "PHIL"^^xsd:string,
+        "PSYC"^^xsd:string,
+        "STSH"^^xsd:string,
+        "STSS"^^xsd:string,
+        "WRIT"^^xsd:string .
+
+crs-rec-ind:ccr09e6d53960ce7e37ab89a26abee63ee16b8853a1 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccr0bbeccf7787596b96317c648caa72e496ddb0116 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "COGS-4330"^^xsd:string,
+        "COGS-4360"^^xsd:string,
+        "COGS-4600"^^xsd:string,
+        "COGS-4610"^^xsd:string,
+        "COGS-4700"^^xsd:string,
+        "IHSS-19XX"^^xsd:string,
+        "PSYC-4320"^^xsd:string,
+        "PSYC-4330"^^xsd:string,
+        "PSYC-4500"^^xsd:string,
+        "PSYC-4600"^^xsd:string,
+        "PSYC-4610"^^xsd:string,
+        "PSYC-4700"^^xsd:string .
+
+crs-rec-ind:ccr0ee859de812daade6bba915b74d6ab44e11d5887 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string,
+        "COGS"^^xsd:string,
+        "COMM"^^xsd:string,
+        "ECON"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "LANG"^^xsd:string,
+        "LITR"^^xsd:string,
+        "PHIL"^^xsd:string,
+        "PSYC"^^xsd:string,
+        "STSH"^^xsd:string,
+        "STSS"^^xsd:string,
+        "WRIT"^^xsd:string ;
+    crs-rec:hasValidLevelMax 2000 .
+
+crs-rec-ind:ccr109364715cf6f444e46fe4e182b1d18043385040 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "vision_graphics_robotics_and_games_concentration"^^xsd:string .
+
+crs-rec-ind:ccr18282f3d45ffb1239009a9189c8990952eafec7a a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "MATH-2010"^^xsd:string,
+        "MATH-4030"^^xsd:string,
+        "MATH-4040"^^xsd:string,
+        "MATH-4100"^^xsd:string,
+        "MATP-4600"^^xsd:string .
+
+crs-rec-ind:ccr214355946518c130083c0740887a1869d34f9e96 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "ARTS-1050"^^xsd:string,
+        "IHSS-1080"^^xsd:string,
+        "IHSS-1170"^^xsd:string,
+        "IHSS-1300"^^xsd:string,
+        "IHSS-1700"^^xsd:string,
+        "IHSS-1960"^^xsd:string .
+
+crs-rec-ind:ccr28ab76a67ce02278a4765d1829462a7710019cc0 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "COGS-4330"^^xsd:string,
+        "COGS-4360"^^xsd:string,
+        "COGS-4600"^^xsd:string,
+        "COGS-4610"^^xsd:string,
+        "COGS-4700"^^xsd:string,
+        "PSYC-4320"^^xsd:string,
+        "PSYC-4330"^^xsd:string,
+        "PSYC-4500"^^xsd:string,
+        "PSYC-4600"^^xsd:string,
+        "PSYC-4610"^^xsd:string,
+        "PSYC-4700"^^xsd:string .
+
+crs-rec-ind:ccr29d3bd44a03cbe45ab18a2c71fe4a6684974b44e a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "COGS"^^xsd:string,
+        "ECON"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "PSYC"^^xsd:string,
+        "STSS"^^xsd:string .
+
+crs-rec-ind:ccr402543aa5b6ef4e6359b14a3101e56f84ac921a2 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccr49d3fa8f256279846abf3ac192e608906f1e6f1d a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "csci_URP"^^xsd:string .
+
+crs-rec-ind:ccr4e9e99f202575402f5c328d44aba8f51e9d4a1d8 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "CSCI-1100"^^xsd:string,
+        "CSCI-1200"^^xsd:string,
+        "CSCI-2200"^^xsd:string,
+        "CSCI-2300"^^xsd:string,
+        "CSCI-2500"^^xsd:string,
+        "CSCI-2600"^^xsd:string,
+        "CSCI-4210"^^xsd:string,
+        "CSCI-4430"^^xsd:string .
+
+crs-rec-ind:ccr527f0dc44846f51592ffadfbd7970dec8a0e07ed a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string,
+        "COMM"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "LANG"^^xsd:string,
+        "LITR"^^xsd:string,
+        "PHIL"^^xsd:string,
+        "STSH"^^xsd:string,
+        "WRIT"^^xsd:string .
+
+crs-rec-ind:ccr5a9b245b2af51a7b021a10d532b88f33418a97ca a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "CSCI"^^xsd:string ;
+    crs-rec:hasValidLevelMin 4000 .
+
+crs-rec-ind:ccr5d72dfae1167483bf11b01715a6040c14e7742f7 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string,
+        "COGS"^^xsd:string,
+        "COMM"^^xsd:string,
+        "ECON"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "LANG"^^xsd:string,
+        "LITR"^^xsd:string,
+        "PHIL"^^xsd:string,
+        "PSYC"^^xsd:string,
+        "STSH"^^xsd:string,
+        "STSS"^^xsd:string,
+        "WRIT"^^xsd:string .
+
+crs-rec-ind:ccr6e1f2e3570601fa5240b571b9b01a6d35463826a a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccr75412c82865cc09a70af795c6354394b4975c406 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "MATH"^^xsd:string ;
+    crs-rec:hasValidLevelMin 4000 .
+
+crs-rec-ind:ccr79a36c1af79f9c7271a61771aab09de994fccd4f a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccr8f91b1ab68b43429a8b4dfe3a0dfc76fadd05aa5 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "theory_and_algorithms_concentration"^^xsd:string .
+
+crs-rec-ind:ccr93770a9bb282283422f7dd85805d0cd49538c860 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "COGS-4410"^^xsd:string,
+        "COGS-4420"^^xsd:string,
+        "COGS-4640"^^xsd:string,
+        "COGS-4880"^^xsd:string,
+        "COGS-4960"^^xsd:string,
+        "PHIL-4960"^^xsd:string,
+        "PHIL-4961"^^xsd:string .
+
+crs-rec-ind:ccr93eee2c1360f7aee30af03e44b847753d48daa44 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "COGS-2120"^^xsd:string .
+
+crs-rec-ind:ccr97d6abecf40250874c0a8dfe263573c34d8d3996 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "MATH-2800"^^xsd:string .
+
+crs-rec-ind:ccra2db7e0c16303d1a7936932cc90a36759c8c0f1e a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "systems_and_software_concentration"^^xsd:string .
+
+crs-rec-ind:ccrb07e6af61beff05daca28defa616c322fff3089a a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "BIOL-1010"^^xsd:string,
+        "BIOL-1015"^^xsd:string,
+        "MATH-1010"^^xsd:string,
+        "MATH-1020"^^xsd:string,
+        "PHYS-1100"^^xsd:string .
+
+crs-rec-ind:ccrb0c55567a307f315bb8c52d842e0ff25488a6ac2 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "PSYC-1200"^^xsd:string .
+
+crs-rec-ind:ccrb25d21e74c4eb2b90d772def91690780cef1c16c a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "MATH"^^xsd:string,
+        "MATP"^^xsd:string ;
+    crs-rec:hasValidLevelMin 2000 .
+
+crs-rec-ind:ccrbc3d999d0e79e4a7ab98e804980787ae7606c742 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ASTR"^^xsd:string,
+        "BCBP"^^xsd:string,
+        "BIOL"^^xsd:string,
+        "CHEM"^^xsd:string,
+        "CSCI"^^xsd:string,
+        "ERTH"^^xsd:string,
+        "ISCI"^^xsd:string,
+        "MATH"^^xsd:string,
+        "MATP"^^xsd:string,
+        "PHYS"^^xsd:string .
+
+crs-rec-ind:ccrc55bd9836f462aff88c7ef12176578659ab78e6f a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ARTS"^^xsd:string,
+        "COGS"^^xsd:string,
+        "COMM"^^xsd:string,
+        "ECON"^^xsd:string,
+        "GSAS"^^xsd:string,
+        "HCDE"^^xsd:string,
+        "IHSS"^^xsd:string,
+        "LANG"^^xsd:string,
+        "LITR"^^xsd:string,
+        "PHIL"^^xsd:string,
+        "PSYC"^^xsd:string,
+        "STSH"^^xsd:string,
+        "STSS"^^xsd:string,
+        "WRIT"^^xsd:string ;
+    crs-rec:hasValidLevelMin 4000 .
+
+crs-rec-ind:ccrcc34ff7640a8858fd25b61799cfd3630776cdd58 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccrd32b0fa3456299ee80f97cb11a88028e08fe8d44 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "IHSS"^^xsd:string .
+
+crs-rec-ind:ccrd5f4203dc20b1f30bf9b7ceefcd7725e9e8f70f9 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasSpecialTag "artificial_intelligence_and_data_concentration"^^xsd:string .
+
+crs-rec-ind:ccrde536eaf613b66733c95cdc4f7a7d2990f40623e a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccre2fa3d627da9e9a4cb291f1eb3fd16ed05b5c152 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccre94c0e71a1a28fd3a185bfa491b0f2a25f856ae9 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidLevelMin 0 .
+
+crs-rec-ind:ccreeeb20f745017ab16213343130b59c1bf5fa1111 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidDepartmentCodeTag "ASTR"^^xsd:string,
+        "BIOL"^^xsd:string,
+        "CHEM"^^xsd:string,
+        "ERTH"^^xsd:string,
+        "PHYS"^^xsd:string .
+
+crs-rec-ind:ccref2f4ab79985da13535cfd98dc0ec441c1b41df3 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "IHSS-1140"^^xsd:string,
+        "IHSS-1235"^^xsd:string,
+        "IHSS-1972"^^xsd:string .
+
+crs-rec-ind:ccrf3e70ed74d77336538a39ebed4ec5963495cc906 a owl:NamedIndividual,
+        crs-rec:CourseCodeRestriction ;
+    crs-rec:hasValidCourseCodeTag "ARTS-2500"^^xsd:string,
+        "ARTS-2540"^^xsd:string,
+        "ARTS-4130"^^xsd:string .
+
+crs-rec-ind:req03afc4f0eb3158a9bbfa7bb34621079b21ae17a7 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_math_option_2_restriction_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr97d6abecf40250874c0a8dfe263573c34d8d3996 ;
+    crs-rec:requiresCredits 1 .
+
+crs-rec-ind:req3285be9e31d56f4b26d2bfbe9d099789c57f6f4e a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_course_capstone_vis_graphic_robo_game_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr109364715cf6f444e46fe4e182b1d18043385040 ;
+    crs-rec:requiresCredits 12 .
+
+crs-rec-ind:req57f4d8604a3eb238e93a74deee1fcd56cf06786a a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_art_history_2"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req98bd39b4256d189b2256216e1f9a6f8613937b54 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrf3e70ed74d77336538a39ebed4ec5963495cc906 ;
+    crs-rec:requiresCredits 8 .
+
+crs-rec-ind:req6c32b81c8307cbc8b91475d87aac428126ba23f3 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "science_math_science_core_req_1"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrb07e6af61beff05daca28defa616c322fff3089a ;
+    crs-rec:requiresCredits 16 .
+
+crs-rec-ind:req74ee274db53732de44bf5f89477bd1035998f887 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_ai_1"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccref2f4ab79985da13535cfd98dc0ec441c1b41df3 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req78bfe87134bb213bbae2fd3e0f9e2235655a1be9 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_art_history_1"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req98bd39b4256d189b2256216e1f9a6f8613937b54 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr214355946518c130083c0740887a1869d34f9e96 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req78e077dfe6014ee50f8fac4e06b2ae06333cc271 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_option_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr5a9b245b2af51a7b021a10d532b88f33418a97ca ;
+    crs-rec:requiresCredits 16 .
+
+crs-rec-ind:req82596e4cc74dbe4a3b6b4c610bfb9f3887b9459f a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_course_capstone_theory_and_alg_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr8f91b1ab68b43429a8b4dfe3a0dfc76fadd05aa5 ;
+    crs-rec:requiresCredits 12 .
+
+crs-rec-ind:req850b443f2bc63e557b9aeccd841a2f126e336af7 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_neuroscience_2_4k"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req9c8a26e36c8364e00f6dea783554a38c6fb902fc ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr28ab76a67ce02278a4765d1829462a7710019cc0 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req8d296f9a2cdd2c3e57c7741243db0677f7a93ba0 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_research_capstone_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqae4289fd7815ec563f927cc14309b63a797ab630 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr49d3fa8f256279846abf3ac192e608906f1e6f1d ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:reqa9d008ee22cdc6cb41889a7090d5ffbee27f7d2c a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_course_capstone_sys_and_software_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccra2db7e0c16303d1a7936932cc90a36759c8c0f1e ;
+    crs-rec:requiresCredits 12 .
+
+crs-rec-ind:reqaa7ae1fe56f541d660cf0e646914286b7e7d5196 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_neuroscience_1"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req6909ea408430a8a25c91669fb9d0f020f239cb42 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrb0c55567a307f315bb8c52d842e0ff25488a6ac2 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:reqba061aa54aa965f94e203dc4850fd2c25fe638ee a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_course_capstone_ai_and_data_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrd5f4203dc20b1f30bf9b7ceefcd7725e9e8f70f9 ;
+    crs-rec:requiresCredits 12 .
+
+crs-rec-ind:reqdb1f5c9ab75bd1486b749aa0e3d16d81cc665d5c a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_ai_2"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr93eee2c1360f7aee30af03e44b847753d48daa44 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:reqeafc296e54e48c7a33178e78aca947bd2241d952 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_ai_3"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr93770a9bb282283422f7dd85805d0cd49538c860 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req20cb17c4247567cc4c630265572873d8ea15d2b2 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_science_option_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccreeeb20f745017ab16213343130b59c1bf5fa1111 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req9c8a26e36c8364e00f6dea783554a38c6fb902fc a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_neuroscience_2"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req6909ea408430a8a25c91669fb9d0f020f239cb42,
+        crs-rec-ind:req850b443f2bc63e557b9aeccd841a2f126e336af7 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr0bbeccf7787596b96317c648caa72e496ddb0116 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req850b443f2bc63e557b9aeccd841a2f126e336af7 ;
+    crs-rec:requiresCredits 8 .
+
+crs-rec-ind:reqe29978dd3d6ce495c371fda071f87f6c36f0739f a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_csci_core_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr4e9e99f202575402f5c328d44aba8f51e9d4a1d8 ;
+    crs-rec:requiresCredits 32 .
+
+crs-rec-ind:req6909ea408430a8a25c91669fb9d0f020f239cb42 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_neuroscience"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:req9c8a26e36c8364e00f6dea783554a38c6fb902fc,
+        crs-rec-ind:reqaa7ae1fe56f541d660cf0e646914286b7e7d5196 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr09e6d53960ce7e37ab89a26abee63ee16b8853a1 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req9c8a26e36c8364e00f6dea783554a38c6fb902fc,
+        crs-rec-ind:reqaa7ae1fe56f541d660cf0e646914286b7e7d5196 ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:req89f949a7b7936c11bc9cdeb3769b889142677e2d a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "science_math_science_core_req_2"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:reqb0cc161b11cb3962de0385212f54a3a0d1bc43e5,
+        crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr75412c82865cc09a70af795c6354394b4975c406 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req98bd39b4256d189b2256216e1f9a6f8613937b54 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_art_history"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req57f4d8604a3eb238e93a74deee1fcd56cf06786a,
+        crs-rec-ind:req78bfe87134bb213bbae2fd3e0f9e2235655a1be9,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrcc34ff7640a8858fd25b61799cfd3630776cdd58 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req57f4d8604a3eb238e93a74deee1fcd56cf06786a,
+        crs-rec-ind:req78bfe87134bb213bbae2fd3e0f9e2235655a1be9 ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:reqae4289fd7815ec563f927cc14309b63a797ab630 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_capstone_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req8d296f9a2cdd2c3e57c7741243db0677f7a93ba0,
+        crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902,
+        crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr6e1f2e3570601fa5240b571b9b01a6d35463826a ;
+    crs-rec:isFulfilledBy crs-rec-ind:req8d296f9a2cdd2c3e57c7741243db0677f7a93ba0,
+        crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:reqb0cc161b11cb3962de0385212f54a3a0d1bc43e5 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_math_option_1_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:req89f949a7b7936c11bc9cdeb3769b889142677e2d,
+        crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr18282f3d45ffb1239009a9189c8990952eafec7a ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_ai"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req74ee274db53732de44bf5f89477bd1035998f887,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqdb1f5c9ab75bd1486b749aa0e3d16d81cc665d5c,
+        crs-rec-ind:reqeafc296e54e48c7a33178e78aca947bd2241d952 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrde536eaf613b66733c95cdc4f7a7d2990f40623e ;
+    crs-rec:hasSubRequirement crs-rec-ind:req74ee274db53732de44bf5f89477bd1035998f887,
+        crs-rec-ind:reqdb1f5c9ab75bd1486b749aa0e3d16d81cc665d5c,
+        crs-rec-ind:reqeafc296e54e48c7a33178e78aca947bd2241d952 ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_math_science_option_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req20cb17c4247567cc4c630265572873d8ea15d2b2,
+        crs-rec-ind:reqb0cc161b11cb3962de0385212f54a3a0d1bc43e5,
+        crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4,
+        crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccre94c0e71a1a28fd3a185bfa491b0f2a25f856ae9 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req20cb17c4247567cc4c630265572873d8ea15d2b2,
+        crs-rec-ind:reqb0cc161b11cb3962de0385212f54a3a0d1bc43e5,
+        crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4 ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_math_option_2_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req03afc4f0eb3158a9bbfa7bb34621079b21ae17a7,
+        crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:req89f949a7b7936c11bc9cdeb3769b889142677e2d,
+        crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2 ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrb25d21e74c4eb2b90d772def91690780cef1c16c ;
+    crs-rec:hasRestriction crs-rec-ind:req03afc4f0eb3158a9bbfa7bb34621079b21ae17a7 ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_1k_restriction_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr0ee859de812daade6bba915b74d6ab44e11d5887 ;
+    crs-rec:requiresCredits 12 .
+
+crs-rec-ind:reqee67b3194b768cccc1d840d53504ebdc5fbaf902 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_course_capstone_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req3285be9e31d56f4b26d2bfbe9d099789c57f6f4e,
+        crs-rec-ind:req82596e4cc74dbe4a3b6b4c610bfb9f3887b9459f,
+        crs-rec-ind:reqa9d008ee22cdc6cb41889a7090d5ffbee27f7d2c,
+        crs-rec-ind:reqae4289fd7815ec563f927cc14309b63a797ab630,
+        crs-rec-ind:reqba061aa54aa965f94e203dc4850fd2c25fe638ee ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr402543aa5b6ef4e6359b14a3101e56f84ac921a2 ;
+    crs-rec:isFulfilledBy crs-rec-ind:req3285be9e31d56f4b26d2bfbe9d099789c57f6f4e,
+        crs-rec-ind:req82596e4cc74dbe4a3b6b4c610bfb9f3887b9459f,
+        crs-rec-ind:reqa9d008ee22cdc6cb41889a7090d5ffbee27f7d2c,
+        crs-rec-ind:reqba061aa54aa965f94e203dc4850fd2c25fe638ee ;
+    crs-rec:requiresCredits 0 .
+
+crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_4k_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrc55bd9836f462aff88c7ef12176578659ab78e6f ;
+    crs-rec:requiresCredits 4 .
+
+crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "csci_bachelor_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:req78e077dfe6014ee50f8fac4e06b2ae06333cc271,
+        crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2,
+        crs-rec-ind:reqae4289fd7815ec563f927cc14309b63a797ab630,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqe29978dd3d6ce495c371fda071f87f6c36f0739f ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr79a36c1af79f9c7271a61771aab09de994fccd4f ;
+    crs-rec:hasSubRequirement crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde,
+        crs-rec-ind:req78e077dfe6014ee50f8fac4e06b2ae06333cc271,
+        crs-rec-ind:reqa323d5f642970db3393d958ea2e8c6510032e1e2,
+        crs-rec-ind:reqae4289fd7815ec563f927cc14309b63a797ab630,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqe29978dd3d6ce495c371fda071f87f6c36f0739f ;
+    crs-rec:requiresCredits 128 .
+
+crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_social_science_dist_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr29d3bd44a03cbe45ab18a2c71fe4a6684974b44e ;
+    crs-rec:requiresCredits 3 .
+
+crs-rec-ind:req5f790f12a27e66b3f8c6534a79003cb5910d7fde a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "science_math_science_core_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req20cb17c4247567cc4c630265572873d8ea15d2b2,
+        crs-rec-ind:req6c32b81c8307cbc8b91475d87aac428126ba23f3,
+        crs-rec-ind:req89f949a7b7936c11bc9cdeb3769b889142677e2d,
+        crs-rec-ind:reqb0cc161b11cb3962de0385212f54a3a0d1bc43e5,
+        crs-rec-ind:reqe29978dd3d6ce495c371fda071f87f6c36f0739f,
+        crs-rec-ind:reqee79d14ba764877794eb760c03c39692d201f5d4,
+        crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrbc3d999d0e79e4a7ab98e804980787ae7606c742 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req6c32b81c8307cbc8b91475d87aac428126ba23f3,
+        crs-rec-ind:req89f949a7b7936c11bc9cdeb3769b889142677e2d ;
+    crs-rec:requiresCredits 46 .
+
+crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_inquery_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccrd32b0fa3456299ee80f97cb11a88028e08fe8d44 ;
+    crs-rec:requiresCredits 3 .
+
+crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_communication_intensive_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr025faa7b4298e75fdec2e4498b8ba6584337863d ;
+    crs-rec:requiresCredits 3 .
+
+crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_humanities_dist_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr527f0dc44846f51592ffadfbd7970dec8a0e07ed ;
+    crs-rec:requiresCredits 3 .
+
+crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_core_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb,
+        crs-rec-ind:reqfd44455d4e7c62e5f83dde9ab7da8583adbfd31e ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccr5d72dfae1167483bf11b01715a6040c14e7742f7 ;
+    crs-rec:hasRestriction crs-rec-ind:reqb37555d4d3a17a4b34c54ece0ec76f90305538b9 ;
+    crs-rec:hasSubRequirement crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:requiresCredits 24 .
+
+crs-rec-ind:req8f6f9f1f348a0eaa9957d387dfb6704c26a6f996 a owl:NamedIndividual,
+        crs-rec:Requirement ;
+    rdfs:label "hass_pathway_req"^^xsd:string ;
+    crs-rec:canShareCreditsWith crs-rec-ind:req4b59c74728564dca2af2003705a40ec1f134b874,
+        crs-rec-ind:req64d4d5918fa8774cf105e0d6b397328828898bbb,
+        crs-rec-ind:req6909ea408430a8a25c91669fb9d0f020f239cb42,
+        crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5,
+        crs-rec-ind:req98bd39b4256d189b2256216e1f9a6f8613937b54,
+        crs-rec-ind:reqbbf0c827d4009fdd91575d3974c3e9be28909b6c,
+        crs-rec-ind:reqbe9d8f174ce8fdfb916ea9fb98b184c35f7c1252,
+        crs-rec-ind:reqbee2d01d40003ffa68aacbc79814578cbdc409ca,
+        crs-rec-ind:reqcd7c501cab395be83c75becbe5ffc2df418cebeb ;
+    crs-rec:hasCourseCodeRestriction crs-rec-ind:ccre2fa3d627da9e9a4cb291f1eb3fd16ed05b5c152 ;
+    crs-rec:isFulfilledBy crs-rec-ind:req6909ea408430a8a25c91669fb9d0f020f239cb42,
+        crs-rec-ind:req6d592efc680afdd38ba59bbb9491435f1adc14c5,
+        crs-rec-ind:req98bd39b4256d189b2256216e1f9a6f8613937b54 ;
+    crs-rec:requiresCredits 0 .
+

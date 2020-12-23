@@ -6,6 +6,8 @@ import ast
 from unidecode import unidecode
 import csv
 import hashlib
+import yaml
+
 
 # quick and dirty implementation to parse yacs data csv into rdf.
 
@@ -17,6 +19,9 @@ offerings_save_file = str((DATA_DIR / offerings_save_file).resolve())
 
 user_save_file = 'users.ttl'
 user_save_file = str((DATA_DIR / user_save_file).resolve())
+
+graduation_req_save_file = 'parsed_grad_requirements.ttl'
+graduation_req_save_file = str((DATA_DIR / graduation_req_save_file).resolve())
 
 RAW_DIR = (PROJECT_ROOT / "data/raw").resolve()
 # savename = 'yacs_course_data_v1.ttl'
@@ -31,6 +36,11 @@ transcript_files = {
     'jacob': (RAW_DIR / 'js_transcript.csv').resolve(),
     'kelly': (RAW_DIR / 'kf_transcript.csv').resolve()
 }
+
+graduation_req_file = 'graduation_requirements.yaml'
+graduation_req_file = str((RAW_DIR / graduation_req_file).resolve())
+
+
 
 LIMIT_COURSE_DEPT = False
 COURSE_DEPT_CHOICES = ['CSCI', 'COGS']
@@ -75,6 +85,7 @@ def setup_graph_and_data(load_files):
 
     return graph, data_rows, name_to_index
 
+
 def semester_to_uri(term, year):
     hasher = hashlib.sha1()
     hasher.update(term.encode('utf-8'))
@@ -112,6 +123,17 @@ def scheduled_course_sec_schedule_uri(*, course_code, section, semester):
     hasher.update(semester.encode('utf-8'))
     hasher.update("SCHEDULE".encode('utf-8'))
     return entity_ns[f'sched{hasher.hexdigest()}']
+
+def grad_req_id_to_uri(req_id):
+    hasher = hashlib.sha1()
+    hasher.update(str(req_id).encode('utf-8'))
+    return entity_ns[f'req{hasher.hexdigest()}']
+
+def course_restriction_to_uri(req_id):
+    hasher = hashlib.sha1()
+    hasher.update(str(req_id).encode('utf-8'))
+    hasher.update('course_code_restriction'.encode('utf-8'))
+    return entity_ns[f'ccr{hasher.hexdigest()}']
 
 
 def get_time_int(time_str):
@@ -174,12 +196,24 @@ for row in data_rows[1:]:
     graph.add((course_uri, CRS_NS['hasDescription'], rdflib.Literal(description, datatype=XSD.string)))
     graph.add((course_uri, CRS_NS['hasTopic'], placeholder_topic_uri))
 
+    # offerings, need to enhance later such as checking crosslistings or checking real offerings
+    raw_offer_freq = row[name_to_index['offer_frequency']].lower()
+    if 'fall' in raw_offer_freq:
+        graph.add((course_uri, CRS_NS['offerTerm'], rdflib.Literal("FALL", datatype=XSD.string)))
+    if 'spring' in raw_offer_freq:
+        graph.add((course_uri, CRS_NS['offerTerm'], rdflib.Literal("SPRING", datatype=XSD.string)))
+    if 'annual' in raw_offer_freq:
+        graph.add((course_uri, CRS_NS['offerPeriod'], rdflib.Literal("ANNUAL", datatype=XSD.string)))
+    elif 'even-num' in raw_offer_freq:
+        graph.add((course_uri, CRS_NS['offerPeriod'], rdflib.Literal("EVEN", datatype=XSD.string)))
+    elif 'odd-num' in raw_offer_freq:
+        graph.add((course_uri, CRS_NS['offerPeriod'], rdflib.Literal("ODD", datatype=XSD.string)))
+
     graph.add((course_code_uri, RDF_NS['type'], CRS_NS['CourseCode']))
     graph.add((course_code_uri, RDF_NS['type'], OWL['NamedIndividual']))
     graph.add((course_code_uri, CRS_NS['hasLevel'], rdflib.Literal(level, datatype=XSD.float)))
     graph.add((course_code_uri, CRS_NS['hasDepartmentCode'], dept_code_uri))
     graph.add((course_code_uri, LCC_LR_NS['hasTag'], rdflib.Literal(course_code, datatype=XSD.string)))
-
 
 # TODO: WIP
 # for row in data_rows[1:]:
@@ -294,15 +328,15 @@ def new_usr_uri(rin):
     return entity_ns[f'usr{rin}']
 
 # PLACEHOLDER STUFF
-graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], RDF_NS['type'], CRS_NS['Major']))
-graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], RDF_NS['type'], OWL['NamedIndividual']))
-graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], CRS_NS['hasName'], rdflib.Literal('placeholder computer science major', datatype=XSD.string)))
-graph.add((entity_ns['PLACEHOLDER-MAJOR-1'], CRS_NS['hasDepartment'], entity_ns['dpt0026']))
+graph.add((entity_ns['majCSCI'], RDF_NS['type'], CRS_NS['Major']))
+graph.add((entity_ns['majCSCI'], RDF_NS['type'], OWL['NamedIndividual']))
+graph.add((entity_ns['majCSCI'], CRS_NS['hasName'], rdflib.Literal('placeholder computer science major', datatype=XSD.string)))
+graph.add((entity_ns['majCSCI'], CRS_NS['hasDepartment'], entity_ns['dpt0026']))
 
-graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], RDF_NS['type'], CRS_NS['Degree']))
-graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], RDF_NS['type'], OWL['NamedIndividual']))
-graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], CRS_NS['hasName'], rdflib.Literal('placeholder BS', datatype=XSD.string)))
-graph.add((entity_ns['PLACEHOLDER-DEGREE-1'], CRS_NS['hasPlannedMajor'], entity_ns['PLACEHOLDER-MAJOR-1']))
+graph.add((entity_ns['degBSInCSCI'], RDF_NS['type'], CRS_NS['Degree']))
+graph.add((entity_ns['degBSInCSCI'], RDF_NS['type'], OWL['NamedIndividual']))
+graph.add((entity_ns['degBSInCSCI'], CRS_NS['hasName'], rdflib.Literal('BS in Computer Science', datatype=XSD.string)))
+graph.add((entity_ns['degBSInCSCI'], CRS_NS['hasPlannedMajor'], entity_ns['majCSCI']))
 
 graph.add((entity_ns['PLACEHOLDER-ADVISOR-URI'], RDF_NS['type'], CRS_NS['Advisor']))
 graph.add((entity_ns['PLACEHOLDER-ADVISOR-URI'], RDF_NS['type'], OWL['NamedIndividual']))
@@ -323,8 +357,8 @@ for user, file in transcript_files.items():
     graph.add((pos_uri, RDF_NS['type'], OWL['NamedIndividual']))
     graph.add((pos_uri, CRS_NS['hasClassYear'],
                rdflib.Literal(2021, datatype=XSD.integer)))  # placeholder class yr
-    graph.add((pos_uri, CRS_NS['hasPlannedMajor'], entity_ns['PLACEHOLDER-MAJOR-1']))
-    graph.add((pos_uri, CRS_NS['hasPlannedDegree'], entity_ns['PLACEHOLDER-DEGREE-1']))
+    graph.add((pos_uri, CRS_NS['hasPlannedMajor'], entity_ns['majCSCI']))
+    graph.add((pos_uri, CRS_NS['hasPlannedDegree'], entity_ns['degBSInCSCI']))
     graph.add((user_uri, CRS_NS['hasStudyPlan'], pos_uri))
 
 
@@ -353,7 +387,88 @@ for user, file in transcript_files.items():
 
 graph.serialize(user_save_file, format='ttl')
 
-# if save_combined:
-#     graph.parse('rpi_departments.ttl', format='ttl')
-#     graph.parse('manualcurated_grad_requirements.ttl', format='ttl')
-#     graph.serialize(combine_save_name, format='xml')
+print("----------------------")
+print("----------------------")
+print("----------------------")
+print("----------------------")
+print("----------------------")
+print("----------------------")
+
+with open(graduation_req_file, 'r') as f:
+    grad_data_dict = yaml.load(f)
+grg = rdflib.Graph()
+
+grg.bind('crs-rec', CRS_NS)
+grg.bind('owl', OWL)
+grg.bind('crs-rec-ind', entity_ns)
+
+print(grad_data_dict)
+for deg_id in grad_data_dict['degree_IDs']:
+    deg_uri = entity_ns[deg_id]
+    for req in grad_data_dict['degree_IDs'][deg_id]['has_req']:
+        grg.add((deg_uri, CRS_NS['hasRequirement'], grad_req_id_to_uri(req)))
+
+for spec_tag in grad_data_dict['special_tags']:
+    for course_tag in grad_data_dict['special_tags'][spec_tag]['courses']:
+        course_tag_uri = course_graph.value(predicate=rdflib.URIRef('https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/hasTag'),
+                                            object=rdflib.Literal(course_tag, datatype=XSD.string))
+        course_uri = course_graph.value(predicate=CRS_NS['hasCourseCode'], object=course_tag_uri)
+        if course_uri:
+            grg.add((course_uri, CRS_NS['hasSpecialTag'], rdflib.Literal(spec_tag, datatype=XSD.string)))
+
+for req_id in grad_data_dict['req_IDs']:
+    req_uri = grad_req_id_to_uri(req_id)
+
+    this_req = grad_data_dict['req_IDs'][req_id]
+    grg.add((req_uri, RDF_NS['type'], CRS_NS['Requirement']))
+    grg.add((req_uri, RDF_NS['type'], OWL['NamedIndividual']))
+    grg.add((req_uri, rdflib.namespace.RDFS['label'], rdflib.Literal(req_id, datatype=XSD.string)))
+    mc = this_req.get('req_credits', None)
+
+    if mc is not None:
+        grg.add((req_uri, CRS_NS['requiresCredits'], rdflib.Literal(mc, datatype=XSD.integer)))
+    for subr in this_req.get('sub_req_IDs', []):
+        grg.add((req_uri, CRS_NS['hasSubRequirement'], grad_req_id_to_uri(subr)))
+        grg.add((req_uri, CRS_NS['canShareCreditsWith'], grad_req_id_to_uri(subr)))
+        grg.add((grad_req_id_to_uri(subr), CRS_NS['canShareCreditsWith'], req_uri))
+    for subr in this_req.get('share_credit_IDs', []):
+        grg.add((req_uri, CRS_NS['canShareCreditsWith'], grad_req_id_to_uri(subr)))
+        grg.add((grad_req_id_to_uri(subr), CRS_NS['canShareCreditsWith'], req_uri))
+    for subr in this_req.get('restriction_IDs', []):
+        grg.add((req_uri, CRS_NS['hasRestriction'], grad_req_id_to_uri(subr)))
+        grg.add((req_uri, CRS_NS['canShareCreditsWith'], grad_req_id_to_uri(subr)))
+        grg.add((grad_req_id_to_uri(subr), CRS_NS['canShareCreditsWith'], req_uri))
+    for subr in this_req.get('fulfillable_by_IDs', []):
+        grg.add((req_uri, CRS_NS['isFulfilledBy'], grad_req_id_to_uri(subr)))
+        grg.add((req_uri, CRS_NS['canShareCreditsWith'], grad_req_id_to_uri(subr)))
+        grg.add((grad_req_id_to_uri(subr), CRS_NS['canShareCreditsWith'], req_uri))
+
+    vc = this_req.get('valid_courses', None)
+    if vc:
+        ccr_uri = course_restriction_to_uri(req_id)
+
+        grg.add((ccr_uri, RDF_NS['type'], CRS_NS['CourseCodeRestriction']))
+        grg.add((ccr_uri, RDF_NS['type'], OWL['NamedIndividual']))
+        grg.add((req_uri, CRS_NS['hasCourseCodeRestriction'], ccr_uri))
+
+        for valid_code in vc.get('valid_codes', []):
+            grg.add((ccr_uri, CRS_NS['hasValidCourseCodeTag'], rdflib.Literal(valid_code, datatype=XSD.string)))
+
+        for dept_code in vc.get('valid_dept_codes', []):
+            grg.add((ccr_uri, CRS_NS['hasValidDepartmentCodeTag'], rdflib.Literal(dept_code, datatype=XSD.string)))
+
+        for spec_tag in vc.get('special_tags', []):
+            grg.add((ccr_uri, CRS_NS['hasSpecialTag'], rdflib.Literal(spec_tag, datatype=XSD.string)))
+
+        maxlevel = vc.get('max_level', None)
+        if maxlevel is not None:
+            grg.add((ccr_uri, CRS_NS['hasValidLevelMax'], rdflib.Literal(maxlevel, datatype=XSD.integer)))
+
+        minlevel = vc.get('min_level', None)
+        if minlevel is not None:
+            grg.add((ccr_uri, CRS_NS['hasValidLevelMin'], rdflib.Literal(minlevel, datatype=XSD.integer)))
+
+        # print(vc)
+    # print(req_id)
+
+grg.serialize(graduation_req_save_file, format='ttl')
