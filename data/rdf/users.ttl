@@ -514,5 +514,5 @@ crs-rec-ind:degBSInCSCI a owl:NamedIndividual,
 crs-rec-ind:majCSCI a owl:NamedIndividual,
         crs-rec:Major ;
     crs-rec:hasDepartment crs-rec-ind:dpt0026 ;
-    crs-rec:hasName "placeholder computer science major"^^xsd:string .
+    crs-rec:hasName "Computer Science Major"^^xsd:string .
 

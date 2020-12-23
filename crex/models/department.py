@@ -10,5 +10,5 @@ from rdflib import URIRef
 @dataclass(frozen=True)
 class Department(DomainObject):
     name: str
-    offered_major_uris: Tuple[URIRef]
-    offered_degree_uris: Tuple[URIRef]
+    offered_major_uris: Tuple[URIRef, ...]
+    offered_degree_uris: Tuple[URIRef, ...]

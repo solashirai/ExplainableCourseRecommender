@@ -9,5 +9,5 @@ from frex.models import DomainObject
 @dataclass(frozen=True)
 class TopicArea(DomainObject):
     name: str
-    sub_topic_of: Tuple[TopicArea]
+    sub_topic_of: Tuple[TopicArea, ...]
     discipline: str

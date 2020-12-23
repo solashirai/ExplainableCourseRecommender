@@ -20,15 +20,15 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
-    def get_all_courses(self) -> Tuple[Course]:
+    def get_all_courses(self) -> Tuple[Course, ...]:
         pass
 
     @abstractmethod
-    def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course]:
+    def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course, ...]:
         pass
 
     @abstractmethod
-    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
+    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course, ...]:
         pass
 
     @abstractmethod
@@ -52,13 +52,13 @@ class CourseQueryService(ABC):
     @abstractmethod
     def get_course_sections_by_semester(
         self, *, term: str, year: int
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
         pass
 
     @abstractmethod
     def get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
         pass
 
     @abstractmethod
@@ -74,7 +74,7 @@ class CourseQueryService(ABC):
     @abstractmethod
     def get_scheduled_course_sections_by_instructor_uri(
         self, *, instructor_uri: URIRef
-    ) -> Tuple[ScheduledCourseSection]:
+    ) -> Tuple[ScheduledCourseSection, ...]:
         pass
 
     @abstractmethod
@@ -88,13 +88,13 @@ class CourseQueryService(ABC):
         pass
 
     @abstractmethod
-    def get_all_requirements(self) -> Tuple[Requirement]:
+    def get_all_requirements(self) -> Tuple[Requirement, ...]:
         pass
 
     @abstractmethod
     def get_all_requirements_by_degree_uri(
         self, *, degree_uri: URIRef
-    ) -> Tuple[Requirement]:
+    ) -> Tuple[Requirement, ...]:
         pass
 
     @abstractmethod

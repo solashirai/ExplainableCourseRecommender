@@ -11,6 +11,6 @@ from rdflib import URIRef
 @dataclass(frozen=True)
 class CourseCode(DomainObject):
     name: str
-    cross_listed: Tuple[URIRef]
+    cross_listed: Tuple[URIRef, ...]
     course_level: float
     department_code: DepartmentCode

@@ -11,6 +11,6 @@ from rdflib import URIRef
 class ScheduledCourseSection(CourseSection):
     semester: str
     schedule: str  # TODO this maybe should be like, a date time? definitely not a string.
-    instructor_uris: Tuple[URIRef]
-    registered_student_uris: Tuple[URIRef]
+    instructor_uris: Tuple[URIRef, ...]
+    registered_student_uris: Tuple[URIRef, ...]
     course_registration_number: str

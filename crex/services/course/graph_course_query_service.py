@@ -40,17 +40,17 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
         # self.cache_graph = self.queryable.graph
         return self._graph_get_course_by_uri(course_uri=course_uri)
 
-    def get_all_courses(self) -> Tuple[Course]:
+    def get_all_courses(self) -> Tuple[Course, ...]:
         self.get_cache_graph(sparql=J2QueryStrHelper.j2_query(file_name="course_query"))
         # self.cache_graph = self.queryable.graph
         courses = self._graph_get_all_courses()
 
         return courses
 
-    def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course]:
+    def get_courses_by_department_uri(self, *, department_uri: URIRef) -> Tuple[Course, ...]:
         pass
 
-    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course]:
+    def get_courses_by_topic_area(self, *, topic_area: TopicArea) -> Tuple[Course, ...]:
         pass
 
     def get_course_code_by_uri(self, *, course_code_uri: URIRef) -> CourseCode:
@@ -101,7 +101,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def get_course_sections_by_semester(
         self, *, term: str, year: int
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
 
         self.get_cache_graph(
             sparql=J2QueryStrHelper.j2_query(
@@ -122,7 +122,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
         pass
 
     def get_course_section_by_uri(self, *, course_section_uri: URIRef) -> CourseSection:
@@ -151,7 +151,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def get_scheduled_course_sections_by_instructor_uri(
         self, *, instructor_uri: URIRef
-    ) -> Tuple[ScheduledCourseSection]:
+    ) -> Tuple[ScheduledCourseSection, ...]:
         pass
 
     def get_scheduled_course_section_by_crn(
@@ -159,7 +159,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     ) -> ScheduledCourseSection:
         pass
 
-    def get_all_requirements(self) -> Tuple[Requirement]:
+    def get_all_requirements(self) -> Tuple[Requirement, ...]:
         self.get_cache_graph(
             sparql=J2QueryStrHelper.j2_query(file_name="requirement_query")
         )
@@ -170,7 +170,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def get_all_requirements_by_degree_uri(
         self, *, degree_uri: URIRef
-    ) -> Tuple[Requirement]:
+    ) -> Tuple[Requirement, ...]:
         self.get_cache_graph(
             sparql=J2QueryStrHelper.j2_query(
                 file_name="requirement_for_degree_query",
@@ -291,7 +291,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             offering_period=offering_period
         )
 
-    def _graph_get_all_courses(self) -> Tuple[Course]:
+    def _graph_get_all_courses(self) -> Tuple[Course, ...]:
 
         courses = []
         for course_uri in self.cache_graph.subjects(RDF_NS["type"], CRS_NS["Course"]):
@@ -301,12 +301,12 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def _graph_get_courses_by_department_uri(
         self, *, department_uri: URIRef
-    ) -> Tuple[Course]:
+    ) -> Tuple[Course, ...]:
         pass
 
     def _graph_get_courses_by_topic_area(
         self, *, topic_area: TopicArea
-    ) -> Tuple[Course]:
+    ) -> Tuple[Course, ...]:
         pass
 
     def _graph_get_course_by_course_code_uri(
@@ -355,7 +355,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def _graph_get_course_sections_by_semester(
         self, *, term: str, year: int
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
         target_semester_uri = None
         for cand_uri in self.cache_graph.subjects(
             CRS_NS["hasTerm"], Literal(term, datatype=XSD.string)
@@ -384,7 +384,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def _graph_get_course_sections_by_course_uri(
         self, *, course_uri: URIRef
-    ) -> Tuple[CourseSection]:
+    ) -> Tuple[CourseSection, ...]:
         pass
 
     def _graph_get_course_section_by_uri(
@@ -416,7 +416,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
 
     def _graph_get_scheduled_course_sections_by_instructor_uri(
         self, *, instructor_uri: URIRef
-    ) -> Tuple[ScheduledCourseSection]:
+    ) -> Tuple[ScheduledCourseSection, ...]:
         pass
 
     def _graph_get_scheduled_course_section_by_crn(
@@ -424,7 +424,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
     ) -> ScheduledCourseSection:
         pass
 
-    def _graph_get_all_requirements(self) -> Tuple[Requirement]:
+    def _graph_get_all_requirements(self) -> Tuple[Requirement, ...]:
         requirements = []
         for requirement_uri in self.cache_graph.subjects(
             RDF_NS["type"], CRS_NS["Requirement"]

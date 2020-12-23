@@ -330,7 +330,7 @@ def new_usr_uri(rin):
 # PLACEHOLDER STUFF
 graph.add((entity_ns['majCSCI'], RDF_NS['type'], CRS_NS['Major']))
 graph.add((entity_ns['majCSCI'], RDF_NS['type'], OWL['NamedIndividual']))
-graph.add((entity_ns['majCSCI'], CRS_NS['hasName'], rdflib.Literal('placeholder computer science major', datatype=XSD.string)))
+graph.add((entity_ns['majCSCI'], CRS_NS['hasName'], rdflib.Literal('Computer Science Major', datatype=XSD.string)))
 graph.add((entity_ns['majCSCI'], CRS_NS['hasDepartment'], entity_ns['dpt0026']))
 
 graph.add((entity_ns['degBSInCSCI'], RDF_NS['type'], CRS_NS['Degree']))

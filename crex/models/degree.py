@@ -12,4 +12,4 @@ from crex.models import Major, Department, Requirement
 class Degree(DomainObject):
     name: str
     major: Major  # currently assuming 1 major
-    requirements: Tuple[Requirement]
+    requirements: Tuple[Requirement, ...]

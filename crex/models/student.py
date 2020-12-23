@@ -12,7 +12,7 @@ from rdflib import URIRef
 class Student(DomainObject):
     name: str
     class_year: str
-    topics_of_interest: Tuple[TopicArea]
-    registered_courses: Tuple[ScheduledCourseSection]
+    topics_of_interest: Tuple[TopicArea, ...]
+    registered_courses: Tuple[ScheduledCourseSection, ...]
     advisor: URIRef
     study_plan: PlanOfStudy

@@ -11,9 +11,9 @@ from rdflib import URIRef
 @dataclass(frozen=True)
 class Requirement(DomainObject):
     # TODO: Requirements probably will change drastically.
-    fulfilled_by_requirement_uris: Tuple[URIRef]
-    sub_requirement_uris: Tuple[URIRef]
-    restriction_requirement_uris: Tuple[URIRef]
-    share_credits_with_requirement_uris: Tuple[URIRef]
+    fulfilled_by_requirement_uris: Tuple[URIRef, ...]
+    sub_requirement_uris: Tuple[URIRef, ...]
+    restriction_requirement_uris: Tuple[URIRef, ...]
+    share_credits_with_requirement_uris: Tuple[URIRef, ...]
     course_code_restriction: CourseCodeRestriction
     requires_credits: int = 0
