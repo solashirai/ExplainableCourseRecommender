@@ -55,7 +55,10 @@ def pl_course(csci_dept_code, csci_dept):
                     "generic), and formal language definition.",
         special_tags=frozenset(),
 
-        required_prerequisites=frozenset(),
+        required_prerequisites=frozenset({
+            individual_ns['crsd930192130a654416bffd45ce16415ee608df66d'],
+            individual_ns['crs9797fa54cb6f077d0e7cf31e23bdbafbbe00e8af']
+        }),
         corequisites=frozenset(),
         recommended_prerequisites=frozenset(),
         topics=frozenset({
@@ -169,7 +172,7 @@ def owen_pos(csci_major, csci_bs_deg):
         class_year=2021,
         planned_major=csci_major,
         planned_degree=csci_bs_deg,
-        completed_course_sections=frozenset({
+        completed_courses=frozenset({
             individual_ns["crsSec0838fe4beedeff7709d32d16ca67c9aa2373dba7"],
             individual_ns["crsSec0cf0d1a768ef7b1d580ac0aaf258257b8c766ecb"],
             individual_ns["crsSec0d060d8550b4d97fa0aa0188e75a213e37114cb5"],
@@ -200,7 +203,7 @@ def owen_pos(csci_major, csci_bs_deg):
             individual_ns["crsSecfb9210e5ca6bd4844b7bf9bdf1cb1c5956f81d08"],
         }),
         ongoing_course_sections=frozenset(),
-        planned_course_sections=frozenset(),
+        planned_courses=frozenset(),
     )
 
 
@@ -220,6 +223,27 @@ def owen_student(owen_pos, placeholder_advisor):
         study_plan=owen_pos,
         name="owen",
         class_year=2021,
+        topics_of_interest=frozenset(),
+        registered_courses=frozenset(),
+        advisor=placeholder_advisor,
+    )
+
+
+@pytest.fixture(scope="session")
+def blank_student(placeholder_advisor, csci_major, csci_bs_deg):
+    return Student(
+        uri=individual_ns['blank_user'],
+        study_plan=PlanOfStudy(
+            uri=individual_ns['blank_user_pos'],
+            class_year=2023,
+            planned_major=csci_major,
+            planned_degree=csci_bs_deg,
+            completed_courses=frozenset({}),
+            ongoing_course_sections=frozenset(),
+            planned_courses=frozenset(),
+        ),
+        name="blank",
+        class_year=2023,
         topics_of_interest=frozenset(),
         registered_courses=frozenset(),
         advisor=placeholder_advisor,
