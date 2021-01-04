@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # for testing locally
 kg_files = tuple((DATA_DIR / file).resolve() for file in [
-    "yacs_course_data_v1.ttl",
+    "yacs_course_data.ttl",
     "rpi_departments.ttl",
     "manualcurated_grad_requirements.ttl",
 ])
@@ -58,7 +58,7 @@ def dummy_recommend_courses():
     context = StudentPOSRequirementContext(student=student, plan_of_study=pos,
                                            requirements=frozenset(COURSE_QS.get_all_requirements()))
 
-    rec_courses: Tuple[CourseCandidate] = PLACEHOLDER_PIPE(context=context)
+    rec_courses: Tuple[CourseCandidate, ...] = PLACEHOLDER_PIPE(context=context)
     app.logger.info(f'retrieved recommended courses.')
 
     rec_course_codes = [rc.domain_object.course_code.name for rc in rec_courses]
@@ -78,7 +78,7 @@ def get_course_recommendation_for_student():
     context = StudentPOSRequirementContext(student=student, plan_of_study=pos,
                                            requirements=frozenset(COURSE_QS.get_all_requirements()))
 
-    rec_courses: Tuple[CourseCandidate] = PLACEHOLDER_PIPE(context=context)
+    rec_courses: Tuple[CourseCandidate, ...] = PLACEHOLDER_PIPE(context=context)
     app.logger.info(f'retrieved recommended courses.')
 
     rec_course_codes = [rc.domain_object.course_code.name for rc in rec_courses]
