@@ -601,9 +601,9 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             planned_major=major,
             planned_degree=degree,
             class_year=year,
-            completed_course_sections=completed,
+            completed_courses=completed,
             ongoing_course_sections=ongoing,
-            planned_course_sections=planned,
+            planned_courses=planned,
         )
 
     def _graph_get_advisor_by_uri(self, *, advisor_uri: URIRef) -> Advisor:

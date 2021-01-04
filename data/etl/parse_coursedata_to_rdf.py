@@ -4,6 +4,7 @@ from crex.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS, DATE_NS
 from crex.utils.path import DATA_DIR, PROJECT_ROOT
 import ast
 from unidecode import unidecode
+import json
 import csv
 import hashlib
 import yaml
@@ -190,6 +191,16 @@ for row in data_rows[1:]:
                    rdflib.Literal(1, datatype=XSD.integer)))
     else:
         graph.add((course_uri, CRS_NS['hasCredits'], rdflib.Literal(credit_hours, datatype=XSD.integer)))
+
+    # pre/co requisites probably need to be revisited later for correctness
+    prereqs = eval(row[name_to_index['prerequisites']])
+    for pr_code in prereqs:
+        graph.add((course_uri, CRS_NS['hasRequiredPrerequisite'], course_to_uri(course_code=pr_code)))
+    coreqs = eval(row[name_to_index['corequisites']])
+    for cr_code in coreqs:
+        course_to_uri(course_code=cr_code)
+        graph.add((course_uri, CRS_NS['hasCorequisite'], course_to_uri(course_code=pr_code)))
+
 
     graph.add((course_uri, CRS_NS['hasDepartment'], department_uri))
     graph.add((course_uri, CRS_NS['hasCourseCode'], course_code_uri))

@@ -9,7 +9,7 @@ class RecommendedPrereqScorer(CandidateScorer):
             return 1
         completed_courses = {
             cc.course
-            for cc in candidate.context.plan_of_study.completed_course_sections
+            for cc in candidate.context.plan_of_study.completed_courses
         }
         recommended_fulfilled = sum(
             1

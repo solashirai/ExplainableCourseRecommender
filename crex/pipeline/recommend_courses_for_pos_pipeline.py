@@ -7,13 +7,13 @@ from crex.services.course import CourseQueryService
 from crex.pipeline_stages import *
 
 
-class RecommendCoursesForSemesterPipeline(_Pipeline):
+class RecommendCoursesForPOSPipeline(_Pipeline):
     def __init__(self, *, course_query_service: CourseQueryService):
         self.cqs = course_query_service
         _Pipeline.__init__(
             self,
             candidate_generators=(
-                CourseSectionsInSemesterCandidateGenerator(
+                DummyCourseCandidateGenerator(
                     course_query_service=self.cqs
                 ),
             ),
@@ -23,19 +23,9 @@ class RecommendCoursesForSemesterPipeline(_Pipeline):
                         explanation_string="This is an undergraduate-level course."
                     )
                 ),
-                PrerequisiteUnfulfilledFilter(
-                    filter_explanation=Explanation(
-                        explanation_string="You have fulfilled the required prerequisites to take this course."
-                    )
-                ),
                 CanFulfillPOSRequirementFilter(
                     filter_explanation=Explanation(
                         explanation_string="This course can fulfill some requirement towards your degree."
-                    )
-                ),
-                RecommendedPrereqScorer(
-                    scoring_explanation=Explanation(
-                        explanation_string="You have completed some of the recommended prerequisites for this course."
                     )
                 ),
                 TopicOfInterestScorer(

@@ -26,6 +26,9 @@ class DummyCourseCandidateGenerator(CandidateGenerator):
         # TODO: this is a dummy
         courses = self.cqs.get_all_courses()
 
+        # filter out coursese without credits for now - TODO maybe revisit later
+        courses = tuple(c for c in courses if c.credits and c.credits > 0)
+
         for course in courses:
             yield CourseCandidate(
                 domain_object=course,

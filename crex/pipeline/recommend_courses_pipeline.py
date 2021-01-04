@@ -16,6 +16,11 @@ class RecommendCoursesPipeline(_Pipeline):
                 DummyCourseCandidateGenerator(course_query_service=self.cqs),
             ),
             stages=(
+                UndergradCourseFilter(
+                    filter_explanation=Explanation(
+                        explanation_string="This is an undergraduate-level course."
+                    )
+                ),
                 PrerequisiteUnfulfilledFilter(
                     filter_explanation=Explanation(
                         explanation_string="You have fulfilled the required prerequisites to take this course."

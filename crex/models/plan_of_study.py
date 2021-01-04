@@ -10,9 +10,9 @@ from crex.models import Degree, Major
 @dataclass_json
 @dataclass(frozen=True)
 class PlanOfStudy(DomainObject):
-    class_year: str
+    class_year: int
     planned_major: Major
     planned_degree: Degree
-    completed_course_sections: FrozenSet[URIRef]
+    completed_courses: FrozenSet[URIRef]
     ongoing_course_sections: FrozenSet[URIRef]
-    planned_course_sections: FrozenSet[URIRef]
+    planned_courses: FrozenSet[URIRef]
