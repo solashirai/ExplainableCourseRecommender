@@ -12,12 +12,10 @@ class RecommendCoursesForSemesterPipeline(_Pipeline):
         self.cqs = course_query_service
         _Pipeline.__init__(
             self,
-            candidate_generators=(
+            stages=(
                 CourseSectionsInSemesterCandidateGenerator(
                     course_query_service=self.cqs
                 ),
-            ),
-            stages=(
                 UndergradCourseFilter(
                     filter_explanation=Explanation(
                         explanation_string="This is an undergraduate-level course."

@@ -3,7 +3,7 @@ from crex.services.course import CourseQueryService
 from crex.models import Student, Semester, StudentPOSRequirementContext, CourseCandidate, Course
 from typing import List, Tuple
 from frex.utils import ConstraintSolver
-from frex.utils.constraints import SectionSetConstraint, ConstraintType, SectionConstraintHierarchy
+from frex.models.constraints import SectionSetConstraint, ConstraintType, SectionConstraintHierarchy
 from frex.models import ConstraintSolution, ConstraintSolutionSection
 from rdflib import URIRef
 
@@ -72,6 +72,8 @@ class PlanOfStudyRecommenderService:
         max_credits_per_semester: int = 16,
         min_credits_per_semester: int = 12
     ) -> ConstraintSolution:
+        import time
+        starttime = time.time()
 
         rec_pipe = RecommendCoursesForPOSPipeline(course_query_service=self.cqs)
 
@@ -85,6 +87,7 @@ class PlanOfStudyRecommenderService:
                 req_uri=req.uri, req_dict=req_sharing_relationships, parent_uris=[],
                 all_requirements=all_requirements, all_restriction_uris=all_restriction_uris)
             req_hierarchies.append(req_hierarchy)
+        print('time to get courses and reqs: ', time.time()-starttime)
 
         context = StudentPOSRequirementContext(
             student=student,
@@ -247,9 +250,9 @@ class PlanOfStudyRecommenderService:
 
         for cc_uri in student.study_plan.completed_courses:
             solver.add_required_item_selection(target_uri=cc_uri)
-
-        solution = solver.solve()
-
+        print('setup time: ', time.time()-starttime)
+        solution = solver.solve(output_uri=URIRef("placeholder.com/output_studyplan"))
+        print('time to solution: ', time.time()-starttime)
         return solution
 
     def get_semester_recommendations_for_student(
