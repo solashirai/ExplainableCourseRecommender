@@ -6,7 +6,7 @@ RUN pip install -r /app/requirements.txt
 
 # More likely to change
 COPY /app/ /app/
-COPY /crex/ /app/crex/
+COPY /escore /app/crex/
 COPY /data/ /app/data/
 
 ENV LISTEN_PORT 5000

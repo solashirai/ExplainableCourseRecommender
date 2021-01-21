@@ -1,7 +1,7 @@
 import rdflib
 from rdflib.namespace import XSD, OWL, RDFS
-from crex.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS, DATE_NS
-from crex.utils.path import DATA_DIR, PROJECT_ROOT
+from escore.utils.namespaces import CRS_NS, RDF_NS, LCC_LR_NS, DATE_NS
+from escore.utils.path import DATA_DIR, PROJECT_ROOT
 import ast
 from unidecode import unidecode
 import json

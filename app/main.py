@@ -1,10 +1,10 @@
 from flask import Flask, request, abort
 import rdflib
-from crex.pipeline import RecommendCoursesPipeline
-from crex.services.course import GraphCourseQueryService
-from crex.services import PlanOfStudyRecommenderService
-from crex.utils.path import DATA_DIR
-from crex.models import StudentPOSRequirementContext, CourseCandidate, Student, PlanOfStudy
+from escore.pipeline import RecommendCoursesPipeline
+from escore.services.course import GraphCourseQueryService
+from escore.services import PlanOfStudyRecommenderService
+from escore.utils.path import DATA_DIR
+from escore.models import StudentPOSRequirementContext, CourseCandidate, Student, PlanOfStudy
 from typing import Tuple
 from frex.stores import LocalGraph
 

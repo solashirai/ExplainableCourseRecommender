@@ -1,10 +1,10 @@
 import pytest
 from typing import FrozenSet, Tuple
 from rdflib import URIRef, Namespace
-from crex.models import StudentPOSRequirementContext, Course, Semester
-from crex.models import StudentPOSRequirementContext
-from crex.services import PlanOfStudyRecommenderService
-from crex.pipeline import RecommendCoursesForPOSPipeline
+from escore.models import StudentPOSRequirementContext, Course, Semester
+from escore.models import StudentPOSRequirementContext
+from escore.services import PlanOfStudyRecommenderService
+from escore.pipeline import RecommendCoursesForPOSPipeline
 
 
 def test_generate_semester_course_recommendations(course_qs, owen_student):
