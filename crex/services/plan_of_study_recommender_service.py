@@ -153,16 +153,12 @@ class PlanOfStudyRecommenderService:
                     )
 
         # set up for fake 'semester' objects, to demonstrate assigning recommended courses to semesters
-        fake_semesters = (
-            Semester(uri=URIRef('fakeuri.com/semester/fall2020'), term='FALL', year=2020),
-            Semester(uri=URIRef('fakeuri.com/semester/spring2021'), term='SPRING', year=2021),
-            Semester(uri=URIRef('fakeuri.com/semester/fall2021'), term='FALL', year=2021),
-            Semester(uri=URIRef('fakeuri.com/semester/spring2022'), term='SPRING', year=2022),
-            Semester(uri=URIRef('fakeuri.com/semester/fall2022'), term='FALL', year=2022),
-            Semester(uri=URIRef('fakeuri.com/semester/spring2023'), term='SPRING', year=2023),
-            Semester(uri=URIRef('fakeuri.com/semester/fall2023'), term='FALL', year=2023),
-            Semester(uri=URIRef('fakeuri.com/semester/spring2024'), term='SPRING', year=2024),
-        )
+        end_year = student.class_year
+        fake_semesters = []
+        for yr in range(end_year-4, end_year):
+            fake_semesters.append(Semester(uri=URIRef(f'fakeuri.com/semester/fall{yr}'), term='FALL', year=yr))
+            fake_semesters.append(Semester(uri=URIRef(f'fakeuri.com/semester/spring{yr+1}'), term='SPRING', year=yr+1))
+        fake_semesters = tuple(fake_semesters)
         semester_section_set = (
             SectionSetConstraint()
                 .set_sections(

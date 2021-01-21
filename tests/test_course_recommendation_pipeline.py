@@ -15,7 +15,7 @@ def test_generate_semester_course_recommendations(course_qs, owen_student):
         min_credits_per_semester=12,
         max_credits_per_semester=16,
         term="FALL",
-        year=2020
+        year=2021
     )
 
     # TODO: more checks that the contents are any good...
