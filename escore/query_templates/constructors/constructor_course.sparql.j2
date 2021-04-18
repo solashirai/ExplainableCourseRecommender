@@ -1,0 +1,16 @@
+?courseUri a crs-rec:Course ;
+    crs-rec:hasCourseCode ?courseCodeUri ;
+    crs-rec:hasName ?crsName ;
+    crs-rec:hasDescription ?courseDesc ;
+    crs-rec:hasDepartment ?departmentUri ;
+    crs-rec:hasCredits ?courseCredits ;
+    crs-rec:hasTopic ?topicUri ;
+    crs-rec:hasSpecialTag ?specialTag ;
+    crs-rec:hasRequiredPrerequisite ?reqPrereqCourseUri ;
+    crs-rec:hasRecommendedPrerequisite ?recPrereqCourseUri ;
+    crs-rec:hasCorequisite ?coreqCourseUri ;
+    crs-rec:offerTerm ?courseOfferTerm ;
+    crs-rec:offerPeriod ?courseOfferPeriod .
+
+{% include 'constructors/constructor_course_code.sparql.j2' %}
+{% include 'constructors/constructor_topic_area.sparql.j2' %}

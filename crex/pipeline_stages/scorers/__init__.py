@@ -1,2 +1,0 @@
-from .topic_of_interest_scorer import TopicOfInterestScorer
-from .recommended_prereq_scorer import RecommendedPrereqScorer

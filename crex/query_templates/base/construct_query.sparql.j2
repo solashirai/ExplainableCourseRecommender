@@ -1,9 +1,0 @@
-{% include 'base/prefixes.sparql.j2' %}
-
-CONSTRUCT {
-{% block construct_triples %}{% endblock %}
-}
-WHERE {
-{% block values %}{% endblock %}
-{% block expressions %}{% endblock %}
-}

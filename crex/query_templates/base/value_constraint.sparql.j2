@@ -1,3 +1,0 @@
-{% for constraint in constraints %}
-VALUES {{constraint.var_name}} { {% for var_val in constraint.var_values %} {{var_val}}{% endfor %} }
-{% endfor %}

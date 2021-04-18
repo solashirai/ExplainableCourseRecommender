@@ -1,0 +1,3 @@
+from .recommend_courses_pipeline import RecommendCoursesPipeline
+from .recommend_courses_for_semester_pipeline import RecommendCoursesForSemesterPipeline
+from .recommend_courses_for_pos_pipeline import RecommendCoursesForPOSPipeline

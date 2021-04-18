@@ -1,9 +1,0 @@
-?courseCodeUri crs-rec:hasLevel ?courseCodeLevel ;
-    crs-rec:hasDepartmentCode ?departmentCodeUri ;
-    lcc-lr:hasTag ?courseCodeTag .
-
-{% include 'models/department_code.sparql.j2' %}
-
-OPTIONAL {
-    ?courseCodeUri crs-rec:hasCrossListing ?clCourseCodeUri .
-}

@@ -1,0 +1,7 @@
+?courseSectionUri a crs-rec:CourseSection ;
+    crs-rec:isCourseSectionOf ?courseUri ;
+    crs-rec:hasSchedule ?courseScheduleUri ;
+    crs-rec:hasSemester ?semesterScheduleUri .
+
+{% include 'constructors/constructor_semester_schedule.sparql.j2' %}
+{% include 'constructors/constructor_course.sparql.j2' %}

@@ -1,0 +1,13 @@
+{% extends 'base/construct_query.sparql.j2' %}
+{% block construct_triples %}
+    {% include 'constructors/constructor_requirement.sparql.j2' %}
+{% endblock %}
+{% block values %}
+    {% include 'base/value_constraint.sparql.j2' %}
+{% endblock %}
+{% block expressions %}
+?degreeUri crs-rec:hasRequirement ?topLevelReqs .
+?topLevelReqs (crs-rec:canShareCreditsWith* | crs-rec:hasSubRequirement* |
+                crs-rec:hasRestriction* | crs-rec:isFulfilledBy*)* ?requirementUri .
+    {% include 'models/requirement.sparql.j2' %}
+{% endblock %}

@@ -1,0 +1,1239 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fibo-be-le-fbo: <https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/> .
+@prefix fibo-be-le-lp: <https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/> .
+@prefix fibo-fnd-aap-ppl: <https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/> .
+@prefix fibo-fnd-arr-cls: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/> .
+@prefix fibo-fnd-arr-id: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/> .
+@prefix fibo-fnd-dt-bd: <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/> .
+@prefix fibo-fnd-dt-fd: <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/> .
+@prefix fibo-fnd-dt-oc: <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/> .
+@prefix fibo-fnd-plc-adr: <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/> .
+@prefix fibo-fnd-plc-loc: <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> .
+@prefix fibo-fnd-plc-vrt: <https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/> .
+@prefix fibo-fnd-pty-pty: <https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/> .
+@prefix fibo-fnd-pty-rl: <https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/> .
+@prefix fibo-fnd-rel-rel: <https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/> .
+@prefix fibo-fnd-utl-av: <https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/> .
+@prefix lcc-3166-1: <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix lcc-3166-2-us: <https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> .
+@prefix oe2020-crs-rec: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender/> .
+@prefix oe2020-crs-rec-ind: <https://tw.rpi.edu/ontology-engineering/oe2020/course-recommender-individuals/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oe2020-crs-rec-ind: a owl:Ontology ;
+    rdfs:label "Course Recommender Individuals Ontology" ;
+    dct:abstract "This ontology ..." ;
+    sm:dependsOn "https://spec.edmcouncil.org/fibo/ontology/BE/"^^xsd:anyURI,
+        "https://spec.edmcouncil.org/fibo/ontology/FND/"^^xsd:anyURI,
+        "https://www.omg.org/spec/LCC/"^^xsd:anyURI ;
+    owl:imports fibo-be-le-fbo:,
+        fibo-be-le-lp:,
+        fibo-fnd-aap-ppl:,
+        fibo-fnd-arr-cls:,
+        fibo-fnd-arr-id:,
+        fibo-fnd-dt-bd:,
+        fibo-fnd-dt-fd:,
+        fibo-fnd-dt-oc:,
+        fibo-fnd-pty-pty:,
+        fibo-fnd-pty-rl:,
+        fibo-fnd-plc-adr:,
+        fibo-fnd-plc-loc:,
+        fibo-fnd-plc-vrt:,
+        fibo-fnd-rel-rel:,
+        fibo-fnd-utl-av:,
+        oe2020-crs-rec:,
+        lcc-cr:,
+        lcc-3166-1:,
+        lcc-3166-2-us:,
+        lcc-lr: ;
+    owl:versionIRI <https://tw.rpi.edu/ontology-engineering/oe2020/20201025/course-recommender-individuals/> .
+
+oe2020-crs-rec-ind:RensselaerPolytechnicInstitute a owl:NamedIndividual,
+        oe2020-crs-rec:University ;
+    rdfs:label "Rensselaer Polytechnic Institute" ;
+    skos:definition "globally recognized university situated on 275 acres in Troy NY, offering 746 labs, studios, and technology spaces used for research" ;
+    fibo-fnd-rel-rel:hasIdentity oe2020-crs-rec-ind:RensselaerPolytechnicInstituteAsLegalEntity ;
+    fibo-fnd-utl-av:abbreviation "RPI",
+        "Rensselaer" ;
+    fibo-fnd-utl-av:adaptedFrom "https://rpi.edu/about/"^^xsd:anyURI .
+
+oe2020-crs-rec-ind:crs000000 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000001 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "An introduction to computer programming algorithm design and analysis. Additional topics include basic computer organization; internal representation of scalar and array data; use of top-down design and subprograms to tackle complex problems; abstract data types. Enrichment material as time allows. Interdisciplinary case studies, numerical and nonnumerical applications. Students who have passed CSCI 1200 cannot register for this course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Computer Science I"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000002 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000003 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course teaches elementary programming concepts using the MATLAB environment for engineering students with little or no prior programming experience. Concepts include variables, looping, and function calls. Students cannot get credit for CSCI 1190 after earning credit for CSCI 1100 or any higher-level CSCI course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Beginning Programming for Engineers"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000004 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000005 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Programming concepts: functions, parameter passing, pointers, arrays, strings, structs, classes, templates. Mathematical tools: sets, functions, and relations, order notation, complexity of algorithms, proof by induction. Data structures and their representations: data abstraction and internal representation, sequences, trees, binary search trees, associative structures. Algorithms: searching and sorting, generic algorithms, iterative and recursive algorithms. Methods of testing correctness and measuring performance."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data Structures"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000006 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000007 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course introduces important mathematical and theoretical tools for computer science, including topics from set theory, combinatorics, and probability theory, and then proceeds to automata theory, the Turing Machine model of computation, and notions of computational complexity. The course will emphasize formal reasoning and proof techniques."^^xsd:string ;
+    oe2020-crs-rec:hasName "Foundations of Computer Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000008 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000009 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Data structures and algorithms, and the mathematical techniques necessary to design and analyze them. Basic data structures: lists, associative structures, trees. Mathematical techniques for designing algorithms and analyzing worst-case and expected-case algorithm efficiency. Advanced data structures: balanced trees, tries, heaps, priority queues, graphs. Searching, sorting. Algorithm design techniques: dynamic programming, greedy algorithms, divide-and-conquer, backtracking. Example graph, string, geometric, and numeric algorithms."^^xsd:string ;
+    oe2020-crs-rec:hasName "Introduction to Algorithms"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000010 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000011 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Introduction to computer organization, assembler language, and operating systems. Computer systems organization: processors, memory, I/O. Digital logic: gates, Boolean algebra, digital logic circuits, memory, buses. Microprogramming. Machine level: instruction formats, addressing modes, instruction types, flow of control. Operating systems: virtual memory, virtual I/O instructions, processes, interprocess communication. Numeric representation. Assembler language: the assembly process, macros, linking, loading. Advanced architectures: RISC architectures, parallel architectures."^^xsd:string ;
+    oe2020-crs-rec:hasName "Computer Organization"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000012 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000013 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "A study of important concepts in software design, implementation, and testing. Topics include specification, abstraction with classes, design principles and patterns, testing, refactoring, the software development process, GUI and event-driven programming, and cloud-based programming. The course also introduces implementation and testing tools, including IDEs, revision control systems, and other frameworks. The overarching goal of the course is for students to learn how to write correct and maintainable software."^^xsd:string ;
+    oe2020-crs-rec:hasName "Principles of Software"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000014 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000015 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000016 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000017 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course presents fundamental ideas and techniques of modern algorithm design and analysis. After completing this course, students should be able to formally analyze and design efficient algorithms for a variety of computational problems. Topics covered include Greedy Algorithms, Dynamic Programming, Network Flow, NP-Completeness, Linear Programming, Network Algorithms, as well as probabilistic and approximate algorithms."^^xsd:string ;
+    oe2020-crs-rec:hasName "Design and Analysis of Algorithms"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000018 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000019 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Topics and techniques of artificial intelligence using the language LISP. Topics include search, knowledge representation, expert systems, theorem proving, natural language interfaces, learning, game playing, and computer vision. Techniques include pattern matching, data-driven programming, substitution rules, frames, heuristic search, transition networks, neural networks, and evolutionary computation. Development of programming proficiency in LISP is emphasized."^^xsd:string ;
+    oe2020-crs-rec:hasName "Introduction to Artificial Intelligence"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000020 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000021 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Discussion of various aspects of computer operating systems design and implementation. Topics include I/O programming, concurrent processes and synchronization problems, process management and scheduling of processes, virtual memory management, device management, file systems, deadlock problems, system calls, and interprocess communication. Programming projects are required."^^xsd:string ;
+    oe2020-crs-rec:hasName "Operating Systems"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000022 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000023 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Fundamental concepts and methods of graph theory and its applications to computing and the social and natural sciences. Topics include graphs as models, representation of graphs, trees, distances, matchings, connectivity, flows in networks, graph colorings, Hamiltonian cycles, traveling salesman problem, planarity. All concepts, methods, and applications are presented through a sequence of exercises and problems, many of which are done with the help of novel software systems for combinatorial computing."^^xsd:string ;
+    oe2020-crs-rec:hasName "Graph Theory"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000024 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000025 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Techniques and methods for parallel programming: models of parallel machines and programs, efficiency and complexity of parallel algorithms. Paradigms of parallel programming and corresponding extensions to sequential programming languages. Overview of parallel languages and coordination languages and models; programming on networks of workstations. Basic parallel algorithms: elementary computation, matrix multiplication, sorting; sample scientific application."^^xsd:string ;
+    oe2020-crs-rec:hasName "Parallel Programming"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000026 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000027 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Discussion of the state of practice in modern database systems, with an emphasis on relational systems. Topics include database design, database system architecture, SQL, normalization techniques, storage structures, query processing, concurrency control, recovery, security, and new directions such as object-oriented and distributed database systems. Students gain hands-on experience with commercial database systems and interface building tools. Programming projects are required."^^xsd:string ;
+    oe2020-crs-rec:hasName "Database Systems"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000028 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000029 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Informatics covers a broad range of disciplines addressing challenges in the explosion of data and information resources. Xinformatics provides commonality for implementations in specific disciplines, e.g. X=astro, geo. Informatics' theoretical bases are information and computer science, cognitive science, social science, library science, aggregating these studies and adding the practice of information processing, and the engineering of information systems. This course grounds the material that students will learn in discipline areas by coursework and project assignments."^^xsd:string ;
+    oe2020-crs-rec:hasName "X-informatics"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000030 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000031 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Software system design methodology emphasizing use of object oriented modeling of application domains and of software systems and emphasizing the roles of written and oral communication in software engineering. Project management and software testing. Individual and team projects include specification, software architecture, user interfaces, and documentation of the phases of a project. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Software Design and Documentation"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000032 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000033 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "The goal of this course is to introduce students to program analysis and its many applications in software engineering, particularly in improving software quality and software productivity. Concretely, students who successfully complete this course should be able to: (1) understand and apply program analysis techniques, such as dataflow analysis and type-based analysis; (2) implement program analysis; (3) understand and apply software testing techniques, such as black-box testing and white-box testing; and (4) understand and apply refactoring techniques."^^xsd:string ;
+    oe2020-crs-rec:hasName "Principles of Program Analysis"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000034 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000035 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course follows Game Development I. Students work in interdisciplinary teams to create one large-scale 3D game, working from concept to public release. Projects may include games, educational games, serious games and simulations, and interactive artworks, and will focus on creative design, technical execution, and use of game design principles. The course builds on skills and knowledge in previous courses in the GSAS core, including game design, game mechanics, game programming, art, and narrative."^^xsd:string ;
+    oe2020-crs-rec:hasName "Game Development II"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000036 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000037 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Visualizing data is a key step in understanding many problems. This course is designed to introduce students to methods of visualizing many different types of data, such as images, three-dimensional surfaces, flow fields, and medical data. Both existing visualization software and program custom visualizations using C++ and OpenGL will be used. Course activities include discussion of recent and classic research papers, weekly homework assignments, in-class critiques of visualization artifacts, and a final project to explore creative uses of these techniques. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Interactive Visualization"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000038 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000039 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "A survey of numerical methods for scientific and engineering problems. Topics include numerical solution of linear and nonlinear algebraic equations, interpolation and least squares approximations, numerical integration and differentiation, eigenvalue problems, and an introduction to the numerical solution of ordinary differential equations. Emphasis is placed on efficient computational procedures including the use of library and student written procedures using high-level software such as MATLAB."^^xsd:string ;
+    oe2020-crs-rec:hasName "Numerical Computing"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000040 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000041 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Derivation, analysis, and use of computational procedures for solving differential equations. Topics covered include ordinary differential equations (both initial value and boundary value problems) and partial differential equations. Runge-Kutta and multistep methods for initial value problems. Finite difference methods for partial differential equations including techniques for heat conduction, wave propagation, and potential problems. Basic convergence and stability theory."^^xsd:string ;
+    oe2020-crs-rec:hasName "Introduction to Numerical Methods for Differential Equations"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000042 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000043 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000044 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000045 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000046 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000047 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000048 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000049 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000050 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000051 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000052 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000053 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000054 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000055 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "A survey of fundamental issues in design of efficient programs for parallel computers. The topics discussed include models of parallel machines and programs, efficiency of parallel algorithms, programming styles for shared memory, message passing, data parallelism, and using MPI in scientific parallel programs. Parallel programming project required."^^xsd:string ;
+    oe2020-crs-rec:hasName "Parallel Computing"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000056 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000057 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Informatics covers a broad range of disciplines addressing challenges in the explosion of data and information resources. Xinformatics provides commonality for implementations in specific disciplines, e.g. X=astro, geo. Informatics' theoretical bases are information and computer science, cognitive science, social science, library science, aggregating these studies and adding the practice of information processing, and the engineering of information systems. This course grounds the material that students will learn in discipline areas by coursework and project assignments."^^xsd:string ;
+    oe2020-crs-rec:hasName "X-informatics"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000058 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000059 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "The goal of this course is to introduce students to program analysis and its many applications in software engineering, particularly in improving software quality and software productivity. Concretely, students who successfully complete this course should be able to: (1) understand and apply program analysis techniques, such as dataflow analysis and type-based analysis; (2) implement program analysis; (3) understand and apply software testing techniques, such as black-box testing and white-box testing; and (4) understand and apply refactoring techniques."^^xsd:string ;
+    oe2020-crs-rec:hasName "Principles of Program Analysis"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000060 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000061 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Visualizing data is a key step in understanding many problems. This course is designed to introduce students to methods of visualizing many different types of data, such as images, three-dimensional surfaces, flow fields, and medical data. Both existing visualization software and program custom visualizations using C++ and OpenGL will be used. Course activities include discussion of recent and classic research papers, weekly homework assignments, in-class critiques of visualization artifacts, and a final project to explore creative uses of these techniques. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Interactive Visualization"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000062 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000063 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Numerical methods and analysis for linear and nonlinear PDEs with applications from heat conduction, wave propagation, solid and fluid mechanics, and other areas. Basic concepts of stability and convergence (Lax equivalence theorem, CFL condition, energy methods). Methods for parabolic problems (finite differences, method of lines, ADI, operator splitting), methods for hyperbolic problems (vector systems and characteristics, dissipation and dispersion, shocks capturing and tracking schemes), methods for elliptic problems (finite difference and finite volume methods)."^^xsd:string ;
+    oe2020-crs-rec:hasName "Numerical Solution of Partial Differential Equations"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000064 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000065 ;
+    oe2020-crs-rec:hasCredits 0 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Presentation of current developments in computer science. Reports by students."^^xsd:string ;
+    oe2020-crs-rec:hasName "Computer Science Seminar"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000066 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000067 ;
+    oe2020-crs-rec:hasCredits 0 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName "Topics in Computer Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000068 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000069 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000070 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000071 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000072 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000073 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000074 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000075 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000076 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000077 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000078 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000079 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Active participation in a semester-long project, under the supervision of a faculty adviser. A Professional Project often serves as a culminating experience for a Professional Master's program but, with departmental or school approval, can be used to fulfill other program requirements. With approval, students may register for more than one Professional Project. Professional Projects must result in documentation established by each department or school, but are not submitted to the Office of Graduate Education and are not archived in the library. Grades of A, B, C, or F are assigned by the faculty adviser at the end of the semester. If not completed on time, a formal Incomplete grade may be assigned by the faculty adviser, listing the work remaining to be completed and the time limit for completing this work."^^xsd:string ;
+    oe2020-crs-rec:hasName "Professional Project"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000080 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000081 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Active participation in a master's-level project, under the supervision of a faculty adviser, leading to a master's project report. Grades S or U are assigned at the end of the semester.  If recommended by the adviser, the master's project may be accepted by the Office of Graduate Education to be archived in the library."^^xsd:string ;
+    oe2020-crs-rec:hasName "Master's Project"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000082 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000083 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Active participation in research, under the supervision of a faculty adviser, leading to a master’s thesis. Grades of S or U are assigned by the adviser each term to reflect the  student's research progress for the given semester. Once the thesis has  been presentend, approved by the adviser, and accepted by the Office of  Graduate Education, it will be archived in a standard format in the  library."^^xsd:string ;
+    oe2020-crs-rec:hasName "Master’s Thesis"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000084 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000085 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Active participation in research, under the supervision of a faculty adviser, leading to a doctoral dissertation. Grades of IP are assigned until the dissertation has been publicly defended, approved by the doctoral committee, and accepted by the Office of Graduate Education to be archived in a standard format in the library. Grades will then be listed as S."^^xsd:string ;
+    oe2020-crs-rec:hasName "Dissertation"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000086 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000087 ;
+    oe2020-crs-rec:hasCredits 1 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000088 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000089 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Introduction to the theory, algorithms, and applications of machine learning (supervised, reinforcement, and unsupervised) from data: What is learning? Is learning feasible? How can we do it? How can we do it well? The course offers a mix of theory, technique, and application with additional selected topics chosen from Pattern Recognition, Decision Trees, Neural Networks, RBF's, Bayesian Learning, PAC Learning, Support Vector Machines, Gaussian processes, and Hidden Markov Models."^^xsd:string ;
+    oe2020-crs-rec:hasName "Machine Learning from Data"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000090 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000091 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Programming with an overview of the principles of computer networks, including a detailed look at the OSI reference model and various popular network protocol suites. Concentration on Unix interprocess communication (IPC), network programming using TCP and UDP, as well as client-side and mobile programming. Programming projects are required."^^xsd:string ;
+    oe2020-crs-rec:hasName "Network Programming"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000092 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000093 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course will offer an introduction to network science and a review of current research in this area. Classes will interchangeably present chapters from the textbook and related current research. The emphasis will be on the mathematical background of network science: graphs and networks; random networks and various types of scale-free networks; network properties such as assortativity, mobility, robustness, social networks, and communities; and dynamics of spreading in networks."^^xsd:string ;
+    oe2020-crs-rec:hasName "Frontiers of Network Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000094 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000095 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course introduces Linux kernel programming basics and starts by examining how Berkeley sockets bridge the user-kernel gap. The remainder of the course is spent looking into transport layer (e.g., TCP) and network layer (e.g., IP) implementations. Students do both individual and group programming projects. In addition to coding, there are detailed write-ups and peer reviews in this course. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Networking in the Linux Kernel"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000096 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000097 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course provides an introduction to ontologies, their uses, and an overview of their application in semantically enabled systems. Ontologies encode term meanings and are used to improve communication and enable computer programs to function more effectively. Class participants learn how to use ontologies in Web-based applications and evaluate ontologies for reuse. Participants read relevant papers, learn how to critically review ontology papers and ontologies, and participate in group project(s) designing, using, and evaluating ontologies."^^xsd:string ;
+    oe2020-crs-rec:hasName "Ontologies"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000098 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000099 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Data science is advancing the inductive conduct of science and is driven by the greater volumes, complexity, and heterogeneity of data being made available over the Internet. It combines aspects of data management, library science, computer science, and physical science. It is changing the way all of these disciplines do both their individual and collaborative work. Key methodologies in application areas based on real research experience are taught."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000100 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000101 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Data and Society provides a broad overview of how society is leveraging and responding to the social, organizational, policy, and technical opportunities and challenges of a data-driven world. Course themes focus on various aspects of the data ecosystem, data and innovation, and data and the broader community. Assignments build writing, presentation, and critical thinking, and assessment skills, all of which are important for professional success. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data and Society"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000102 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000103 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course will provide an introductory survey of the main topics in data mining and knowledge discovery in databases (KDD), including: classification, clustering, association rules, sequence mining, similarity search, deviation detection, and so on. Emphasis will be on the algorithmic and system issues in KDD, as well as on applications such as Web mining, multimedia mining, bioinformatics, geographical information systems, etc."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data Mining"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000104 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000105 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course is a study of the important concepts found in current programming languages. Topics include language processing (lexical analysis, parsing, type-checking, interpretation and compilation, run-time environment), the role of abstraction (data abstraction and control abstraction), programming paradigms (procedural, functional, object-oriented, logic-oriented, generic), and formal language definition."^^xsd:string ;
+    oe2020-crs-rec:hasName "Programming Languages"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000106 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000107 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course focuses on software development techniques in support of large-scale software projects and maintenance. Specific topics include various programming paradigms and techniques, approaches to testing and automation, debugging, refactoring, and inheriting code. Individual and team assignments are required, including programming assignments. Project topics include text processing, building a search engine, and the like. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Large-Scale Programming and Testing"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000108 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000109 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "A survey of the fundamental issues necessary for the design, analysis, control, and implementation of robotic systems. The mathematical description of robot manipulators in terms of kinematics and dynamics. Hardware components of a typical robot arm. Path following, control, and sensing. Examples of several currently available manipulators."^^xsd:string ;
+    oe2020-crs-rec:hasName "Robotics I"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000110 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000111 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course explores the principles of distributed systems, emphasizing fundamental issues underlying the design of such systems: communication, coordination, synchronization, and fault-tolerance. Key algorithms and theoretical results will be studied and students will explore how these foundations play out in modern systems and applications."^^xsd:string ;
+    oe2020-crs-rec:hasName "Distributed Systems and Algorithms"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000112 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000113 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName "Topics in Computer Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000114 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000115 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000116 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000117 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000118 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000119 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000120 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000121 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Introduction to the theory, algorithms, and applications of machine learning (supervised, reinforcement, and unsupervised) from data: What is learning? Is learning feasible? How can it be done? How can it be done well? The course offers a mix of theory, technique, and application with additional selected topics chosen from Pattern Recognition, Decision Trees, Neural Networks, RBF's, Bayesian Learning, PAC Learning, Support Vector Machines, Gaussian processes, and Hidden Markov Models."^^xsd:string ;
+    oe2020-crs-rec:hasName "Machine Learning from Data"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000122 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000123 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course will offer an introduction to network science and a review of current research in this area. Classes will interchangeably present chapters from the textbook and related current research. The emphasis will be on the mathematical background of network science: graphs and networks; random networks and various types of scale-free networks; network properties such as assortativity, mobility, robustness, social networks, and communities; and dynamics of spreading in networks."^^xsd:string ;
+    oe2020-crs-rec:hasName "Frontiers of Network Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000124 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000125 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course introduces Linux kernel programming basics and starts by examining how Berkeley sockets bridge the user-kernel gap. The remainder of the course is spent looking into transport layer (e.g., TCP) and network layer (e.g., IP) implementations. Students do both individual and group programming projects. In addition to coding, there are detailed write-ups and peer reviews in this course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Networking in the Linux Kernel"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000126 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000127 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course provides an introduction to ontologies, their uses, and an overview of their application in semantically enabled systems. Ontologies encode term meanings and are used to improve communication and enable computer programs to function more effectively. Class participants learn how to use ontologies in web-based applications and evaluate ontologies for reuse. Participants read relevant papers, learn how to critically review ontology papers and ontologies, and participate in group project(s) designing, using, and evaluating ontologies."^^xsd:string ;
+    oe2020-crs-rec:hasName "Ontologies"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000128 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000129 ;
+    oe2020-crs-rec:hasCredits 3 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Data science is advancing the inductive conduct of science and is driven by the greater volumes, complexity, and heterogeneity of data being made available over the Internet. It combines aspects of data management, library science, computer science, and physical science. It is changing the way all of these disciplines do both their individual and collaborative work. Key methodologies in application areas based on real research experience are taught."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data Science"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000130 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000131 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course will provide an introductory survey of the main topics in data mining and knowledge discovery in databases (KDD), including: classification, clustering, association rules, sequence mining, similarity search, deviation detection, and so on. Emphasis will be on the algorithmic and system issues in KDD, as well as on applications such as Web mining, multimedia mining, bioinformatics, geographical information systems, etc."^^xsd:string ;
+    oe2020-crs-rec:hasName "Data Mining"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000132 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000133 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course focuses on software development techniques in support of large-scale software projects and maintenance. Specific topics include various programming paradigms and techniques, approaches to testing and automation, debugging, refactoring, and inheriting code. Individual and team assignments are required, including programming assignments. Project topics include text processing, building a search engine, and the like."^^xsd:string ;
+    oe2020-crs-rec:hasName "Large-Scale Programming and Testing"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000134 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000135 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "This course explores the principles of distributed systems, emphasizing fundamental issues underlying the design of such systems: communication, coordination, synchronization, and fault-tolerance. Key algorithms and theoretical results will be studied and students will explore how these foundations play out in modern systems and applications."^^xsd:string ;
+    oe2020-crs-rec:hasName "Distributed Systems and Algorithms"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000136 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000137 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Gaussian elimination, special linear systems (such as positive definite, banded, or sparse), introduction to parallel computing, iterative methods for linear systems (such as conjugate gradient and preconditioning), QR factorization and least squares problems, and eigenvalue problems."^^xsd:string ;
+    oe2020-crs-rec:hasName "Computational Linear Algebra"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000138 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000139 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "Galerkin's method and extremal principles, finite element approximations (Lagrange, hierarchical and 3-D approximations, interpolation errors), mesh generation and assembly, adaptivity (h-, p-, hp-refinement). Error analysis and convergence rates. Perturbations resulting from boundary approximation, numerical integration, etc. Time dependent problems including parabolic and hyperbolic PDEs. Applications will be selected from several areas including heat conduction, wave propagation, potential theory, and solid and fluid mechanics."^^xsd:string ;
+    oe2020-crs-rec:hasName "Finite Element Analysis"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000140 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000141 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription "A self-contained course that includes topics from number theory, basic cryptography, and protocol security. This is a hybrid course with sufficient depth in both theory and hands-on experience with network protocols. Topics include: Classical Cryptography, Block Ciphers (DES, AES), Information Theoretical Cryptography, Randomness, RNG and Stream Ciphers, Hash and MAC Algorithms, Public-Key Cryptography, Elliptic Curve Cryptography, Digital Signatures and Identification, Internet Attacks, Web Security, SSL and PGP. This is a communication-intensive course."^^xsd:string ;
+    oe2020-crs-rec:hasName "Cryptography and Network Security I"^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000142 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000143 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:crs000144 a owl:NamedIndividual,
+        oe2020-crs-rec:Course ;
+    oe2020-crs-rec:hasCourseCode oe2020-crs-rec-ind:crs000145 ;
+    oe2020-crs-rec:hasCredits 4 ;
+    oe2020-crs-rec:hasDepartment oe2020-crs-rec-ind:dpt0026 ;
+    oe2020-crs-rec:hasDescription ""^^xsd:string ;
+    oe2020-crs-rec:hasName ""^^xsd:string ;
+    oe2020-crs-rec:hasTopic oe2020-crs-rec-ind:topic00001 .
+
+oe2020-crs-rec-ind:RensselaerPolytechnicInstituteAddress a owl:NamedIndividual,
+        fibo-fnd-plc-adr:PhysicalAddress ;
+    rdfs:label "Rensselaer Polytechnic Institute address" ;
+    skos:definition "physical street address for Rensselaer Polytechnic Institute" ;
+    fibo-fnd-plc-adr:hasAddressLine1 "110 8th Street" ;
+    fibo-fnd-plc-adr:hasPostalCode "12180-3522" ;
+    fibo-fnd-plc-loc:hasCityName "Troy" ;
+    fibo-fnd-plc-loc:hasCountry lcc-3166-1:UnitedStates ;
+    fibo-fnd-plc-loc:hasSubdivision lcc-3166-2-us:NewYork .
+
+oe2020-crs-rec-ind:RensselaerPolytechnicInstituteAsLegalEntity a owl:NamedIndividual,
+        fibo-be-le-lp:LegalEntity ;
+    rdfs:label "Rensselaer Polytechnic Institute as legal entity" ;
+    skos:definition "legal entity that is Rensselaer Polytechnic Institute" ;
+    fibo-be-le-fbo:hasHeadquartersAddress oe2020-crs-rec-ind:RensselaerPolytechnicInstituteAddress .
+
+oe2020-crs-rec-ind:crs000003 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 1190 ;
+    lcc-lr:hasTag "CSCI-1190"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000015 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2960 ;
+    lcc-lr:hasTag "CSCI-2960"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000017 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4020 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4020"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000019 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4150 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4150"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000023 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4260 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000001,
+        oe2020-crs-rec-ind:crs000007 ;
+    lcc-lr:hasTag "CSCI-4260"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000025 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4320 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000011 ;
+    lcc-lr:hasTag "CSCI-4320"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000029 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4400 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005 ;
+    lcc-lr:hasTag "CSCI-4400"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000031 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4440 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4440"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000033 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4450 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000105 ;
+    lcc-lr:hasTag "CSCI-4450"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000035 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4540 ;
+    lcc-lr:hasTag "CSCI-4540"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000037 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4550 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000013 ;
+    lcc-lr:hasTag "CSCI-4550"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000041 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4820 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000039 ;
+    lcc-lr:hasTag "CSCI-4820"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000043 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4961 ;
+    lcc-lr:hasTag "CSCI-4961"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000045 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4962 ;
+    lcc-lr:hasTag "CSCI-4962"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000047 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4964 ;
+    lcc-lr:hasTag "CSCI-4964"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000049 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4967 ;
+    lcc-lr:hasTag "CSCI-4967"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000051 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4969 ;
+    lcc-lr:hasTag "CSCI-4969"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000053 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4976 ;
+    lcc-lr:hasTag "CSCI-4976"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000055 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6360 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000021 ;
+    lcc-lr:hasTag "CSCI-6360"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000057 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6400 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005 ;
+    lcc-lr:hasTag "CSCI-6400"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000059 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6450 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000105 ;
+    lcc-lr:hasTag "CSCI-6450"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000061 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6550 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000013 ;
+    lcc-lr:hasTag "CSCI-6550"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000063 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6840 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000039 ;
+    lcc-lr:hasTag "CSCI-6840"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000065 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6900 ;
+    lcc-lr:hasTag "CSCI-6900"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000067 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6960 ;
+    lcc-lr:hasTag "CSCI-6960"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000069 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6961 ;
+    lcc-lr:hasTag "CSCI-6961"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000071 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6962 ;
+    lcc-lr:hasTag "CSCI-6962"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000073 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6964 ;
+    lcc-lr:hasTag "CSCI-6964"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000075 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6967 ;
+    lcc-lr:hasTag "CSCI-6967"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000077 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6969 ;
+    lcc-lr:hasTag "CSCI-6969"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000079 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6970 ;
+    lcc-lr:hasTag "CSCI-6970"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000081 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6980 ;
+    lcc-lr:hasTag "CSCI-6980"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000083 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6990 ;
+    lcc-lr:hasTag "CSCI-6990"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000085 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 9990 ;
+    lcc-lr:hasTag "CSCI-9990"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000087 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2961 ;
+    lcc-lr:hasTag "CSCI-2961"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000089 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4100 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4100"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000093 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4250 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4250"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000095 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4310 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000021 ;
+    lcc-lr:hasTag "CSCI-4310"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000097 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4340 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4340"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000101 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4370 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000099 ;
+    lcc-lr:hasTag "CSCI-4370"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000103 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4390 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4390"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000107 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4460 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4460"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000109 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4480 ;
+    lcc-lr:hasTag "CSCI-4480"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000111 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4510 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000021 ;
+    lcc-lr:hasTag "CSCI-4510"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000113 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4960 ;
+    lcc-lr:hasTag "CSCI-4960"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000115 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4966 ;
+    lcc-lr:hasTag "CSCI-4966"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000117 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4968 ;
+    lcc-lr:hasTag "CSCI-4968"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000119 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4970 ;
+    lcc-lr:hasTag "CSCI-4970"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000121 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6100 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-6100"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000123 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6250 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-6250"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000125 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6310 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000021 ;
+    lcc-lr:hasTag "CSCI-6310"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000127 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6340 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-6340"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000129 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6350 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005,
+        oe2020-crs-rec-ind:crs000027 ;
+    lcc-lr:hasTag "CSCI-6350"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000131 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6390 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-6390"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000133 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6460 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-6460"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000135 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6510 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000021 ;
+    lcc-lr:hasTag "CSCI-6510"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000137 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6800 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000039 ;
+    lcc-lr:hasTag "CSCI-6800"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000139 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 6860 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000039 ;
+    lcc-lr:hasTag "CSCI-6860"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000141 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4230 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000021,
+        oe2020-crs-rec-ind:crs000091 ;
+    lcc-lr:hasTag "CSCI-4230"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000143 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4963 ;
+    lcc-lr:hasTag "CSCI-4963"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000145 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4965 ;
+    lcc-lr:hasTag "CSCI-4965"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000091 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4220 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000011 ;
+    lcc-lr:hasTag "CSCI-4220"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000099 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4350 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005,
+        oe2020-crs-rec-ind:crs000027 ;
+    lcc-lr:hasTag "CSCI-4350"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000027 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4380 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009 ;
+    lcc-lr:hasTag "CSCI-4380"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000105 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4430 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000013 ;
+    lcc-lr:hasTag "CSCI-4430"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000001 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 1100 ;
+    lcc-lr:hasTag "CSCI-1100"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000007 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2200 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005 ;
+    lcc-lr:hasTag "CSCI-2200"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000011 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2500 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005 ;
+    lcc-lr:hasTag "CSCI-2500"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000013 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2600 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005,
+        oe2020-crs-rec-ind:crs000007 ;
+    lcc-lr:hasTag "CSCI-2600"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000039 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4800 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000001 ;
+    lcc-lr:hasTag "CSCI-4800"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000021 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 4210 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000009,
+        oe2020-crs-rec-ind:crs000011 ;
+    lcc-lr:hasTag "CSCI-4210"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000005 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 1200 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000001 ;
+    lcc-lr:hasTag "CSCI-1200"^^xsd:string .
+
+oe2020-crs-rec-ind:crs000009 a owl:NamedIndividual,
+        oe2020-crs-rec:CourseCode ;
+    oe2020-crs-rec:hasDepartmentCode oe2020-crs-rec-ind:dptc0026 ;
+    oe2020-crs-rec:hasLevel 2300 ;
+    oe2020-crs-rec:hasRequiredPrerequisite oe2020-crs-rec-ind:crs000005,
+        oe2020-crs-rec-ind:crs000007 ;
+    lcc-lr:hasTag "CSCI-2300"^^xsd:string .
+
+oe2020-crs-rec-ind:topic00001 a owl:NamedIndividual,
+        oe2020-crs-rec:TopicArea ;
+    rdfs:label "placeholder for topic"^^xsd:string .
+
