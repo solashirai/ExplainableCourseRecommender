@@ -72,8 +72,8 @@ class PlanOfStudyRecommenderService:
         max_credits_per_semester: int = 16,
         min_credits_per_semester: int = 12
     ) -> ConstraintSolution:
-        import time
-        starttime = time.time()
+        # import time
+        # starttime = time.time()
 
         rec_pipe = RecommendCoursesForPOSPipeline(course_query_service=self.cqs)
 
@@ -87,7 +87,7 @@ class PlanOfStudyRecommenderService:
                 req_uri=req.uri, req_dict=req_sharing_relationships, parent_uris=[],
                 all_requirements=all_requirements, all_restriction_uris=all_restriction_uris)
             req_hierarchies.append(req_hierarchy)
-        print('time to get courses and reqs: ', time.time()-starttime)
+        # print('time to get courses and reqs: ', time.time()-starttime)
 
         context = StudentPOSRequirementContext(
             student=student,
@@ -255,9 +255,9 @@ class PlanOfStudyRecommenderService:
                         constraint_type=ConstraintType.GEQ
                     )
 
-        print('setup time: ', time.time()-starttime)
+        # print('setup time: ', time.time()-starttime)
         solution = solver.solve(output_uri=URIRef("placeholder.com/output_studyplan"))
-        print('time to solution: ', time.time()-starttime)
+        # print('time to solution: ', time.time()-starttime)
         return solution
 
     def get_semester_recommendations_for_student(

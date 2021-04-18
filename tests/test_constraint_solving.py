@@ -4,35 +4,14 @@ from escore.pipeline import RecommendCoursesForPOSPipeline
 import pytest
 
 
-@pytest.mark.skip("skip blank")
+#@pytest.mark.skip("skip blank")
 def test_generate_pos_for_blank_student(course_qs, blank_student, bs1, bs2):
 
-    # posrs = PlanOfStudyRecommenderService(course_query_service=course_qs)
-    # solution = posrs.get_pos_recommendation_for_target_student(student=blank_student,
-    #                                                            min_credits_per_semester=12,
-    #                                                            max_credits_per_semester=16)
-
-    import pickle
-    # with open('blank_student_0_soln.pkl', 'wb') as f:
-    #     pickle.dump(solution, f)
-
-
     posrs = PlanOfStudyRecommenderService(course_query_service=course_qs)
-    solution1 = posrs.get_pos_recommendation_for_target_student(student=bs1,
+    solution = posrs.get_pos_recommendation_for_target_student(student=blank_student,
                                                                min_credits_per_semester=12,
                                                                max_credits_per_semester=16)
 
-    with open('new_machinelearning_bs1_soln.pkl', 'wb') as f:
-        pickle.dump(solution1, f)
-
-    # posrs = PlanOfStudyRecommenderService(course_query_service=course_qs)
-    # solution2 = posrs.get_pos_recommendation_for_target_student(student=bs2,
-    #                                                            min_credits_per_semester=12,
-    #                                                            max_credits_per_semester=16)
-    #
-    # with open('blank_student_2_soln.pkl', 'wb') as f:
-    #     pickle.dump(solution2, f)
-    solution = []
     assert (
             solution.items is not None
             and all(
@@ -41,7 +20,8 @@ def test_generate_pos_for_blank_student(course_qs, blank_student, bs1, bs2):
     )
     )
 
-@pytest.mark.skip("skip - student progress cant graduate with updated reqs...")
+
+@pytest.mark.skip("skip - This student profile isnt compatible with the most current graduation requirements")
 def test_generate_pos_for_progressed_student(course_qs, owen_student):
 
     posrs = PlanOfStudyRecommenderService(course_query_service=course_qs)

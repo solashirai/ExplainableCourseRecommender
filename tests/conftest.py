@@ -290,6 +290,7 @@ def blank_student(placeholder_advisor, csci_major, csci_bs_deg):
         advisor=placeholder_advisor,
     )
 
+
 @pytest.fixture(scope="session")
 def bs2(placeholder_advisor, csci_major, csci_bs_deg):
     return Student(
@@ -315,6 +316,7 @@ def bs2(placeholder_advisor, csci_major, csci_bs_deg):
         registered_courses=frozenset(),
         advisor=placeholder_advisor,
     )
+
 
 @pytest.fixture(scope="session")
 def bs1(placeholder_advisor, csci_major, csci_bs_deg):
