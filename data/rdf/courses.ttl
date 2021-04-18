@@ -35298,9 +35298,6 @@ crs-rec-ind:crsc746a794a800d873f1e5deff86c0c58e25f94848 a owl:NamedIndividual,
     crs-rec:hasDescription "This course introduces important mathematical and theoretical tools for computer science, including topics from set theory, combinatorics, and probability theory, and then proceeds to automata theory, the Turing Machine model of computation, and notions of computational complexity. The course will emphasize formal reasoning and proof techniques."^^xsd:string ;
     crs-rec:hasName "Foundations of Computer Science"^^xsd:string ;
     crs-rec:hasRequiredPrerequisite crs-rec-ind:crs331b6fa914bf4a6dbe2665f26df7d9aaf1c9d24a,
-        crs-rec-ind:crs5588ea4d5b28350c146e5d15db75fea3702c6cdc,
-        crs-rec-ind:crs9e07b5493e850cf8029e953cc3ee6fef9fa22bd5,
-        crs-rec-ind:crsafed9cb99a22f3c1c24a461212de74c061147fdc,
         crs-rec-ind:crsbb2f79ec60f43618cd25567f87e71171d29aee83 ;
     crs-rec:hasTopic crs-rec-ind:topic00001 ;
     crs-rec:offerPeriod "ANNUAL"^^xsd:string ;
@@ -36166,9 +36163,6 @@ crs-rec-ind:crsd930192130a654416bffd45ce16415ee608df66d a owl:NamedIndividual,
     crs-rec:hasDescription "Data structures and algorithms, and the mathematical techniques necessary to design and analyze them. Basic data structures: lists, associative structures, trees. Mathematical techniques for designing algorithms and analyzing worst-case and expected-case algorithm efficiency. Advanced data structures: balanced trees, tries, heaps, priority queues, graphs. Searching, sorting. Algorithm design techniques: dynamic programming, greedy algorithms, divide-and-conquer, backtracking. Example graph, string, geometric, and numeric algorithms."^^xsd:string ;
     crs-rec:hasName "Introduction to Algorithms"^^xsd:string ;
     crs-rec:hasRequiredPrerequisite crs-rec-ind:crs331b6fa914bf4a6dbe2665f26df7d9aaf1c9d24a,
-        crs-rec-ind:crs5588ea4d5b28350c146e5d15db75fea3702c6cdc,
-        crs-rec-ind:crs9e07b5493e850cf8029e953cc3ee6fef9fa22bd5,
-        crs-rec-ind:crsafed9cb99a22f3c1c24a461212de74c061147fdc,
         crs-rec-ind:crsbb2f79ec60f43618cd25567f87e71171d29aee83,
         crs-rec-ind:crsc746a794a800d873f1e5deff86c0c58e25f94848 ;
     crs-rec:hasTopic crs-rec-ind:topic00001 ;

@@ -172,7 +172,7 @@ def owen_pos(csci_major, csci_bs_deg):
         class_year=2021,
         planned_major=csci_major,
         planned_degree=csci_bs_deg,
-        completed_courses=frozenset({
+        completed_course_sections=frozenset({
             individual_ns["crsSec0838fe4beedeff7709d32d16ca67c9aa2373dba7"],
             individual_ns["crsSec0cf0d1a768ef7b1d580ac0aaf258257b8c766ecb"],
             individual_ns["crsSec0d060d8550b4d97fa0aa0188e75a213e37114cb5"],
@@ -202,6 +202,36 @@ def owen_pos(csci_major, csci_bs_deg):
             individual_ns["crsSecf8b3e82fd2f512b3db0727642c6a1b7153581d47"],
             individual_ns["crsSecfb9210e5ca6bd4844b7bf9bdf1cb1c5956f81d08"],
         }),
+        completed_courses=frozenset({
+            individual_ns["crsafed9cb99a22f3c1c24a461212de74c061147fdc"],
+            individual_ns["crsd13b01ead0fba8b4aa112ce4a06999a774cf7b2d"],
+            individual_ns["crs16512f1cf1a0772c4b025c3d6ec1edcd0d8fe1fb"],
+            individual_ns["crsfb2686b704f12418fbb57e79c573d4bb0fd2f418"],
+            individual_ns["crsbb2f79ec60f43618cd25567f87e71171d29aee83"],
+            individual_ns["crs3040f719acb6d5f911e4a1e0efdae1aab16e71d5"],
+            individual_ns["crs76deeb1ecf1123e7b7b6918afd3e7e9c65a5bbdc"],
+            individual_ns["crsa9004db87efa99687062b8819ace3f59d4e235cd"],
+            individual_ns["crs8e3b954b259c3b7c341a8839f81fb05deeff68ea"],
+            individual_ns["crs938c5b7e20ea7e1620a2dd6329e6f0af274b46c3"],
+            individual_ns["crs667378d70c52e4a84617225e20e380eb49540f42"],
+            individual_ns["crsd930192130a654416bffd45ce16415ee608df66d"],
+            individual_ns["crs11d22a217c292f1bd278d88b96fa770c9a6fa207"],
+            individual_ns["crs66ece4f97b7ad555666d9477af785bcaa7a40e8a"],
+            individual_ns["crs547b5ccb36b817d3e2df2a96a09aa18f678bc4e0"],
+            individual_ns["crs4b79ba1b9717a21b3aff7a7d656a471eea21448a"],
+            individual_ns["crs0f4511984f6fb0682b0185c2dc94b50dbc4efd2a"],
+            individual_ns["crs70c201e1b37def5c83e4458b044028e8a44f91c7"],
+            individual_ns["crs9797fa54cb6f077d0e7cf31e23bdbafbbe00e8af"],
+            individual_ns["crs1f544a878959fae04cb9d08b258e527007df5491"],
+            individual_ns["crs61c14eb096ee7002039fb8baee948b4495f08440"],
+            individual_ns["crsb195823511b1f4a6f4b656734aab626993defec6"],
+            individual_ns["crs8aabf92b49dce005f10db4d14605ad4d5eb920d7"],
+            individual_ns["crs2a22ca2e61da1be778732a493f944011f5b30519"],
+            individual_ns["crs72de52b44f46d5b08b2917495701f202699880ca"],
+            individual_ns["crsc746a794a800d873f1e5deff86c0c58e25f94848"],
+            individual_ns["crs622f7a32272ea2f04599f688790c2571325b949a"],
+            individual_ns["crs7c03aa6fefaf99476e8158ef5943f5ee91ee6146"],
+        }),
         ongoing_course_sections=frozenset(),
         planned_courses=frozenset(),
     )
@@ -223,7 +253,12 @@ def owen_student(owen_pos, placeholder_advisor):
         study_plan=owen_pos,
         name="owen",
         class_year=2021,
-        topics_of_interest=frozenset(),
+        topics_of_interest=frozenset({TopicArea(
+            uri=individual_ns['hardcodedUserInterest'],
+            name='semantic web',
+            sub_topic_of=frozenset(),
+            discipline="placeholder discipline",
+        )}),
         registered_courses=frozenset(),
         advisor=placeholder_advisor,
     )
@@ -239,12 +274,70 @@ def blank_student(placeholder_advisor, csci_major, csci_bs_deg):
             planned_major=csci_major,
             planned_degree=csci_bs_deg,
             completed_courses=frozenset({}),
+            completed_course_sections=frozenset({}),
             ongoing_course_sections=frozenset(),
             planned_courses=frozenset(),
         ),
         name="blank",
         class_year=2023,
-        topics_of_interest=frozenset(),
+        topics_of_interest=frozenset({TopicArea(
+            uri=individual_ns['hardcodedUserInterest'],
+            name='ontology engineering',
+            sub_topic_of=frozenset(),
+            discipline="placeholder discipline",
+        )}),
+        registered_courses=frozenset(),
+        advisor=placeholder_advisor,
+    )
+
+@pytest.fixture(scope="session")
+def bs2(placeholder_advisor, csci_major, csci_bs_deg):
+    return Student(
+        uri=individual_ns['blank_user'],
+        study_plan=PlanOfStudy(
+            uri=individual_ns['blank_user_pos'],
+            class_year=2023,
+            planned_major=csci_major,
+            planned_degree=csci_bs_deg,
+            completed_courses=frozenset({}),
+            completed_course_sections=frozenset({}),
+            ongoing_course_sections=frozenset(),
+            planned_courses=frozenset(),
+        ),
+        name="blank",
+        class_year=2023,
+        topics_of_interest=frozenset({TopicArea(
+            uri=individual_ns['hardcodedUserInterest'],
+            name='artificial intelligence',
+            sub_topic_of=frozenset(),
+            discipline="placeholder discipline",
+        )}),
+        registered_courses=frozenset(),
+        advisor=placeholder_advisor,
+    )
+
+@pytest.fixture(scope="session")
+def bs1(placeholder_advisor, csci_major, csci_bs_deg):
+    return Student(
+        uri=individual_ns['blank_user'],
+        study_plan=PlanOfStudy(
+            uri=individual_ns['blank_user_pos'],
+            class_year=2023,
+            planned_major=csci_major,
+            planned_degree=csci_bs_deg,
+            completed_courses=frozenset({}),
+            completed_course_sections=frozenset({}),
+            ongoing_course_sections=frozenset(),
+            planned_courses=frozenset(),
+        ),
+        name="blank",
+        class_year=2023,
+        topics_of_interest=frozenset({TopicArea(
+            uri=individual_ns['hardcodedUserInterest'],
+            name='machine learning',
+            sub_topic_of=frozenset(),
+            discipline="placeholder discipline",
+        )}),
         registered_courses=frozenset(),
         advisor=placeholder_advisor,
     )

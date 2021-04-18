@@ -1,4 +1,4 @@
-from frex.pipelines import _Pipeline
+from frex.pipelines import Pipeline
 from frex.pipeline_stages import CandidateRanker
 from frex.models import Explanation
 from escore.models import CourseCandidate
@@ -7,10 +7,10 @@ from escore.services.course import CourseQueryService
 from escore.pipeline_stages import *
 
 
-class RecommendCoursesForSemesterPipeline(_Pipeline):
+class RecommendCoursesForSemesterPipeline(Pipeline):
     def __init__(self, *, course_query_service: CourseQueryService):
         self.cqs = course_query_service
-        _Pipeline.__init__(
+        Pipeline.__init__(
             self,
             stages=(
                 CourseSectionsInSemesterCandidateGenerator(

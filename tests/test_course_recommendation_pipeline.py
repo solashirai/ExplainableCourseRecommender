@@ -7,15 +7,15 @@ from escore.services import PlanOfStudyRecommenderService
 from escore.pipeline import RecommendCoursesForPOSPipeline
 
 
-def test_generate_semester_course_recommendations(course_qs, owen_student):
+def test_generate_semester_course_recommendations(course_qs, blank_student):
 
     posrs = PlanOfStudyRecommenderService(course_query_service=course_qs)
     sem_solution = posrs.get_semester_recommendations_for_student(
-        student=owen_student,
+        student=blank_student,
         min_credits_per_semester=12,
         max_credits_per_semester=16,
         term="FALL",
-        year=2021
+        year=2020
     )
 
     # TODO: more checks that the contents are any good...

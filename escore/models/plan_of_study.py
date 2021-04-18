@@ -14,5 +14,6 @@ class PlanOfStudy(DomainObject):
     planned_major: Major
     planned_degree: Degree
     completed_courses: FrozenSet[URIRef]
+    completed_course_sections: FrozenSet[URIRef]
     ongoing_course_sections: FrozenSet[URIRef]
     planned_courses: FrozenSet[URIRef]

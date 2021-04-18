@@ -581,6 +581,13 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
                 plan_of_study_uri, CRS_NS["hasCompletedCourse"]
             )
         )
+        completed_sec = frozenset(
+            # self._graph_get_course_section_by_uri(course_section_uri=csu)
+            csu
+            for csu in self.cache_graph.objects(
+                plan_of_study_uri, CRS_NS["hasCompletedCourseSection"]
+            )
+        )
         ongoing = frozenset(
             # self._graph_get_course_section_by_uri(course_section_uri=csu)
             csu
@@ -602,6 +609,7 @@ class GraphCourseQueryService(_GraphQueryService, CourseQueryService):
             planned_degree=degree,
             class_year=year,
             completed_courses=completed,
+            completed_course_sections=completed_sec,
             ongoing_course_sections=ongoing,
             planned_courses=planned,
         )

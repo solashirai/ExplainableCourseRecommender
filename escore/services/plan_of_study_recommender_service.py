@@ -204,13 +204,20 @@ class PlanOfStudyRecommenderService:
                     constraint_type=ConstraintType.AM1
                 )
 
+
+        # set up courses the student has already taken
+        for cc_uri in student.study_plan.completed_course_sections:
+            course_sec = self.cqs.get_course_section_by_uri(course_section_uri=cc_uri)
+            semester_section_set.add_required_item_assignment(section_uri=course_sec.semester.uri,
+                                                              item_uri=course_sec.course.uri)
+
         solver_sections = (
             grad_requirements_section_set,
             semester_section_set,
         )
 
         solver = (
-            ConstraintSolver()
+            ConstraintSolver(scaling=1000)
                 .set_candidates(candidates=candidate_courses)
                 .set_section_set_constraints(section_sets=solver_sections)
                 .add_overall_count_constraint(max_count=100)  # maybe this one should be removed?
@@ -220,6 +227,10 @@ class PlanOfStudyRecommenderService:
                 constraint_value=128,
             )
         )
+
+        # set up courses the student has already taken
+        for cc_uri in student.study_plan.completed_courses:
+            solver.add_required_item_selection(target_uri=cc_uri)
 
         # apply additional constraints on course prerequisites
         candidate_course_uris = frozenset({cc.domain_object.uri for cc in candidate_courses})
@@ -235,7 +246,7 @@ class PlanOfStudyRecommenderService:
                     semester_section_set.add_item_ordering_dependence_constraint(
                         independent_uri=prereq_uri,
                         dependent_uri=cc.domain_object.uri,
-                        constraint_type=ConstraintType.LEQ
+                        constraint_type=ConstraintType.LESS
                     )
                     # if the candidate course is selected, the prereq must be selected.
                     solver.add_item_selection_constraint(
@@ -244,8 +255,6 @@ class PlanOfStudyRecommenderService:
                         constraint_type=ConstraintType.GEQ
                     )
 
-        for cc_uri in student.study_plan.completed_courses:
-            solver.add_required_item_selection(target_uri=cc_uri)
         print('setup time: ', time.time()-starttime)
         solution = solver.solve(output_uri=URIRef("placeholder.com/output_studyplan"))
         print('time to solution: ', time.time()-starttime)
@@ -266,7 +275,6 @@ class PlanOfStudyRecommenderService:
                                                                   min_credits_per_semester=min_credits_per_semester)
 
         target_semester = Semester(uri=URIRef(f'fakeuri.com/semester/{term.lower()}{year}'), term=term, year=year)
-
         solution_section = None
         for section in pos_soln.solution_section_sets[1].sections:
             if section.section_object.uri == target_semester.uri:

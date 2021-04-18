@@ -7,10 +7,8 @@ class RecommendedPrereqScorer(CandidateScorer):
     def score(self, *, candidate: CourseCandidate) -> float:
         if len(candidate.domain_object.recommended_prerequisites) == 0:
             return 1
-        completed_courses = {
-            cc.course
-            for cc in candidate.context.plan_of_study.completed_courses
-        }
+        completed_courses = candidate.context.plan_of_study.completed_courses
+
         recommended_fulfilled = sum(
             1
             for prereq in candidate.domain_object.recommended_prerequisites

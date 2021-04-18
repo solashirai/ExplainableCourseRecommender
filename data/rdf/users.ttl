@@ -12,6 +12,7 @@ crs-rec-ind:usrjacob a owl:NamedIndividual,
     crs-rec:hasAdvisor crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
     crs-rec:hasClassYear 2021 ;
     crs-rec:hasName "jacob"^^xsd:string ;
+    crs-rec:hasInterest crs-rec-ind:hardcodedUserInterest ;
     crs-rec:hasStudyPlan crs-rec-ind:pos0ae915694bbc4c24455b621d59e5d43959b3b463 .
 
 crs-rec-ind:usrkelly a owl:NamedIndividual,
@@ -19,6 +20,7 @@ crs-rec-ind:usrkelly a owl:NamedIndividual,
     crs-rec:hasAdvisor crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
     crs-rec:hasClassYear 2021 ;
     crs-rec:hasName "kelly"^^xsd:string ;
+    crs-rec:hasInterest crs-rec-ind:hardcodedNoInterest ;
     crs-rec:hasStudyPlan crs-rec-ind:pose8a68a3d863e198fde2a9851f9334379d0b5599c .
 
 crs-rec-ind:usrowen a owl:NamedIndividual,
@@ -26,7 +28,16 @@ crs-rec-ind:usrowen a owl:NamedIndividual,
     crs-rec:hasAdvisor crs-rec-ind:PLACEHOLDER-ADVISOR-URI ;
     crs-rec:hasClassYear 2021 ;
     crs-rec:hasName "owen"^^xsd:string ;
+    crs-rec:hasInterest crs-rec-ind:hardcodedUserInterest ;
     crs-rec:hasStudyPlan crs-rec-ind:pos9a8e6844c6ecbac12f9f92da68ac51c5bd67704f .
+
+crs-rec-ind:hardcodedUserInterest a owl:NamedIndividual,
+        crs-rec:Interest ;
+    rdfs:label "semantic web"^^xsd:string .
+
+crs-rec-ind:hardcodedNoInterest a owl:NamedIndividual,
+        crs-rec:Interest ;
+    rdfs:label ""^^xsd:string .
 
 crs-rec-ind:crsSec0838fe4beedeff7709d32d16ca67c9aa2373dba7 a owl:NamedIndividual,
         crs-rec:CourseSection ;

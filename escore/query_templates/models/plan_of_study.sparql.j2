@@ -8,6 +8,7 @@
 
 OPTIONAL {
     ?planOfStudyUri crs-rec:hasCompletedCourse ?completedCourseSectionUri .
+    ?completedCourseSectionUri crs-rec:isCourseSectionOf ?completedCourseUri .
 }
 OPTIONAL {
     ?planOfStudyUri crs-rec:hasOngoingCourse ?ongoingCourseSectionUri .

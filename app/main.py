@@ -33,11 +33,11 @@ PR_SERVICE = PlanOfStudyRecommenderService(
     course_query_service=COURSE_QS
 )
 
-@app.route("/crex_api/")
+@app.route("/escore_api/")
 def hello_world():
-    return "Hello, Worrld!"
+    return "Hello, World!"
 
-@app.route("/crex_api/dummy_get_rec", methods=["GET"])
+@app.route("/escore_api/dummy_get_rec", methods=["GET"])
 def dummy_recommend_courses():
     args = request.args
 
@@ -48,6 +48,7 @@ def dummy_recommend_courses():
         planned_major=None,
         planned_degree=None,
         completed_courses=frozenset(),
+        completed_course_sections=frozenset(),
         ongoing_course_sections=frozenset(),
         planned_courses=frozenset()
     )
@@ -70,7 +71,7 @@ def dummy_recommend_courses():
     rec_course_codes = [rc.domain_object.course_code.name for rc in rec_courses]
     return {'recommend_course_codes': rec_course_codes}
 
-@app.route("/crex_api/get_recommended_courses_for_student", methods=["GET"])
+@app.route("/escore_api/get_recommended_courses_for_student", methods=["GET"])
 def get_course_recommendation_for_student():
     args = request.args
 
@@ -101,7 +102,7 @@ def get_course_recommendation_for_student():
     # except MalformedContentException as e:
     #     abort(500, description=e)
 
-@app.route("/crex_api/get_pos_rec_for_student", methods=["GET"])
+@app.route("/escore_api/get_pos_rec_for_student", methods=["GET"])
 def get_pos_recommendation_for_student():
     args = request.args
 
